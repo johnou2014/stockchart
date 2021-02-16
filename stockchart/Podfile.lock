@@ -4,11 +4,13 @@ PODS:
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - SnapKit (4.2.0)
+  - SwiftIconFont (6.1.1)
 
 DEPENDENCIES:
   - Kingfisher
   - R.swift
   - SnapKit
+  - SwiftIconFont
 
 SPEC REPOS:
   trunk:
@@ -16,13 +18,15 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - SnapKit
+    - SwiftIconFont
 
 SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftIconFont: 0a772c5ac65a40c9b0675efa37b4928158bd8e43
 
-PODFILE CHECKSUM: f07f82aee8a7801f646d8d9eb4adf97286e4431e
+PODFILE CHECKSUM: c2e403019f31509618513326722278319f090903
 
 COCOAPODS: 1.10.0

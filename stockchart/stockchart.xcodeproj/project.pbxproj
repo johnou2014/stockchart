@@ -7,26 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE6AB5F825D9F03B00B5280F /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB5F725D9F03B00B5280F /* Watch.swift */; };
+		CE6AB5FC25D9F31100B5280F /* WatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB5FB25D9F31100B5280F /* WatchDetailViewController.swift */; };
+		CE6AB5FF25D9F3BE00B5280F /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB5FE25D9F3BE00B5280F /* TableCell.swift */; };
 		CE6E6C8F25CE450900A4C892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6C8E25CE450900A4C892 /* AppDelegate.swift */; };
 		CE6E6C9125CE450900A4C892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6C9025CE450900A4C892 /* SceneDelegate.swift */; };
 		CE6E6C9325CE450900A4C892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6C9225CE450900A4C892 /* ViewController.swift */; };
 		CE6E6C9625CE450900A4C892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6E6C9425CE450900A4C892 /* Main.storyboard */; };
 		CE6E6C9825CE450C00A4C892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6E6C9725CE450C00A4C892 /* Assets.xcassets */; };
 		CE6E6C9B25CE450C00A4C892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6E6C9925CE450C00A4C892 /* LaunchScreen.storyboard */; };
-		CE6E6CA525CE458E00A4C892 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CA425CE458E00A4C892 /* HomeViewController.swift */; };
-		CE6E6CA925CE47F100A4C892 /* ProtfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CA825CE47F100A4C892 /* ProtfolioViewController.swift */; };
-		CE6E6CAC25CE480F00A4C892 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CAB25CE480F00A4C892 /* AlertsViewController.swift */; };
-		CE6E6CAF25CE484400A4C892 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CAE25CE484400A4C892 /* MineViewController.swift */; };
-		CE6E6CB225CE485F00A4C892 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CB125CE485F00A4C892 /* NewsViewController.swift */; };
-		CE6E6CB525CE490D00A4C892 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CB425CE490D00A4C892 /* BaseViewController.swift */; };
+		CE6E6CA525CE458E00A4C892 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CA425CE458E00A4C892 /* WatchViewController.swift */; };
 		CE6E6CB925CE49B900A4C892 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CB825CE49B900A4C892 /* UIColorExtension.swift */; };
 		CE6E6CC625CE501C00A4C892 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CC525CE501C00A4C892 /* R.generated.swift */; };
-		CE6E6CCF25CEC7CD00A4C892 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CCE25CEC7CD00A4C892 /* LoginViewController.swift */; };
+		CE8E4A0F25D6AED5007B11A2 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */; };
+		CE8E4A1225D6B042007B11A2 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1125D6B042007B11A2 /* ChartViewController.swift */; };
+		CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */; };
 		F32A373DC608F3C64FF2476C /* Pods_stockchart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5484916D3B394898463BEFD /* Pods_stockchart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C9BB72351A3E00B56523FC2B /* Pods-stockchart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockchart.release.xcconfig"; path = "Target Support Files/Pods-stockchart/Pods-stockchart.release.xcconfig"; sourceTree = "<group>"; };
+		CE6AB5F725D9F03B00B5280F /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
+		CE6AB5FB25D9F31100B5280F /* WatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailViewController.swift; sourceTree = "<group>"; };
+		CE6AB5FE25D9F3BE00B5280F /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		CE6E6C8B25CE450900A4C892 /* stockchart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockchart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6E6C8E25CE450900A4C892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6E6C9025CE450900A4C892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,15 +38,12 @@
 		CE6E6C9725CE450C00A4C892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6E6C9A25CE450C00A4C892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6E6C9C25CE450C00A4C892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE6E6CA425CE458E00A4C892 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CE6E6CA825CE47F100A4C892 /* ProtfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtfolioViewController.swift; sourceTree = "<group>"; };
-		CE6E6CAB25CE480F00A4C892 /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
-		CE6E6CAE25CE484400A4C892 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
-		CE6E6CB125CE485F00A4C892 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		CE6E6CB425CE490D00A4C892 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CE6E6CA425CE458E00A4C892 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		CE6E6CB825CE49B900A4C892 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CE6E6CC525CE501C00A4C892 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		CE6E6CCE25CEC7CD00A4C892 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		CE8E4A1125D6B042007B11A2 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E416FF4EA87C836FF65B5653 /* Pods-stockchart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockchart.debug.xcconfig"; path = "Target Support Files/Pods-stockchart/Pods-stockchart.debug.xcconfig"; sourceTree = "<group>"; };
 		E5484916D3B394898463BEFD /* Pods_stockchart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stockchart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +77,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE6AB5F625D9EFF200B5280F /* WatchViews */ = {
+			isa = PBXGroup;
+			children = (
+				CE6AB5F725D9F03B00B5280F /* Watch.swift */,
+				CE6AB5FB25D9F31100B5280F /* WatchDetailViewController.swift */,
+				CE6AB5FE25D9F3BE00B5280F /* TableCell.swift */,
+			);
+			path = WatchViews;
+			sourceTree = "<group>";
+		};
 		CE6E6C8225CE450900A4C892 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		CE6E6C8D25CE450900A4C892 /* stockchart */ = {
 			isa = PBXGroup;
 			children = (
+				CE6AB5F625D9EFF200B5280F /* WatchViews */,
 				CE6E6CB725CE499A00A4C892 /* Extensions */,
 				CE6E6CA325CE456400A4C892 /* ViewControllers */,
 				CE6E6C8E25CE450900A4C892 /* AppDelegate.swift */,
@@ -108,7 +119,6 @@
 				CE6E6C9725CE450C00A4C892 /* Assets.xcassets */,
 				CE6E6C9925CE450C00A4C892 /* LaunchScreen.storyboard */,
 				CE6E6C9C25CE450C00A4C892 /* Info.plist */,
-				CE6E6CCE25CEC7CD00A4C892 /* LoginViewController.swift */,
 			);
 			path = stockchart;
 			sourceTree = "<group>";
@@ -116,12 +126,10 @@
 		CE6E6CA325CE456400A4C892 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE6E6CA425CE458E00A4C892 /* HomeViewController.swift */,
-				CE6E6CA825CE47F100A4C892 /* ProtfolioViewController.swift */,
-				CE6E6CAB25CE480F00A4C892 /* AlertsViewController.swift */,
-				CE6E6CAE25CE484400A4C892 /* MineViewController.swift */,
-				CE6E6CB125CE485F00A4C892 /* NewsViewController.swift */,
-				CE6E6CB425CE490D00A4C892 /* BaseViewController.swift */,
+				CE6E6CA425CE458E00A4C892 /* WatchViewController.swift */,
+				CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */,
+				CE8E4A1125D6B042007B11A2 /* ChartViewController.swift */,
+				CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -268,18 +276,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6E6CCF25CEC7CD00A4C892 /* LoginViewController.swift in Sources */,
 				CE6E6C9325CE450900A4C892 /* ViewController.swift in Sources */,
-				CE6E6CAC25CE480F00A4C892 /* AlertsViewController.swift in Sources */,
+				CE6AB5F825D9F03B00B5280F /* Watch.swift in Sources */,
 				CE6E6C8F25CE450900A4C892 /* AppDelegate.swift in Sources */,
-				CE6E6CAF25CE484400A4C892 /* MineViewController.swift in Sources */,
-				CE6E6CA925CE47F100A4C892 /* ProtfolioViewController.swift in Sources */,
-				CE6E6CB525CE490D00A4C892 /* BaseViewController.swift in Sources */,
+				CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */,
 				CE6E6C9125CE450900A4C892 /* SceneDelegate.swift in Sources */,
 				CE6E6CB925CE49B900A4C892 /* UIColorExtension.swift in Sources */,
-				CE6E6CA525CE458E00A4C892 /* HomeViewController.swift in Sources */,
+				CE6AB5FF25D9F3BE00B5280F /* TableCell.swift in Sources */,
+				CE8E4A1225D6B042007B11A2 /* ChartViewController.swift in Sources */,
+				CE6E6CA525CE458E00A4C892 /* WatchViewController.swift in Sources */,
+				CE6AB5FC25D9F31100B5280F /* WatchDetailViewController.swift in Sources */,
 				CE6E6CC625CE501C00A4C892 /* R.generated.swift in Sources */,
-				CE6E6CB225CE485F00A4C892 /* NewsViewController.swift in Sources */,
+				CE8E4A0F25D6AED5007B11A2 /* AlertsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

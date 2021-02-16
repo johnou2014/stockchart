@@ -89,6 +89,30 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  struct segue {
+    /// This struct is generated for `WatchViewController`, and contains static references to 1 segues.
+    struct stockchartWatchViewController {
+      /// Segue identifier `watchDetail`.
+      static let watchDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, stockchart.WatchViewController, WatchDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "watchDetail")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `watchDetail`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func watchDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, stockchart.WatchViewController, WatchDetailViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.stockchartWatchViewController.watchDetail, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
@@ -170,6 +194,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `tableCell`.
+    static let tableCell: Rswift.ReuseIdentifier<TableCell> = Rswift.ReuseIdentifier(identifier: "tableCell")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -217,12 +249,16 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = UIKit.UITabBarController
 
       let bundle = R.hostingBundle
       let name = "Main"
 
       static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "exclamationmark.square") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'exclamationmark.square' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "gearshape") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'gearshape' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "list.bullet.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'list.bullet.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "waveform.path.ecg.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'waveform.path.ecg.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
