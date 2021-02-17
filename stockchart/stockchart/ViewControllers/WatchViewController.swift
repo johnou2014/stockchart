@@ -5,6 +5,8 @@
 //  Created by Sheldon_Gao on 2021/2/6.
 //
 import UIKit
+import Alamofire
+
 class WatchViewController: UITableViewController {
     
     var watchs = Watch.getWatchList()
