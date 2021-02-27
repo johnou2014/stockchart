@@ -92,16 +92,16 @@ struct R: Rswift.Validatable {
   /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
     /// This struct is generated for `WatchViewController`, and contains static references to 1 segues.
-    struct stockchartWatchViewController {
+    struct watchViewController {
       /// Segue identifier `watchDetail`.
-      static let watchDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, stockchart.WatchViewController, WatchDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "watchDetail")
+      static let watchDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WatchViewController, WatchDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "watchDetail")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `watchDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func watchDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, stockchart.WatchViewController, WatchDetailViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.stockchartWatchViewController.watchDetail, segue: segue)
+      static func watchDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WatchViewController, WatchDetailViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.watchViewController.watchDetail, segue: segue)
       }
       #endif
 

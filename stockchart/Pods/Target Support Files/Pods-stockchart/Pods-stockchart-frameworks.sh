@@ -176,17 +176,31 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftHTTP/SwiftHTTP.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MXPagerView/MXPagerView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MXSegmentedPager/MXSegmentedPager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftHTTP/SwiftHTTP.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
 fi

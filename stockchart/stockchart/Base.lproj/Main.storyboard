@@ -103,12 +103,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnO-Zn-RRQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="404"/>
+            <point key="canvasLocation" x="227.536231884058" y="403.79464285714283"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="DIB-f5-UN8">
             <objects>
-                <tableViewController id="hjK-3I-Yb3" customClass="WatchViewController" customModule="stockchart" sceneMemberID="viewController">
+                <tableViewController id="hjK-3I-Yb3" customClass="WatchViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z3h-gj-Knh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

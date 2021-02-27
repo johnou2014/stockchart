@@ -8,6 +8,8 @@ import Foundation
 import UIKit
 import SwiftIconFont
 
+let collectionViewA = KSBinanceController();
+
 class WatchDetailViewController: UIViewController {
 
     @IBOutlet private var pkLabel: UILabel!
@@ -17,7 +19,6 @@ class WatchDetailViewController: UIViewController {
     @IBOutlet private var userIdLabel: UILabel!
     @IBOutlet private var stockIdLabel: UILabel!
     @IBOutlet private var thumbnailImageView: UIImageView!
-    
     var watch: Watch?
 
     override func viewDidLoad() {
@@ -35,6 +36,10 @@ class WatchDetailViewController: UIViewController {
             } else {
                 thumbnailImageView.image = UIImage(from: .themify, code: "stats.down", textColor: .red, backgroundColor: .clear, size: CGSize(width: 200, height: 100))
             }
+            let ctr = KSBinanceController.init()
+            self.view.addSubview(ctr.view)
         }
+        
     }
 }
+

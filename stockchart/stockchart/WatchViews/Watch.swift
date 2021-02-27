@@ -19,18 +19,20 @@ struct Watch {
 }
 
 extension Watch {
-    static var itemsList = [[String:Any]]()
+    static var itemsList = [Watch]()
     static func getWatchList() -> [Watch] {
-        Alamofire.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"john.ou"]).validate().responseJSON { response in
-            var list = [Watch]()
+        AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"john.ou"]).validate().responseJSON { response in
+            var list: [Watch] = [Watch]()
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
-                /*for (index, item) in json {
-                    list.append(item)
-                }*/
-                //Watch.itemsList = json as! [[String:Any]]
+                for (_, item) in json {
+                    let watchData = Watch(pk: item["pk"].intValue, user: item["user"].stringValue, stock: item["stock"].stringValue, stock_name: item["stock_name"].stringValue, user_id: item["user_id"].intValue, stock_id: item["stock_id"].intValue)
+                    list.append(watchData)
+                }
+                self.itemsList = list
+                print("list =\(list)")
             case .failure(let error):
                 print(error)
             }

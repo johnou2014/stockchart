@@ -1,40 +1,69 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.0.5)
+  - HandyJSON (5.0.2)
+  - HMSegmentedControl (1.5.3)
   - Kingfisher (4.10.1)
+  - MXPagerView (0.2.1)
+  - MXParallaxHeader (0.6.1)
+  - MXSegmentedPager (3.3.0):
+    - HMSegmentedControl (= 1.5.3)
+    - MXPagerView (= 0.2.1)
+    - MXParallaxHeader (= 0.6.1)
   - R.swift (5.3.1):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - SnapKit (4.2.0)
+  - SocketRocket (0.5.1)
+  - SwiftHTTP (3.0.1)
   - SwiftIconFont (6.1.1)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 5.0.0-beta.5)
+  - HandyJSON (~> 5.0.0)
   - Kingfisher
+  - MXSegmentedPager (~> 3.3.0)
   - R.swift
   - SnapKit
+  - SocketRocket (~> 0.5.1)
+  - SwiftHTTP (~> 3.0.1)
   - SwiftIconFont
-  - SwiftyJSON
+  - SwiftyJSON (~> 5.0.0)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
+  trunk:
+    - HandyJSON
+    - HMSegmentedControl
     - Kingfisher
+    - MXPagerView
+    - MXParallaxHeader
+    - MXSegmentedPager
     - R.swift
     - R.swift.Library
     - SnapKit
+    - SocketRocket
+    - SwiftHTTP
     - SwiftIconFont
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MXPagerView: ede184b5191b2ed689ccf05a750a9978cce42414
+  MXParallaxHeader: 858c403532ed933b381556a81ce333d7065ad182
+  MXSegmentedPager: a35ebaf939e1629f24db3bb26653c1c557362f59
   R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
   SwiftIconFont: 0a772c5ac65a40c9b0675efa37b4928158bd8e43
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 11aea8a0d9ebd5e1cccb6d161cf95982758c2505
+PODFILE CHECKSUM: bb86274824ae2bb0d3f09480ee8969f90d00a44a
 
 COCOAPODS: 1.10.0

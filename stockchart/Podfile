@@ -1,10 +1,17 @@
-platform :ios, "9.0"
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
 use_frameworks!
-target "stockchart" do 
-	pod "Kingfisher"
-	pod "SnapKit"
-	pod "R.swift"
-  pod "SwiftIconFont"
-  pod "SwiftyJSON"
-  pod "Alamofire"
+target 'stockchart' do
+	pod 'Kingfisher'
+	pod 'R.swift'
+  pod 'SwiftIconFont'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'HandyJSON', '~> 5.0.0'
+  pod 'SnapKit'
+  pod 'SwiftyJSON', '~> 5.0.0'
+
+  pod 'MXSegmentedPager', '~> 3.3.0'
+  pod 'SocketRocket', '~> 0.5.1'
+  pod 'SwiftHTTP', '~> 3.0.1'
+  
 end
