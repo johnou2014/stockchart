@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE18BBFC25E2627200AC5EA6 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18BBFB25E2627200AC5EA6 /* TableDataSource.swift */; };
-		CE18BC0025E2864500AC5EA6 /* WatchUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18BBFF25E2864500AC5EA6 /* WatchUIViewController.swift */; };
 		CE18BC0525E2940B00AC5EA6 /* stockchart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE18BC0325E2940B00AC5EA6 /* stockchart.xcdatamodeld */; };
 		CE6AB5F825D9F03B00B5280F /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB5F725D9F03B00B5280F /* Watch.swift */; };
 		CE6AB5FC25D9F31100B5280F /* WatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB5FB25D9F31100B5280F /* WatchDetailViewController.swift */; };
@@ -118,8 +116,6 @@
 
 /* Begin PBXFileReference section */
 		C9BB72351A3E00B56523FC2B /* Pods-stockchart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stockchart.release.xcconfig"; path = "Target Support Files/Pods-stockchart/Pods-stockchart.release.xcconfig"; sourceTree = "<group>"; };
-		CE18BBFB25E2627200AC5EA6 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
-		CE18BBFF25E2864500AC5EA6 /* WatchUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchUIViewController.swift; sourceTree = "<group>"; };
 		CE18BC0425E2940B00AC5EA6 /* stockchart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = stockchart.xcdatamodel; sourceTree = "<group>"; };
 		CE6AB5F725D9F03B00B5280F /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
 		CE6AB5FB25D9F31100B5280F /* WatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailViewController.swift; sourceTree = "<group>"; };
@@ -269,7 +265,6 @@
 				CE6AB5F725D9F03B00B5280F /* Watch.swift */,
 				CE6AB5FB25D9F31100B5280F /* WatchDetailViewController.swift */,
 				CE6AB5FE25D9F3BE00B5280F /* TableCell.swift */,
-				CE18BBFB25E2627200AC5EA6 /* TableDataSource.swift */,
 			);
 			path = WatchViews;
 			sourceTree = "<group>";
@@ -318,7 +313,6 @@
 				CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */,
 				CE8E4A1125D6B042007B11A2 /* ChartViewController2.swift */,
 				CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */,
-				CE18BBFF25E2864500AC5EA6 /* WatchUIViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -961,7 +955,6 @@
 				CEE88B7425E9F60D00F2CD1A /* KSHeaderChartView.swift in Sources */,
 				CEE88BA525E9FAA000F2CD1A /* CGFloat+KSExtensions.swift in Sources */,
 				CEE88B7A25E9F60D00F2CD1A /* KSChartValueView.swift in Sources */,
-				CE18BC0025E2864500AC5EA6 /* WatchUIViewController.swift in Sources */,
 				CEE88B5825E9F60D00F2CD1A /* KSBaseNavigationController.swift in Sources */,
 				CE6E6C8F25CE450900A4C892 /* AppDelegate.swift in Sources */,
 				CEE88BA425E9FAA000F2CD1A /* Date+KSExtensions.swift in Sources */,
@@ -1033,7 +1026,6 @@
 				CEE88B4E25E9F60D00F2CD1A /* UIViewController+KSExtensions.swift in Sources */,
 				CE6E6CC625CE501C00A4C892 /* R.generated.swift in Sources */,
 				CEE88B3F25E9F60D00F2CD1A /* KSFileMgr.swift in Sources */,
-				CE18BBFC25E2627200AC5EA6 /* TableDataSource.swift in Sources */,
 				CEE88BA625E9FAA000F2CD1A /* UIColor+KSExtensions.swift in Sources */,
 				CEE88B5225E9F60D00F2CD1A /* KSImport.swift in Sources */,
 				CEE88B4125E9F60D00F2CD1A /* KSApi.swift in Sources */,

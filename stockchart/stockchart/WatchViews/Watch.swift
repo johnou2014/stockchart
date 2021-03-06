@@ -8,8 +8,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-
-struct Watch {
+struct Watch: Decodable {
     let pk: Int
     let user: String
     let stock: String
@@ -17,7 +16,7 @@ struct Watch {
     let user_id: Int
     let stock_id: Int
 }
-
+/*
 extension Watch {
     static var itemsList = [Watch]()
     static func getWatchList() -> [Watch] {
@@ -31,8 +30,8 @@ extension Watch {
                     let watchData = Watch(pk: item["pk"].intValue, user: item["user"].stringValue, stock: item["stock"].stringValue, stock_name: item["stock_name"].stringValue, user_id: item["user_id"].intValue, stock_id: item["stock_id"].intValue)
                     list.append(watchData)
                 }
-                self.itemsList = list
-                print("list =\(list)")
+                //self.itemsList = list
+                //print("list =\(list)")
             case .failure(let error):
                 print(error)
             }
@@ -41,3 +40,4 @@ extension Watch {
 ]
     }
 }
+*/

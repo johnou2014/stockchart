@@ -7,15 +7,16 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Foundation
 
 class WatchViewController: UITableViewController {
-    var watchs = Watch.getWatchList()
+    var watchs = [Watch]()//Watch.getWatchList()
     let identifier: String = "tableCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupUI()
-        updateUI()
+        loadDataFromAPI()
+        //updateUI()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,25 +80,29 @@ extension WatchViewController {
         }
     }
     @objc func loadDataFromAPI() {
+        /// 链式请求
+        print("run1 ++++")
+       
         AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"john.ou"]).validate().responseJSON { response in
-            var list: [Watch] = [Watch]()
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                for (_, item) in json {
-                    let watchData = Watch(pk: item["pk"].intValue, user: item["user"].stringValue, stock: item["stock"].stringValue, stock_name: item["stock_name"].stringValue, user_id: item["user_id"].intValue, stock_id: item["stock_id"].intValue)
-                    list.append(watchData)
-                }
-                TableDataSource.itemsList = list
-                self.updateUI()
-                print("list =\(list)")
-            case .failure(let error):
-                print(error)
+            if let err = response.error {
+                print("error \(err.localizedDescription)")
+                return
             }
+            let json = JSON(response.data)
+            print("json ===",json)
+            var candles: [Watch] = [Watch]()
+            for json in json.arrayValue {
+                let info    = Watch(pk: json["pk"].intValue, user: json["user"].stringValue, stock: json["stock"].stringValue, stock_name: json["stock_name"].stringValue, user_id: json["user_id"].intValue, stock_id: json["stock_id"].intValue)
+                candles.append(info)
         }
+            self.watchs = candles
+            
+            self.setupUI()
+            print("刷新成功！")
+    }
     }
 
 }
+
 
 
