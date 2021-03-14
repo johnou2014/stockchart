@@ -94,13 +94,13 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `WatchViewController`, and contains static references to 1 segues.
     struct watchViewController {
       /// Segue identifier `watchDetail`.
-      static let watchDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WatchViewController, WatchDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "watchDetail")
+      static let watchDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, WatchViewController, CanvasViewController> = Rswift.StoryboardSegueIdentifier(identifier: "watchDetail")
 
       #if os(iOS) || os(tvOS)
       /// Optionally returns a typed version of segue `watchDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func watchDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WatchViewController, WatchDetailViewController>? {
+      static func watchDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, WatchViewController, CanvasViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.watchViewController.watchDetail, segue: segue)
       }
       #endif

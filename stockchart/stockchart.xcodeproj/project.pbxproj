@@ -23,7 +23,7 @@
 		CE8E4A0F25D6AED5007B11A2 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */; };
 		CE8E4A1225D6B042007B11A2 /* ChartViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1125D6B042007B11A2 /* ChartViewController2.swift */; };
 		CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */; };
-		CEE88AB225E9F45700F2CD1A /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE88AB125E9F45700F2CD1A /* ChartViewController.swift */; };
+		CEDBC7BA25FC531C00FD8067 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC7B925FC531C00FD8067 /* CanvasViewController.swift */; };
 		CEE88AB625E9F4B100F2CD1A /* KSLineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE88AB525E9F4B100F2CD1A /* KSLineChartCell.swift */; };
 		CEE88B3C25E9F60D00F2CD1A /* KSChartConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE88AD025E9F60C00F2CD1A /* KSChartConfigure.swift */; };
 		CEE88B3D25E9F60D00F2CD1A /* KSChartStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE88AD125E9F60C00F2CD1A /* KSChartStyles.swift */; };
@@ -131,10 +131,11 @@
 		CE6E6CA425CE458E00A4C892 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		CE6E6CB825CE49B900A4C892 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CE6E6CC525CE501C00A4C892 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		CE7BD37C25F4FA6600B937D6 /* watchlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = watchlist.json; sourceTree = "<group>"; };
 		CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		CE8E4A1125D6B042007B11A2 /* ChartViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController2.swift; sourceTree = "<group>"; };
 		CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		CEE88AB125E9F45700F2CD1A /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		CEDBC7B925FC531C00FD8067 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		CEE88AB525E9F4B100F2CD1A /* KSLineChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLineChartCell.swift; sourceTree = "<group>"; };
 		CEE88AD025E9F60C00F2CD1A /* KSChartConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSChartConfigure.swift; sourceTree = "<group>"; };
 		CEE88AD125E9F60C00F2CD1A /* KSChartStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSChartStyles.swift; sourceTree = "<group>"; };
@@ -291,6 +292,7 @@
 		CE6E6C8D25CE450900A4C892 /* stockchart */ = {
 			isa = PBXGroup;
 			children = (
+				CE7BD37B25F4F9D500B937D6 /* staticResources */,
 				CEE88AB025E9F43500F2CD1A /* chart */,
 				CE6AB5F625D9EFF200B5280F /* WatchViews */,
 				CE6E6CB725CE499A00A4C892 /* Extensions */,
@@ -325,6 +327,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CE7BD37B25F4F9D500B937D6 /* staticResources */ = {
+			isa = PBXGroup;
+			children = (
+				CE7BD37C25F4FA6600B937D6 /* watchlist.json */,
+			);
+			path = staticResources;
+			sourceTree = "<group>";
+		};
 		CEE88AB025E9F43500F2CD1A /* chart */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,7 +345,7 @@
 				CEE88B1225E9F60C00F2CD1A /* Dashboard */,
 				CEE88B0825E9F60C00F2CD1A /* Library */,
 				CEE88AB425E9F49000F2CD1A /* Cell */,
-				CEE88AB125E9F45700F2CD1A /* ChartViewController.swift */,
+				CEDBC7B925FC531C00FD8067 /* CanvasViewController.swift */,
 			);
 			path = chart;
 			sourceTree = "<group>";
@@ -946,6 +956,7 @@
 				CEE88BBD25E9FB0700F2CD1A /* KSAxisModel.swift in Sources */,
 				CEE88B7325E9F60D00F2CD1A /* KSTransactionBarView.swift in Sources */,
 				CEE88BA125E9FAA000F2CD1A /* KSChartModel+Extensions.swift in Sources */,
+				CEDBC7BA25FC531C00FD8067 /* CanvasViewController.swift in Sources */,
 				CE6E6C9325CE450900A4C892 /* ViewController.swift in Sources */,
 				CEE88B5325E9F60D00F2CD1A /* KSSpeedy.swift in Sources */,
 				CEE88B6E25E9F60D00F2CD1A /* KSSocketMsgMgr.swift in Sources */,
@@ -962,7 +973,6 @@
 				CEE88B7925E9F60D00F2CD1A /* KSChartIndexView.swift in Sources */,
 				CEE88B6425E9F60D00F2CD1A /* KSOrderBookController.swift in Sources */,
 				CEE88B6C25E9F60D00F2CD1A /* KSSummaryInfo.swift in Sources */,
-				CEE88AB225E9F45700F2CD1A /* ChartViewController.swift in Sources */,
 				CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */,
 				CEE88B4725E9F60D00F2CD1A /* UIView+KSExtensions.swift in Sources */,
 				CEE88B5925E9F60D00F2CD1A /* KSBaseTableViewCell.swift in Sources */,

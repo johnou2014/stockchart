@@ -1,0 +1,186 @@
+[
+    {
+        pk: 90,
+        user: "john.ou",
+        stock: "AAPL",
+        stock_name: "Apple Inc.",
+        user_id: 5,
+        stock_id: 2
+    },
+    {
+        pk: 94,
+        user: "john.ou",
+        stock: "BA",
+        stock_name: "The Boeing Company",
+        user_id: 5,
+        stock_id: 1
+    },
+    {
+        pk: 30,
+        user: "john.ou",
+        stock: "FB",
+        stock_name: "Facebook Inc",
+        user_id: 5,
+        stock_id: 4
+    },
+    {
+        pk: 91,
+        user: "john.ou",
+        stock: "FSLR",
+        stock_name: "First Solar Inc.",
+        user_id: 5,
+        stock_id: 22
+    },
+    {
+        pk: 89,
+        user: "john.ou",
+        stock: "FSLY",
+        stock_name: "Fastly Inc",
+        user_id: 5,
+        stock_id: 11
+    },
+    {
+        pk: 72,
+        user: "john.ou",
+        stock: "GLD",
+        stock_name: "Spdr Gold Trust Gold Shares Npv",
+        user_id: 5,
+        stock_id: 8
+    },
+    {
+        pk: 78,
+        user: "john.ou",
+        stock: "JMIA",
+        stock_name: "Jumia Technologies",
+        user_id: 5,
+        stock_id: 10
+    },
+    {
+        pk: 85,
+        user: "john.ou",
+        stock: "JPM",
+        stock_name: "JP Morgan Chase & Co.",
+        user_id: 5,
+        stock_id: 20
+    },
+    {
+        pk: 40,
+        user: "john.ou",
+        stock: "LYFT",
+        stock_name: "Lyft Inc",
+        user_id: 5,
+        stock_id: 5
+    },
+    {
+        pk: 41,
+        user: "john.ou",
+        stock: "MSFT",
+        stock_name: "Microsoft Corp",
+        user_id: 5,
+        stock_id: 6
+    },
+    {
+        pk: 92,
+        user: "john.ou",
+        stock: "NET",
+        stock_name: "Cloudflare Inc",
+        user_id: 5,
+        stock_id: 23
+    },
+    {
+        pk: 73,
+        user: "john.ou",
+        stock: "NFLX",
+        stock_name: "Netflix Inc",
+        user_id: 5,
+        stock_id: 14
+    },
+    {
+        pk: 43,
+        user: "john.ou",
+        stock: "NIO",
+        stock_name: "Nio Inc",
+        user_id: 5,
+        stock_id: 9
+    },
+    {
+        pk: 93,
+        user: "john.ou",
+        stock: "NVTA",
+        stock_name: "Invitae Corporation",
+        user_id: 5,
+        stock_id: 19
+    },
+    {
+        pk: 39,
+        user: "john.ou",
+        stock: "PLTR",
+        stock_name: "Palantir Technologies Inc.",
+        user_id: 5,
+        stock_id: 3
+    },
+    {
+        pk: 61,
+        user: "john.ou",
+        stock: "QQQ",
+        stock_name: "Nasdaq ETF",
+        user_id: 5,
+        stock_id: 15
+    },
+    {
+        pk: 42,
+        user: "john.ou",
+        stock: "SNOW",
+        stock_name: "Snowflake Inc",
+        user_id: 5,
+        stock_id: 7
+    },
+    {
+        pk: 59,
+        user: "john.ou",
+        stock: "SPY",
+        stock_name: "S&P500",
+        user_id: 5,
+        stock_id: 16
+    },
+    {
+        pk: 76,
+        user: "john.ou",
+        stock: "SRNE",
+        stock_name: "Sorrento Therapeutics Inc",
+        user_id: 5,
+        stock_id: 12
+    },
+    {
+        pk: 77,
+        user: "john.ou",
+        stock: "TQQQ",
+        stock_name: "3x QQQ",
+        user_id: 5,
+        stock_id: 17
+    },
+    {
+        pk: 75,
+        user: "john.ou",
+        stock: "TSLA",
+        stock_name: "Tesla Inc",
+        user_id: 5,
+        stock_id: 13
+    },
+    {
+        pk: 86,
+        user: "john.ou",
+        stock: "UBER",
+        stock_name: "Uber Technologies Inc",
+        user_id: 5,
+        stock_id: 21
+    },
+    {
+        pk: 74,
+        user: "john.ou",
+        stock: "ZM",
+        stock_name: "Zoom Video Communications Inc",
+        user_id: 5,
+        stock_id: 18
+    }
+]

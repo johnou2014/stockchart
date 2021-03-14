@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="880" y="-998"/>
         </scene>
-        <!--Watch Detail View Controller-->
+        <!--Canvas View Controller-->
         <scene sceneID="Knj-TU-uFf">
             <objects>
-                <viewController id="5ts-UZ-o4M" customClass="WatchDetailViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5ts-UZ-o4M" customClass="CanvasViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="srw-nW-18N"/>
                         <viewControllerLayoutGuide type="bottom" id="RyF-8g-zqd"/>
@@ -94,16 +94,16 @@
                     <connections>
                         <outlet property="pkLabel" destination="a7w-oI-dKP" id="04X-GF-o47"/>
                         <outlet property="stockIdLabel" destination="yHs-Cy-gRI" id="ToB-P6-I8W"/>
-                        <outlet property="stockLabel" destination="lhc-vP-134" id="959-xy-UtK"/>
+                        <outlet property="stockLabel" destination="lhc-vP-134" id="Sof-BC-HIV"/>
                         <outlet property="stockNameLabel" destination="QKz-nW-H0r" id="zrW-3O-PqO"/>
-                        <outlet property="thumbnailImageView" destination="6nq-VV-19R" id="Ff4-XU-bht"/>
+                        <outlet property="thumbnailImageView" destination="6nq-VV-19R" id="rV9-wy-hfq"/>
                         <outlet property="userIdLabel" destination="4yX-Tj-i9G" id="DUZ-TB-0hY"/>
                         <outlet property="userLabel" destination="kZW-bL-5yG" id="AfC-W2-yEe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnO-Zn-RRQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="227.536231884058" y="403.79464285714283"/>
+            <point key="canvasLocation" x="-183" y="134"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="DIB-f5-UN8">
@@ -145,7 +145,7 @@
                                     <outlet property="stockLabel" destination="EPS-rS-fEZ" id="hD2-vd-mdb"/>
                                     <outlet property="stockNameLabel" destination="Qxk-qm-XUC" id="5cd-Z2-qqI"/>
                                     <outlet property="thumbnailImageView" destination="Zew-xw-FgL" id="B5i-wm-P2i"/>
-                                    <segue destination="5ts-UZ-o4M" kind="show" identifier="watchDetail" id="2zh-6C-sdT"/>
+                                    <segue destination="5ts-UZ-o4M" kind="show" identifier="watchDetail" id="bMe-l9-Se8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

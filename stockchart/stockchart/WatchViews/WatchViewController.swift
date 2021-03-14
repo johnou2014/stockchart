@@ -16,16 +16,18 @@ class WatchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDataFromAPI()
-        //updateUI()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("watch Detail = ",segue.identifier as Any)
         if segue.identifier == "watchDetail",
-            let indexPath = tableView?.indexPathForSelectedRow,
-            let destinationViewController: WatchDetailViewController = segue.destination as? WatchDetailViewController {
+           let indexPath = tableView?.indexPathForSelectedRow,
+           let destinationViewController: CanvasViewController = segue.destination as? CanvasViewController {
             destinationViewController.watch = watchs[indexPath.row]
         }
+           /*let destinationViewController: WatchDetailViewController = segue.destination as? WatchDetailViewController {
+            destinationViewController.watch = watchs[indexPath.row]
+        }
+ */
     }
 }
 extension WatchViewController {
@@ -33,16 +35,6 @@ extension WatchViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         navigationItem.title = "Watch List"
         tableView.reloadData()
-    }
-    func updateUI() {
-        /*
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            if self.tableView.refreshControl!.isRefreshing {
-                self.tableView.refreshControl!.endRefreshing()
-                self.presentAlertController(withTitle: "List Reloaded Successfully")
-            }
-        } */
     }
     private func presentAlertController(withTitle title: String) {
         let controller = UIAlertController(title: title, message: nil, preferredStyle: .alert)
@@ -54,11 +46,11 @@ extension WatchViewController {
     
 }
 extension WatchViewController {
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return watchs.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell {
             cell.configurateTheCell(watchs[indexPath.row])
@@ -66,42 +58,38 @@ extension WatchViewController {
         }
         return UITableViewCell()
     }
-
+    
 }
 
 // MARK: - UITableView Delegate
 
 extension WatchViewController {
-
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             watchs.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
         }
     }
+    // MARK: -链式请求
     @objc func loadDataFromAPI() {
-        /// 链式请求
-        print("run1 ++++")
-       
         AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"john.ou"]).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return
             }
             let json = JSON(response.data)
-            print("json ===",json)
             var candles: [Watch] = [Watch]()
             for json in json.arrayValue {
-                let info    = Watch(pk: json["pk"].intValue, user: json["user"].stringValue, stock: json["stock"].stringValue, stock_name: json["stock_name"].stringValue, user_id: json["user_id"].intValue, stock_id: json["stock_id"].intValue)
+                let info = Watch(pk: json["pk"].intValue, user: json["user"].stringValue, stock: json["stock"].stringValue, stock_name: json["stock_name"].stringValue, user_id: json["user_id"].intValue, stock_id: json["stock_id"].intValue)
                 candles.append(info)
-        }
+            }
             self.watchs = candles
-            
             self.setupUI()
             print("刷新成功！")
+        }
+        //MARK: -本地静态数据
     }
-    }
-
 }
 
 
