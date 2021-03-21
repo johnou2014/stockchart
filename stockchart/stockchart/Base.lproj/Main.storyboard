@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1586" y="-998"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--View Controller-->
         <scene sceneID="JFL-9k-iF1">
             <objects>
-                <tabBarController id="KVD-0A-3VO" sceneMemberID="viewController">
+                <tabBarController id="KVD-0A-3VO" customClass="ViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="eic-Z6-2px"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xxd-up-tUx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

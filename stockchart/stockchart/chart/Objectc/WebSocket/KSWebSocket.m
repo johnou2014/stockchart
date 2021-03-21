@@ -303,7 +303,7 @@ static NSString *KS_Notification_NetworkChange       = @"KS_Notification_Network
     //NSLog(@"%s:%@",__FUNCTION__,[NSThread currentThread]);
     _configure.status = KSWebSocketStatusConnected;
     [self defaultValues];
-    [self startHeartbeat];
+    //[self startHeartbeat];
     
     KSWeakSelf;
     dispatch_async(dispatch_get_main_queue(), ^{

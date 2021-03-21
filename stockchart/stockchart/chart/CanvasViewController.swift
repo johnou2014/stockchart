@@ -15,8 +15,8 @@ import SwiftIconFont
 //======================================================================
 import Foundation
 
+
 class CanvasViewController: KSBaseViewController {
-    
     @IBOutlet private var pkLabel: UILabel!
     @IBOutlet private var userLabel:UILabel!
     @IBOutlet private var stockLabel: UILabel!
@@ -128,6 +128,7 @@ class CanvasViewController: KSBaseViewController {
     private func defaultValue() {
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: NSNotification.Name(rawValue: "Won_Notification_WillEnterForeground"), object: nil)
     }
+    
     
     //======================================================================
     // MARK: - 7、系统代理方法 Extension
@@ -333,16 +334,6 @@ class CanvasViewController: KSBaseViewController {
             self.headerChartView.resetDrawChart(isAll: true)
         }
     }
-        socket?.activeClose()
-        NotificationCenter.default.removeObserver(self)
-        print("run ++++++++++ ws ")
-        let server       = "ws://easytrade007.com:8080/ws/foobar?subscribe-broadcast&publish-broadcast&echo"
-        socket           = KSWebSocket.init()
-        //socket?.configureServer(KSSingleton.shared.server.socketServer, isAutoConnect: true)
-        socket?.configureServer(server, isAutoConnect: true)
-        socket?.delegate = self
-        socket?.startConnect()
-        print("end+ canvas3++++++++")
     }
     
     //======================================================================
@@ -466,7 +457,6 @@ extension CanvasViewController: KSWebSocketDelegate {
     func socket(_ socket: KSWebSocket!, didReceivedMessage message: Any!) {
         if let _message = message as? String {
             if let jsonData = _message.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-                print("message =",_message);
                 return;
                 let json    = try! JSON(data: jsonData)
                 handleBinanceKline(message: json)
@@ -581,4 +571,3 @@ extension CanvasViewController {
         self.msgMgr.unSubscriptionAll(configure: configure, socket: socket)
     }
 }
-
