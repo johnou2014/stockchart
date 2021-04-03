@@ -194,8 +194,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `MyCell`.
+    static let myCell: Rswift.ReuseIdentifier<SearchTableCell> = Rswift.ReuseIdentifier(identifier: "MyCell")
     /// Reuse identifier `tableCell`.
     static let tableCell: Rswift.ReuseIdentifier<TableCell> = Rswift.ReuseIdentifier(identifier: "tableCell")
 
@@ -258,6 +260,7 @@ struct _R: Rswift.Validatable {
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "exclamationmark.square") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'exclamationmark.square' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "gearshape") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'gearshape' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "list.bullet.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'list.bullet.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "plus.circle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'plus.circle' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "waveform.path.ecg.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'waveform.path.ecg.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }

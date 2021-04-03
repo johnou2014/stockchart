@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class ViewController: UITabBarController, KSWebSocketDelegate {
     private var socket: KSWebSocket?
     @objc enum NotificationReminder: Int {
@@ -30,7 +30,7 @@ class ViewController: UITabBarController, KSWebSocketDelegate {
         socket?.activeClose()
         NotificationCenter.default.removeObserver(self)
         print("run ++++++++++ ws ")
-        let server       = "ws://easytrade007.com:8080/ws/foobar?subscribe-broadcast&publish-broadcast&echo"
+        let server       = "ws://easytrade007.com:8080/ws/alarm:john.ou?subscribe-broadcast&publish-broadcast&echo"
         socket           = KSWebSocket.init()
         //socket?.configureServer(KSSingleton.shared.server.socketServer, isAutoConnect: true)
         socket?.configureServer(server, isAutoConnect: true)
@@ -40,7 +40,7 @@ class ViewController: UITabBarController, KSWebSocketDelegate {
     func socket(_ socket: KSWebSocket!, didReceivedMessage message: Any!) {
         if let _message = message as? String {
             if let jsonData = _message.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-                //print("message =",_message);
+                //print("message =",_message);´
                 if(_message != "--heartbeat--") {
                     print("new message =",_message)
                     scheduleLocal(reminder: .fiveSeconds, title: _message)
@@ -60,8 +60,8 @@ extension ViewController: UNUserNotificationCenterDelegate {
 
       // this is the content you are going to send to your notification
       let content = UNMutableNotificationContent()
-      content.title = "请卖掉\(title)股票，否则亏死" // the main title
-      content.body = "看到信息请及时处理！！" // the main text
+      content.title = "看到信息请及时处理！！" // the main title
+      content.body = "\(title)" // the main text
       content.categoryIdentifier = "alarm" // this are the custom actions
       content.userInfo = ["customData" : "fizzbuzz"] // this helps to attach custom data to the notification. e.g. an internal ID
       content.sound = UNNotificationSound.default // you can create a custom UNNotificationSound object and attach it to the sound property, or just use the default one

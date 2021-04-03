@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnO-Zn-RRQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="134"/>
+            <point key="canvasLocation" x="194" y="370"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="DIB-f5-UN8">
@@ -154,21 +154,96 @@
                             <outlet property="delegate" destination="hjK-3I-Yb3" id="hcG-Up-OvL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="igg-Al-Aa6"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="igg-Al-Aa6">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="g6q-R5-5VL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5G0-tM-wrh">
+                                <rect key="frame" x="364" y="8.5" width="30" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" image="plus.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="pushController" destination="hjK-3I-Yb3" eventType="touchUpInside" id="4TV-e7-TLO"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="JaY-y2-AYw" kind="push" id="sbS-yb-Ehw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SB2-js-QA0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="227.536231884058" y="-294.64285714285711"/>
+        </scene>
+        <!--Search View List Controller-->
+        <scene sceneID="IKh-lg-2Dy">
+            <objects>
+                <tableViewController id="JaY-y2-AYw" customClass="SearchViewListController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="31y-fI-joJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyCell" id="gbN-aC-lZX" customClass="SearchTableCell" customModule="stockchart" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gbN-aC-lZX" id="QPw-np-VLw">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-sQ-zdS">
+                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fha-co-tzw">
+                                            <rect key="frame" x="20" y="22" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hi,,,,,sss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJz-RG-ekc">
+                                            <rect key="frame" x="170" y="11" width="62" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptions" destination="fha-co-tzw" id="P5S-Sb-5uG"/>
+                                    <outlet property="name" destination="fXl-sQ-zdS" id="I1B-7k-zQ8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JaY-y2-AYw" id="UwO-iA-6Gv"/>
+                            <outlet property="delegate" destination="JaY-y2-AYw" id="ZdZ-uo-Ulc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="zlF-sU-swS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hC-Iu-GaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="-295"/>
         </scene>
         <!--Watch list-->
         <scene sceneID="eYn-qQ-ab7">
             <objects>
                 <navigationController id="QJv-Ud-QDs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Watch list" image="list.bullet.rectangle" catalog="system" selectedImage="list.bullet.rectangle" id="rhx-ka-zee"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zt8-na-7qe">
+                    <navigationItem key="navigationItem" id="BTw-lT-B8f"/>
+                    <navigationBar key="navigationBar" userInteractionEnabled="NO" contentMode="scaleToFill" id="Zt8-na-7qe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="er7-YS-mwe">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="hjK-3I-Yb3" kind="relationship" relationship="rootViewController" id="vcr-7E-Pst"/>
                     </connections>
@@ -241,6 +316,7 @@
         <image name="exclamationmark.square" catalog="system" width="128" height="114"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="waveform.path.ecg.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

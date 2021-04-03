@@ -9,13 +9,14 @@ import Alamofire
 import SwiftyJSON
 import Foundation
 
-class WatchViewController: UITableViewController {
-    var watchs = [Watch]()//Watch.getWatchList()
+class WatchViewController: UITableViewController,UISearchControllerDelegate,UISearchBarDelegate {
+    var watchs = [Watch]()
+    let searchController = UISearchController(searchResultsController:nil)
     let identifier: String = "tableCell"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDataFromAPI()
+        setUpSearchBar()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -24,11 +25,27 @@ class WatchViewController: UITableViewController {
            let destinationViewController: CanvasViewController = segue.destination as? CanvasViewController {
             destinationViewController.watch = watchs[indexPath.row]
         }
-           /*let destinationViewController: WatchDetailViewController = segue.destination as? WatchDetailViewController {
-            destinationViewController.watch = watchs[indexPath.row]
-        }
- */
     }
+}
+extension WatchViewController:UISearchResultsUpdating {
+    private func setUpSearchBar() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Add Stock"
+        searchController.hidesNavigationBarDuringPresentation = true
+        navigationItem.searchController = searchController
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchedText = searchController.searchBar.text else { return }
+        if searchedText == "" {
+            loadDataFromAPI()
+        } else {
+            self.watchs = watchs.filter({
+                $0.stock_name.contains(searchedText)
+            })
+            tableView.reloadData()
+        }
+  }
 }
 extension WatchViewController {
     func setupUI() {
@@ -43,7 +60,10 @@ extension WatchViewController {
             controller.dismiss(animated: true, completion: nil)
         }
     }
-    
+    @IBAction func pushController() {
+        let vc = SearchViewListController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 extension WatchViewController {
     
