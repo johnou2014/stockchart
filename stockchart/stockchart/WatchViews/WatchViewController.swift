@@ -45,7 +45,7 @@ extension WatchViewController:UISearchResultsUpdating {
             })
             tableView.reloadData()
         }
-  }
+    }
 }
 extension WatchViewController {
     func setupUI() {
@@ -72,7 +72,8 @@ extension WatchViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? TableCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+            as? TableCell {
             cell.configurateTheCell(watchs[indexPath.row])
             return cell
         }

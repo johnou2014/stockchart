@@ -14,20 +14,18 @@ class SearchViewListController: UITableViewController,UISearchControllerDelegate
     let identifier: String = "searchTableCell"
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.register(SearchTableCell.self, forCellReuseIdentifier: "searchTableCell")
-        setupTableView()
         loadDataFromAPI()
         setUpSearchBar()
     }
     /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*if segue.identifier == "watchDetail",
-           let indexPath = tableView?.indexPathForSelectedRow,
-           let destinationViewController: WatchDetailViewController = segue.destination as? WatchDetailViewController {
-            print("searchs === prepare", searchs)
-            destinationViewController.watch = watches[indexPath.row]
-        }*/
-    } */
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     if segue.identifier == "watchDetail",
+     let indexPath = tableView?.indexPathForSelectedRow,
+     let destinationViewController: WatchDetailViewController = segue.destination as? WatchDetailViewController {
+     print("searchs === prepare", searchs)
+     destinationViewController.watch = watches[indexPath.row]
+     }
+     } */
 }
 extension SearchViewListController:UISearchResultsUpdating {
     private func setUpSearchBar() {
@@ -38,7 +36,6 @@ extension SearchViewListController:UISearchResultsUpdating {
         navigationItem.searchController = searchController
     }
     func updateSearchResults(for searchController: UISearchController) {
-        print("searchBar.text ===",searchController.searchBar.text)
         guard let searchedText = searchController.searchBar.text else { return }
         if searchedText == "" {
             loadDataFromAPI()
@@ -48,46 +45,44 @@ extension SearchViewListController:UISearchResultsUpdating {
             })
             tableView.reloadData()
         }
-  }
+    }
 }
 extension SearchViewListController {
-    func setupTableView() {
-        self.tableView.register(SearchTableCell.self, forCellReuseIdentifier: identifier)
-    }
     func setupUI() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         navigationItem.title = "Search Stock List"
         tableView.reloadData()
     }
-   
+    
 }
 extension SearchViewListController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("searchs ==",searchs)
         return searchs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? SearchTableCell {
-            cell.configurateTheCell(searchs[indexPath.row])
-            print("cell ====",cell)
+        //为了提供表格显示性能，已创建完成的单元需重复使用
+        //同一形式的单元格重复使用，在声明时已注册
+        self.tableView!.register(SearchTableCell.self,forCellReuseIdentifier: identifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.identifier, for: indexPath) as! SearchTableCell
+        if self.searchController.isActive {
+            cell.textLabel?.text = self.searchs[indexPath.row].name
+            return cell
+        } else {
+            cell.textLabel?.text = self.searchs[indexPath.row].name
+            cell.textLabel?.tag = self.searchs[indexPath.row].pk
             return cell
         }
-        return UITableViewCell()
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("+++",indexPath[1])
+        
     }
     
 }
 extension SearchViewListController {
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            searchs.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .bottom)
-        }
-        
-    }
     // MARK: -链式请求
     @objc func loadDataFromAPI() {
         AF.request("http://easytrade007.com:8080/api/v1/getStockList", method: .get, parameters: ["username":"john.ou"]).validate().responseJSON { response in
