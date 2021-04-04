@@ -8,7 +8,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Foundation
-
+struct DelUserInfo: Encodable {
+    let username: String
+    let symbol: String
+}
 class WatchViewController: UITableViewController,UISearchControllerDelegate,UISearchBarDelegate {
     var watchs = [Watch]()
     let searchController = UISearchController(searchResultsController:nil)
@@ -62,6 +65,7 @@ extension WatchViewController {
     }
     @IBAction func pushController() {
         let vc = SearchViewListController()
+        vc.watchs = watchs
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -88,13 +92,33 @@ extension WatchViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            print("indexPath =",indexPath.row)
+            let stock = watchs[indexPath.row].stock
+            delUserStock(stock: stock)
             watchs.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
         }
     }
+    //MARK: -删除用户股票
+    @objc func delUserStock(stock: String) {
+        let delUserInfo = DelUserInfo(username: "gaoxu", symbol: stock)
+        AF.request( "http://easytrade007.com:8080/api/v1/delUserStock/",method: .post, parameters:delUserInfo, encoder: JSONParameterEncoder.default).validate().responseJSON { response in
+            if let err = response.error {
+                print("error \(err.localizedDescription)")
+                return
+            }
+            let json = JSON(response.data)
+            if (response.data != nil) {
+                self.presentAlertController(withTitle: "删除失败！")
+            } else {
+                self.presentAlertController(withTitle: "删除成功！")
+            }
+            self.loadDataFromAPI()
+        }
+    }
     // MARK: -链式请求
     @objc func loadDataFromAPI() {
-        AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"john.ou"]).validate().responseJSON { response in
+        AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"gaoxu"]).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return
