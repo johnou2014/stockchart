@@ -163,6 +163,44 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `icon_pull_to_refresh_arrow@2x.png`.
+    static let icon_pull_to_refresh_arrow2xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "icon_pull_to_refresh_arrow@2x", pathExtension: "png")
+
+    /// `bundle.url(forResource: "icon_pull_to_refresh_arrow@2x", withExtension: "png")`
+    static func icon_pull_to_refresh_arrow2xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.icon_pull_to_refresh_arrow2xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 2 images.
+  struct image {
+    /// Image `RefeshView_arrow`.
+    static let refeshView_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "RefeshView_arrow")
+    /// Image `icon_pull_to_refresh_arrow`.
+    static let icon_pull_to_refresh_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_pull_to_refresh_arrow")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "RefeshView_arrow", bundle: ..., traitCollection: ...)`
+    static func refeshView_arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.refeshView_arrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_pull_to_refresh_arrow", bundle: ..., traitCollection: ...)`
+    static func icon_pull_to_refresh_arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_pull_to_refresh_arrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -194,12 +232,186 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  struct nib {
+    /// Nib `ESPhotoTableViewCell`.
+    static let esPhotoTableViewCell = _R.nib._ESPhotoTableViewCell()
+    /// Nib `ESRefreshTableViewCell`.
+    static let esRefreshTableViewCell = _R.nib._ESRefreshTableViewCell()
+    /// Nib `ListTableViewCell`.
+    static let listTableViewCell = _R.nib._ListTableViewCell()
+    /// Nib `WebViewController`.
+    static let webViewController = _R.nib._WebViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ESPhotoTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.esPhotoTableViewCell) instead")
+    static func esPhotoTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.esPhotoTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ESRefreshTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.esRefreshTableViewCell) instead")
+    static func esRefreshTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.esRefreshTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ListTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.listTableViewCell) instead")
+    static func listTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.listTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "WebViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.webViewController) instead")
+    static func webViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.webViewController)
+    }
+    #endif
+
+    static func esPhotoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ESPhotoTableViewCell? {
+      return R.nib.esPhotoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ESPhotoTableViewCell
+    }
+
+    static func esRefreshTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ESRefreshTableViewCell? {
+      return R.nib.esRefreshTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ESRefreshTableViewCell
+    }
+
+    static func listTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ListTableViewCell? {
+      return R.nib.listTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ListTableViewCell
+    }
+
+    static func webViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.webViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `ESPhotoTableViewCell`.
+    static let esPhotoTableViewCell: Rswift.ReuseIdentifier<ESPhotoTableViewCell> = Rswift.ReuseIdentifier(identifier: "ESPhotoTableViewCell")
+    /// Reuse identifier `ESRefreshTableViewCell`.
+    static let esRefreshTableViewCell: Rswift.ReuseIdentifier<ESRefreshTableViewCell> = Rswift.ReuseIdentifier(identifier: "ESRefreshTableViewCell")
+    /// Reuse identifier `ListTableViewCell`.
+    static let listTableViewCell: Rswift.ReuseIdentifier<ListTableViewCell> = Rswift.ReuseIdentifier(identifier: "ListTableViewCell")
     /// Reuse identifier `MyCell`.
     static let myCell: Rswift.ReuseIdentifier<SearchTableCell> = Rswift.ReuseIdentifier(identifier: "MyCell")
     /// Reuse identifier `tableCell`.
     static let tableCell: Rswift.ReuseIdentifier<TableCell> = Rswift.ReuseIdentifier(identifier: "tableCell")
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    struct localizable {
+      /// Base translation: Loading more
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static let loadingMore = Rswift.StringResource(key: "Loading more", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
+      /// Base translation: Loading...
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static let loading = Rswift.StringResource(key: "Loading...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
+      /// Base translation: No more data
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static let noMoreData = Rswift.StringResource(key: "No more data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
+      /// Base translation: Pull to refresh
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static let pullToRefresh = Rswift.StringResource(key: "Pull to refresh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
+      /// Base translation: Release to refresh
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static let releaseToRefresh = Rswift.StringResource(key: "Release to refresh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
+
+      /// Base translation: Loading more
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static func loadingMore(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Loading more", bundle: hostingBundle, value: "Loading more", comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Loading more"
+        }
+
+        return NSLocalizedString("Loading more", bundle: bundle, value: "Loading more", comment: "")
+      }
+
+      /// Base translation: Loading...
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static func loading(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Loading...", bundle: hostingBundle, value: "Loading...", comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Loading..."
+        }
+
+        return NSLocalizedString("Loading...", bundle: bundle, value: "Loading...", comment: "")
+      }
+
+      /// Base translation: No more data
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static func noMoreData(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("No more data", bundle: hostingBundle, value: "No more data", comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "No more data"
+        }
+
+        return NSLocalizedString("No more data", bundle: bundle, value: "No more data", comment: "")
+      }
+
+      /// Base translation: Pull to refresh
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static func pullToRefresh(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Pull to refresh", bundle: hostingBundle, value: "Pull to refresh", comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Pull to refresh"
+        }
+
+        return NSLocalizedString("Pull to refresh", bundle: bundle, value: "Pull to refresh", comment: "")
+      }
+
+      /// Base translation: Release to refresh
+      ///
+      /// Locales: zh-Hans, Base, zh-Hant
+      static func releaseToRefresh(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Release to refresh", bundle: hostingBundle, value: "Release to refresh", comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Release to refresh"
+        }
+
+        return NSLocalizedString("Release to refresh", bundle: bundle, value: "Release to refresh", comment: "")
+      }
+
+      fileprivate init() {}
+    }
 
     fileprivate init() {}
   }
@@ -220,9 +432,98 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _ESPhotoTableViewCell.validate()
+      try _ESRefreshTableViewCell.validate()
+      try _WebViewController.validate()
+    }
+
+    struct _ESPhotoTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = ESPhotoTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ESPhotoTableViewCell"
+      let name = "ESPhotoTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ESPhotoTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ESPhotoTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Photo_Lofter_1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Photo_Lofter_1' is used in nib 'ESPhotoTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Photo_Lofter_Info", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Photo_Lofter_Info' is used in nib 'ESPhotoTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Photo_Lofter_Tab", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Photo_Lofter_Tab' is used in nib 'ESPhotoTableViewCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon' is used in nib 'ESPhotoTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ESRefreshTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = ESRefreshTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ESRefreshTableViewCell"
+      let name = "ESRefreshTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ESRefreshTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ESRefreshTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon' is used in nib 'ESRefreshTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ListTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ListTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ListTableViewCell"
+      let name = "ListTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ListTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ListTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _WebViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "WebViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "network", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'network' is used in nib 'WebViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

@@ -21,6 +21,32 @@
 		CE6E6CA525CE458E00A4C892 /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CA425CE458E00A4C892 /* WatchViewController.swift */; };
 		CE6E6CB925CE49B900A4C892 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CB825CE49B900A4C892 /* UIColorExtension.swift */; };
 		CE6E6CC625CE501C00A4C892 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E6CC525CE501C00A4C892 /* R.generated.swift */; };
+		CE74881C261B568300F0C711 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748805261B568300F0C711 /* ListTableViewCell.swift */; };
+		CE74881D261B568300F0C711 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748808261B568300F0C711 /* TextViewController.swift */; };
+		CE74881E261B568300F0C711 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74880A261B568300F0C711 /* CollectionViewController.swift */; };
+		CE74881F261B568300F0C711 /* ESPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE74880B261B568300F0C711 /* ESPhotoTableViewCell.xib */; };
+		CE748820261B568300F0C711 /* ESRefreshTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE74880C261B568300F0C711 /* ESRefreshTableViewCell.xib */; };
+		CE748821261B568300F0C711 /* ESPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74880D261B568300F0C711 /* ESPhotoTableViewCell.swift */; };
+		CE748822261B568300F0C711 /* WeChatTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74880F261B568300F0C711 /* WeChatTableHeaderView.swift */; };
+		CE748824261B568300F0C711 /* WCRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748811261B568300F0C711 /* WCRefreshHeaderAnimator.swift */; };
+		CE748825261B568300F0C711 /* ESRefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748812261B568300F0C711 /* ESRefreshTableViewController.swift */; };
+		CE748826261B568300F0C711 /* ESRefreshTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748813261B568300F0C711 /* ESRefreshTableViewCell.swift */; };
+		CE748827261B568300F0C711 /* MTRefreshFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748815261B568300F0C711 /* MTRefreshFooterAnimator.swift */; };
+		CE748828261B568300F0C711 /* MTRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748816261B568300F0C711 /* MTRefreshHeaderAnimator.swift */; };
+		CE74882B261B568400F0C711 /* ESRefreshDayHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74881A261B568300F0C711 /* ESRefreshDayHeaderAnimator.swift */; };
+		CE74882C261B568400F0C711 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE74881B261B568300F0C711 /* ListTableViewCell.xib */; };
+		CE74883D261B587300F0C711 /* ESPullToRefresh+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74882F261B587300F0C711 /* ESPullToRefresh+Manager.swift */; };
+		CE74883E261B587300F0C711 /* ESRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748830261B587300F0C711 /* ESRefreshAnimator.swift */; };
+		CE74883F261B587300F0C711 /* ESRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748831261B587300F0C711 /* ESRefreshComponent.swift */; };
+		CE748840261B587300F0C711 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE748833261B587300F0C711 /* Localizable.strings */; };
+		CE748841261B587300F0C711 /* ESRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748837261B587300F0C711 /* ESRefreshHeaderAnimator.swift */; };
+		CE748842261B587300F0C711 /* icon_pull_to_refresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE748838261B587300F0C711 /* icon_pull_to_refresh_arrow@2x.png */; };
+		CE748843261B587300F0C711 /* ESRefreshFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748839261B587300F0C711 /* ESRefreshFooterAnimator.swift */; };
+		CE748844261B587300F0C711 /* ESRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74883A261B587300F0C711 /* ESRefreshProtocol.swift */; };
+		CE748845261B587300F0C711 /* ES.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74883B261B587300F0C711 /* ES.swift */; };
+		CE748846261B587300F0C711 /* ESPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74883C261B587300F0C711 /* ESPullToRefresh.swift */; };
+		CE74884A261B58B700F0C711 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE748848261B58B700F0C711 /* WebViewController.xib */; };
+		CE74884B261B58B700F0C711 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748849261B58B700F0C711 /* WebViewController.swift */; };
 		CE76549026100D2A000A4599 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76548F26100D2A000A4599 /* SearchViewController.swift */; };
 		CE7654AB2610842A000A4599 /* SearchViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AA2610842A000A4599 /* SearchViewListController.swift */; };
 		CE7654AE2610C24A000A4599 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AD2610C24A000A4599 /* SearchTableCell.swift */; };
@@ -136,6 +162,34 @@
 		CE6E6CA425CE458E00A4C892 /* WatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
 		CE6E6CB825CE49B900A4C892 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CE6E6CC525CE501C00A4C892 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		CE748805261B568300F0C711 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		CE748808261B568300F0C711 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		CE74880A261B568300F0C711 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		CE74880B261B568300F0C711 /* ESPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		CE74880C261B568300F0C711 /* ESRefreshTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ESRefreshTableViewCell.xib; sourceTree = "<group>"; };
+		CE74880D261B568300F0C711 /* ESPhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		CE74880F261B568300F0C711 /* WeChatTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeChatTableHeaderView.swift; sourceTree = "<group>"; };
+		CE748811261B568300F0C711 /* WCRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
+		CE748812261B568300F0C711 /* ESRefreshTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshTableViewController.swift; sourceTree = "<group>"; };
+		CE748813261B568300F0C711 /* ESRefreshTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshTableViewCell.swift; sourceTree = "<group>"; };
+		CE748815261B568300F0C711 /* MTRefreshFooterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTRefreshFooterAnimator.swift; sourceTree = "<group>"; };
+		CE748816261B568300F0C711 /* MTRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
+		CE74881A261B568300F0C711 /* ESRefreshDayHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshDayHeaderAnimator.swift; sourceTree = "<group>"; };
+		CE74881B261B568300F0C711 /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		CE74882F261B587300F0C711 /* ESPullToRefresh+Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ESPullToRefresh+Manager.swift"; sourceTree = "<group>"; };
+		CE748830261B587300F0C711 /* ESRefreshAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshAnimator.swift; sourceTree = "<group>"; };
+		CE748831261B587300F0C711 /* ESRefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshComponent.swift; sourceTree = "<group>"; };
+		CE748834261B587300F0C711 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE748835261B587300F0C711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE748836261B587300F0C711 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE748837261B587300F0C711 /* ESRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
+		CE748838261B587300F0C711 /* icon_pull_to_refresh_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_pull_to_refresh_arrow@2x.png"; sourceTree = "<group>"; };
+		CE748839261B587300F0C711 /* ESRefreshFooterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshFooterAnimator.swift; sourceTree = "<group>"; };
+		CE74883A261B587300F0C711 /* ESRefreshProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESRefreshProtocol.swift; sourceTree = "<group>"; };
+		CE74883B261B587300F0C711 /* ES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ES.swift; sourceTree = "<group>"; };
+		CE74883C261B587300F0C711 /* ESPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPullToRefresh.swift; sourceTree = "<group>"; };
+		CE748848261B58B700F0C711 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		CE748849261B58B700F0C711 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CE76548F26100D2A000A4599 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE7654AA2610842A000A4599 /* SearchViewListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewListController.swift; sourceTree = "<group>"; };
 		CE7654AD2610C24A000A4599 /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
@@ -304,6 +358,7 @@
 		CE6E6C8D25CE450900A4C892 /* stockchart */ = {
 			isa = PBXGroup;
 			children = (
+				CE7487B0261B3D1800F0C711 /* AlarmTableView */,
 				CE7BD37B25F4F9D500B937D6 /* staticResources */,
 				CEE88AB025E9F43500F2CD1A /* chart */,
 				CE6AB5F625D9EFF200B5280F /* WatchViews */,
@@ -324,6 +379,8 @@
 		CE6E6CA325CE456400A4C892 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE748805261B568300F0C711 /* ListTableViewCell.swift */,
+				CE74881B261B568300F0C711 /* ListTableViewCell.xib */,
 				CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */,
 				CE8E4A1125D6B042007B11A2 /* ChartViewController2.swift */,
 				CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */,
@@ -337,6 +394,101 @@
 				CE6E6CB825CE49B900A4C892 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE7487B0261B3D1800F0C711 /* AlarmTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE748849261B58B700F0C711 /* WebViewController.swift */,
+				CE748848261B58B700F0C711 /* WebViewController.xib */,
+				CE74882E261B587300F0C711 /* Sources */,
+				CE748806261B568300F0C711 /* Custom */,
+			);
+			path = AlarmTableView;
+			sourceTree = "<group>";
+		};
+		CE748806261B568300F0C711 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				CE748807261B568300F0C711 /* TextView */,
+				CE748809261B568300F0C711 /* CollectionView */,
+				CE74880B261B568300F0C711 /* ESPhotoTableViewCell.xib */,
+				CE74880C261B568300F0C711 /* ESRefreshTableViewCell.xib */,
+				CE74880D261B568300F0C711 /* ESPhotoTableViewCell.swift */,
+				CE74880E261B568300F0C711 /* WeChat */,
+				CE748812261B568300F0C711 /* ESRefreshTableViewController.swift */,
+				CE748813261B568300F0C711 /* ESRefreshTableViewCell.swift */,
+				CE748814261B568300F0C711 /* Meituan */,
+				CE748818261B568300F0C711 /* Day */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		CE748807261B568300F0C711 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				CE748808261B568300F0C711 /* TextViewController.swift */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		CE748809261B568300F0C711 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CE74880A261B568300F0C711 /* CollectionViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		CE74880E261B568300F0C711 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				CE74880F261B568300F0C711 /* WeChatTableHeaderView.swift */,
+				CE748811261B568300F0C711 /* WCRefreshHeaderAnimator.swift */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		CE748814261B568300F0C711 /* Meituan */ = {
+			isa = PBXGroup;
+			children = (
+				CE748815261B568300F0C711 /* MTRefreshFooterAnimator.swift */,
+				CE748816261B568300F0C711 /* MTRefreshHeaderAnimator.swift */,
+			);
+			path = Meituan;
+			sourceTree = "<group>";
+		};
+		CE748818261B568300F0C711 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				CE74881A261B568300F0C711 /* ESRefreshDayHeaderAnimator.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		CE74882E261B587300F0C711 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE74882F261B587300F0C711 /* ESPullToRefresh+Manager.swift */,
+				CE748830261B587300F0C711 /* ESRefreshAnimator.swift */,
+				CE748831261B587300F0C711 /* ESRefreshComponent.swift */,
+				CE748832261B587300F0C711 /* Animator */,
+				CE74883A261B587300F0C711 /* ESRefreshProtocol.swift */,
+				CE74883B261B587300F0C711 /* ES.swift */,
+				CE74883C261B587300F0C711 /* ESPullToRefresh.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE748832261B587300F0C711 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				CE748833261B587300F0C711 /* Localizable.strings */,
+				CE748837261B587300F0C711 /* ESRefreshHeaderAnimator.swift */,
+				CE748838261B587300F0C711 /* icon_pull_to_refresh_arrow@2x.png */,
+				CE748839261B587300F0C711 /* ESRefreshFooterAnimator.swift */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 		CE7BD37B25F4F9D500B937D6 /* staticResources */ = {
@@ -873,6 +1025,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = CE6E6C8225CE450900A4C892;
 			productRefGroup = CE6E6C8C25CE450900A4C892 /* Products */;
@@ -890,8 +1044,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6E6C9B25CE450C00A4C892 /* LaunchScreen.storyboard in Resources */,
+				CE74882C261B568400F0C711 /* ListTableViewCell.xib in Resources */,
 				CE6E6C9825CE450C00A4C892 /* Assets.xcassets in Resources */,
+				CE74884A261B58B700F0C711 /* WebViewController.xib in Resources */,
+				CE748840261B587300F0C711 /* Localizable.strings in Resources */,
+				CE74881F261B568300F0C711 /* ESPhotoTableViewCell.xib in Resources */,
 				CE6E6C9625CE450900A4C892 /* Main.storyboard in Resources */,
+				CE748820261B568300F0C711 /* ESRefreshTableViewCell.xib in Resources */,
+				CE748842261B587300F0C711 /* icon_pull_to_refresh_arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -963,9 +1123,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE74881E261B568300F0C711 /* CollectionViewController.swift in Sources */,
 				CEE88B4425E9F60D00F2CD1A /* KSPageButton.swift in Sources */,
 				CEE88B9E25E9FAA000F2CD1A /* KSTimeChartModel.swift in Sources */,
+				CE74882B261B568400F0C711 /* ESRefreshDayHeaderAnimator.swift in Sources */,
 				CE7654AB2610842A000A4599 /* SearchViewListController.swift in Sources */,
+				CE74883F261B587300F0C711 /* ESRefreshComponent.swift in Sources */,
 				CEE88BBD25E9FB0700F2CD1A /* KSAxisModel.swift in Sources */,
 				CEE88B7325E9F60D00F2CD1A /* KSTransactionBarView.swift in Sources */,
 				CEE88BA125E9FAA000F2CD1A /* KSChartModel+Extensions.swift in Sources */,
@@ -986,10 +1149,13 @@
 				CEE88B7925E9F60D00F2CD1A /* KSChartIndexView.swift in Sources */,
 				CEE88B6425E9F60D00F2CD1A /* KSOrderBookController.swift in Sources */,
 				CE76549026100D2A000A4599 /* SearchViewController.swift in Sources */,
+				CE748841261B587300F0C711 /* ESRefreshHeaderAnimator.swift in Sources */,
 				CEE88B6C25E9F60D00F2CD1A /* KSSummaryInfo.swift in Sources */,
 				CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */,
+				CE748845261B587300F0C711 /* ES.swift in Sources */,
 				CEE88B4725E9F60D00F2CD1A /* UIView+KSExtensions.swift in Sources */,
 				CEE88B5925E9F60D00F2CD1A /* KSBaseTableViewCell.swift in Sources */,
+				CE74883D261B587300F0C711 /* ESPullToRefresh+Manager.swift in Sources */,
 				CEE88B5E25E9F60D00F2CD1A /* WindowViewController.swift in Sources */,
 				CEE88B4F25E9F60D00F2CD1A /* UIButton+KSExtensions.swift in Sources */,
 				CEE88B6525E9F60D00F2CD1A /* KSOrderBookCell.swift in Sources */,
@@ -1000,7 +1166,9 @@
 				CE7654AE2610C24A000A4599 /* SearchTableCell.swift in Sources */,
 				CEE88B6725E9F60D00F2CD1A /* KSMarketTradeController.swift in Sources */,
 				CEE88BB725E9FB0700F2CD1A /* KSDynamicItem.swift in Sources */,
+				CE74883E261B587300F0C711 /* ESRefreshAnimator.swift in Sources */,
 				CEE88B3E25E9F60D00F2CD1A /* KSSeriesParam.swift in Sources */,
+				CE748843261B587300F0C711 /* ESRefreshFooterAnimator.swift in Sources */,
 				CEE88B6225E9F60D00F2CD1A /* PerformanceСalculator.swift in Sources */,
 				CEE88B7525E9F60D00F2CD1A /* KSTaiPickerView.swift in Sources */,
 				CEE88B3D25E9F60D00F2CD1A /* KSChartStyles.swift in Sources */,
@@ -1029,24 +1197,34 @@
 				CEE88B6825E9F60D00F2CD1A /* KSMarketTradeCell.swift in Sources */,
 				CE6E6CA525CE458E00A4C892 /* WatchViewController.swift in Sources */,
 				CEE88B6A25E9F60D00F2CD1A /* KSBinanceController.swift in Sources */,
+				CE748828261B568300F0C711 /* MTRefreshHeaderAnimator.swift in Sources */,
 				CEE88B5425E9F60D00F2CD1A /* KSLanguageHelper.swift in Sources */,
+				CE748824261B568300F0C711 /* WCRefreshHeaderAnimator.swift in Sources */,
+				CE74881D261B568300F0C711 /* TextViewController.swift in Sources */,
+				CE74884B261B58B700F0C711 /* WebViewController.swift in Sources */,
 				CE6AB5FC25D9F31100B5280F /* WatchDetailViewController.swift in Sources */,
 				CEE88B5B25E9F60D00F2CD1A /* KSTableView.swift in Sources */,
+				CE748844261B587300F0C711 /* ESRefreshProtocol.swift in Sources */,
 				CEE88B7C25E9F60D00F2CD1A /* KSKChartView.swift in Sources */,
 				CEE88B5A25E9F60D00F2CD1A /* KSBaseView.swift in Sources */,
 				CEE88B5D25E9F60D00F2CD1A /* LinkedFramesList.swift in Sources */,
 				CEE88B6D25E9F60D00F2CD1A /* KSDashboardConfigure.swift in Sources */,
+				CE74881C261B568300F0C711 /* ListTableViewCell.swift in Sources */,
 				CEE88B4025E9F60D00F2CD1A /* ASNetManager.swift in Sources */,
 				CEE88B5C25E9F60D00F2CD1A /* ezJson.swift in Sources */,
+				CE748846261B587300F0C711 /* ESPullToRefresh.swift in Sources */,
 				CEE88B7825E9F60D00F2CD1A /* KSBubbleMenuView.swift in Sources */,
 				CEE88B4B25E9F60D00F2CD1A /* NSDecimalNumber+KSExtensions.swift in Sources */,
 				CEE88BBC25E9FB0700F2CD1A /* KSChartModel.swift in Sources */,
 				CEE88B4525E9F60D00F2CD1A /* KSListMenuView.swift in Sources */,
+				CE748822261B568300F0C711 /* WeChatTableHeaderView.swift in Sources */,
+				CE748825261B568300F0C711 /* ESRefreshTableViewController.swift in Sources */,
 				CEE88B4C25E9F60D00F2CD1A /* UILabel+KSExtensions.swift in Sources */,
 				CEE88BB625E9FB0700F2CD1A /* KSSeries.swift in Sources */,
 				CEE88B6925E9F60D00F2CD1A /* KSTradeDetail.swift in Sources */,
 				CEE88B9F25E9FAA000F2CD1A /* KSBollModel.swift in Sources */,
 				CEE88B7125E9F60D00F2CD1A /* KSMenuBarView.swift in Sources */,
+				CE748827261B568300F0C711 /* MTRefreshFooterAnimator.swift in Sources */,
 				CEE88B4625E9F60D00F2CD1A /* KSMultipleLabelView.swift in Sources */,
 				CEE88BB825E9FB0700F2CD1A /* KSKLineChartStyle.swift in Sources */,
 				CEE88B4E25E9F60D00F2CD1A /* UIViewController+KSExtensions.swift in Sources */,
@@ -1066,6 +1244,8 @@
 				CEE88BB425E9FB0700F2CD1A /* KSLayer.swift in Sources */,
 				CEE88B6F25E9F60D00F2CD1A /* KSVerticalMenuView.swift in Sources */,
 				CEE88B4225E9F60D00F2CD1A /* KSTwinsLabelView.swift in Sources */,
+				CE748821261B568300F0C711 /* ESPhotoTableViewCell.swift in Sources */,
+				CE748826261B568300F0C711 /* ESRefreshTableViewCell.swift in Sources */,
 				CEE88BA325E9FAA000F2CD1A /* String+KSExtensions.swift in Sources */,
 				CEE88B5025E9F60D00F2CD1A /* KSConstValue.swift in Sources */,
 			);
@@ -1088,6 +1268,16 @@
 				CE6E6C9A25CE450C00A4C892 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE748833261B587300F0C711 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE748834261B587300F0C711 /* zh-Hans */,
+				CE748835261B587300F0C711 /* Base */,
+				CE748836261B587300F0C711 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

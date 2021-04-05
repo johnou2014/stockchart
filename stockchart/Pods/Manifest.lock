@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.5)
+  - ESPullToRefresh (2.9.3)
   - HandyJSON (5.0.2)
   - HMSegmentedControl (1.5.3)
   - Kingfisher (4.10.1)
@@ -20,6 +21,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.5)
+  - ESPullToRefresh
   - HandyJSON (~> 5.0.0)
   - Kingfisher
   - MXSegmentedPager (~> 3.3.0)
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - ESPullToRefresh
   trunk:
     - HandyJSON
     - HMSegmentedControl
@@ -50,6 +53,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   SwiftIconFont: 0a772c5ac65a40c9b0675efa37b4928158bd8e43
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: bb86274824ae2bb0d3f09480ee8969f90d00a44a
+PODFILE CHECKSUM: e3143d15d65dea4ba56035497b4ef956aa54fced
 
 COCOAPODS: 1.10.0

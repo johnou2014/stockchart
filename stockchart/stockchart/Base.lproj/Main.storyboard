@@ -3,32 +3,10 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Alerts-->
-        <scene sceneID="wQv-gN-cPK">
-            <objects>
-                <viewController id="emr-SX-2Hw" customClass="AlertsViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lXq-Tb-qJb"/>
-                        <viewControllerLayoutGuide type="bottom" id="ezy-t3-yIG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9si-Vu-DIk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Alerts" id="axs-9t-9wN">
-                        <imageReference key="image" image="exclamationmark.square" catalog="system" symbolScale="medium" renderingMode="original"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="naj-oS-dkv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="880" y="-998"/>
-        </scene>
         <!--Canvas View Controller-->
         <scene sceneID="Knj-TU-uFf">
             <objects>
@@ -175,6 +153,25 @@
             </objects>
             <point key="canvasLocation" x="227.536231884058" y="-294.64285714285711"/>
         </scene>
+        <!--Alerts View Controller-->
+        <scene sceneID="Y9M-8g-Rp5">
+            <objects>
+                <viewController id="w2c-4e-KaT" customClass="AlertsViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i2y-J8-LcP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xan-2B-WMW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ayW-oa-yBe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hs5-8x-3d3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgJ-Fi-Ado" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="-276"/>
+        </scene>
         <!--Search View List Controller-->
         <scene sceneID="IKh-lg-2Dy">
             <objects>
@@ -202,7 +199,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hC-Iu-GaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="-295"/>
+            <point key="canvasLocation" x="-922" y="-250"/>
         </scene>
         <!--Watch list-->
         <scene sceneID="eYn-qQ-ab7">
@@ -256,7 +253,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="QJv-Ud-QDs" kind="relationship" relationship="viewControllers" id="svX-hw-iSL"/>
-                        <segue destination="emr-SX-2Hw" kind="relationship" relationship="viewControllers" id="6hd-Wr-41J"/>
+                        <segue destination="cWY-gC-LfK" kind="relationship" relationship="viewControllers" id="s9l-yJ-tHb"/>
                         <segue destination="iRz-XV-Wnf" kind="relationship" relationship="viewControllers" id="vFT-kw-fRK"/>
                         <segue destination="0nC-TJ-qiF" kind="relationship" relationship="viewControllers" id="cM5-y2-2aR"/>
                     </connections>
@@ -264,6 +261,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccl-uI-wKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="-1724"/>
+        </scene>
+        <!--Alert-->
+        <scene sceneID="SUp-cf-LrG">
+            <objects>
+                <navigationController id="cWY-gC-LfK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Alert" selectedImage="exclamationmark.square" catalog="system" id="E0e-kq-pXN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ug-2j-44m">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="w2c-4e-KaT" kind="relationship" relationship="rootViewController" id="klX-l7-vwb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iE-53-v5T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="-998"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Tbh-8r-ORO">

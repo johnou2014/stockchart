@@ -13,5 +13,6 @@ target 'stockchart' do
   pod 'MXSegmentedPager', '~> 3.3.0'
   pod 'SocketRocket', '~> 0.5.1'
   pod 'SwiftHTTP', '~> 3.0.1'
+  pod 'ESPullToRefresh'
   
 end
