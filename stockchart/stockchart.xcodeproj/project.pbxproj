@@ -51,7 +51,7 @@
 		CE7654AB2610842A000A4599 /* SearchViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AA2610842A000A4599 /* SearchViewListController.swift */; };
 		CE7654AE2610C24A000A4599 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AD2610C24A000A4599 /* SearchTableCell.swift */; };
 		CE8E4A0F25D6AED5007B11A2 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */; };
-		CE8E4A1225D6B042007B11A2 /* ChartViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1125D6B042007B11A2 /* ChartViewController2.swift */; };
+		CE8E4A1225D6B042007B11A2 /* AlertsViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1125D6B042007B11A2 /* AlertsViewController2.swift */; };
 		CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */; };
 		CEDBC7BA25FC531C00FD8067 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC7B925FC531C00FD8067 /* CanvasViewController.swift */; };
 		CEE88AB625E9F4B100F2CD1A /* KSLineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE88AB525E9F4B100F2CD1A /* KSLineChartCell.swift */; };
@@ -195,7 +195,7 @@
 		CE7654AD2610C24A000A4599 /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
 		CE7BD37C25F4FA6600B937D6 /* watchlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = watchlist.json; sourceTree = "<group>"; };
 		CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
-		CE8E4A1125D6B042007B11A2 /* ChartViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController2.swift; sourceTree = "<group>"; };
+		CE8E4A1125D6B042007B11A2 /* AlertsViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController2.swift; sourceTree = "<group>"; };
 		CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CEDBC7B925FC531C00FD8067 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		CEE88AB525E9F4B100F2CD1A /* KSLineChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLineChartCell.swift; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 				CE748805261B568300F0C711 /* ListTableViewCell.swift */,
 				CE74881B261B568300F0C711 /* ListTableViewCell.xib */,
 				CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */,
-				CE8E4A1125D6B042007B11A2 /* ChartViewController2.swift */,
+				CE8E4A1125D6B042007B11A2 /* AlertsViewController2.swift */,
 				CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -1183,7 +1183,7 @@
 				CEE88B5525E9F60D00F2CD1A /* KSWebSocketConfigure.m in Sources */,
 				CE6AB5FF25D9F3BE00B5280F /* TableCell.swift in Sources */,
 				CEE88BA025E9FAA000F2CD1A /* KSSeries+Extensions.swift in Sources */,
-				CE8E4A1225D6B042007B11A2 /* ChartViewController2.swift in Sources */,
+				CE8E4A1225D6B042007B11A2 /* AlertsViewController2.swift in Sources */,
 				CEE88B4A25E9F60D00F2CD1A /* UIImage+KSExtensions.swift in Sources */,
 				CEE88B4925E9F60D00F2CD1A /* KSBaseViewController+Extensions.swift in Sources */,
 				CEE88B5625E9F60D00F2CD1A /* KSWebSocket.m in Sources */,

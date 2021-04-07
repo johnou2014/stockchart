@@ -1,14 +1,14 @@
 //
-//  ESRefreshTableViewController.swift
-//  ESPullToRefreshExample
+//  AlertsViewController2.swift
+//  stockchart
 //
-//  Created by lihao on 16/8/18.
-//  Copyright © 2016年 egg swift. All rights reserved.
+//  Created by Sheldon_Gao on 2021/2/12.
 //
+
 
 import UIKit
 
-public class ESRefreshTableViewController: UITableViewController {
+public class AlertsViewController2: UITableViewController {
 
     public var array = [String]()
     public var page = 1
@@ -44,18 +44,8 @@ public class ESRefreshTableViewController: UITableViewController {
         
         var header: ESRefreshProtocol & ESRefreshAnimatorProtocol
         var footer: ESRefreshProtocol & ESRefreshAnimatorProtocol
-        switch type {
-        case .meituan:
-            header = MTRefreshHeaderAnimator.init(frame: CGRect.zero)
-            footer = MTRefreshFooterAnimator.init(frame: CGRect.zero)
-        case .wechat:
-            header = WCRefreshHeaderAnimator.init(frame: CGRect.zero)
-            footer = ESRefreshFooterAnimator.init(frame: CGRect.zero)
-        default:
-            header = ESRefreshHeaderAnimator.init(frame: CGRect.zero)
-            footer = ESRefreshFooterAnimator.init(frame: CGRect.zero)
-            break
-        }
+        header = ESRefreshHeaderAnimator.init(frame: CGRect.zero)
+        footer = ESRefreshFooterAnimator.init(frame: CGRect.zero)
         
         self.tableView.es.addPullToRefresh(animator: header) { [weak self] in
             self?.refresh()
@@ -63,7 +53,7 @@ public class ESRefreshTableViewController: UITableViewController {
         self.tableView.es.addInfiniteScrolling(animator: footer) { [weak self] in
             self?.loadMore()
         }
-        print("===", String.init(describing: type))
+        print("++++",String.init(describing: type))
         self.tableView.refreshIdentifier = String.init(describing: type)
         self.tableView.expiredTimeInterval = 20.0
         

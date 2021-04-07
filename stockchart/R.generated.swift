@@ -177,12 +177,139 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 27 images.
   struct image {
+    /// Image `Photo_Lofter_1`.
+    static let photo_Lofter_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_1")
+    /// Image `Photo_Lofter_2`.
+    static let photo_Lofter_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_2")
+    /// Image `Photo_Lofter_3`.
+    static let photo_Lofter_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_3")
+    /// Image `Photo_Lofter_4`.
+    static let photo_Lofter_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_4")
+    /// Image `Photo_Lofter_5`.
+    static let photo_Lofter_5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_5")
+    /// Image `Photo_Lofter_6`.
+    static let photo_Lofter_6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_6")
+    /// Image `Photo_Lofter_7`.
+    static let photo_Lofter_7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_7")
+    /// Image `Photo_Lofter_8`.
+    static let photo_Lofter_8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_8")
+    /// Image `Photo_Lofter_9`.
+    static let photo_Lofter_9 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_9")
+    /// Image `Photo_Lofter_Info`.
+    static let photo_Lofter_Info = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_Info")
+    /// Image `Photo_Lofter_Tab`.
+    static let photo_Lofter_Tab = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_Tab")
     /// Image `RefeshView_arrow`.
     static let refeshView_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "RefeshView_arrow")
+    /// Image `icon_pull_animation_1`.
+    static let icon_pull_animation_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_pull_animation_1")
+    /// Image `icon_pull_animation_2`.
+    static let icon_pull_animation_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_pull_animation_2")
+    /// Image `icon_pull_animation_3`.
+    static let icon_pull_animation_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_pull_animation_3")
+    /// Image `icon_pull_animation_4`.
+    static let icon_pull_animation_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_pull_animation_4")
+    /// Image `icon_pull_animation_5`.
+    static let icon_pull_animation_5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_pull_animation_5")
     /// Image `icon_pull_to_refresh_arrow`.
     static let icon_pull_to_refresh_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_pull_to_refresh_arrow")
+    /// Image `icon_shake_animation_1`.
+    static let icon_shake_animation_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_1")
+    /// Image `icon_shake_animation_2`.
+    static let icon_shake_animation_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_2")
+    /// Image `icon_shake_animation_3`.
+    static let icon_shake_animation_3 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_3")
+    /// Image `icon_shake_animation_4`.
+    static let icon_shake_animation_4 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_4")
+    /// Image `icon_shake_animation_5`.
+    static let icon_shake_animation_5 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_5")
+    /// Image `icon_shake_animation_6`.
+    static let icon_shake_animation_6 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_6")
+    /// Image `icon_shake_animation_7`.
+    static let icon_shake_animation_7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_7")
+    /// Image `icon_shake_animation_8`.
+    static let icon_shake_animation_8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_8")
+    /// Image `icon_wechat`.
+    static let icon_wechat = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_wechat")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_1", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_2", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_3", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_4", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_5", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_5, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_6", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_6(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_6, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_7", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_7, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_8", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_8(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_8, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_9", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_9(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_9, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_Info", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_Info(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_Info, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Photo_Lofter_Tab", bundle: ..., traitCollection: ...)`
+    static func photo_Lofter_Tab(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.photo_Lofter_Tab, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "RefeshView_arrow", bundle: ..., traitCollection: ...)`
@@ -192,9 +319,107 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_pull_animation_1", bundle: ..., traitCollection: ...)`
+    static func icon_pull_animation_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_pull_animation_1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_pull_animation_2", bundle: ..., traitCollection: ...)`
+    static func icon_pull_animation_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_pull_animation_2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_pull_animation_3", bundle: ..., traitCollection: ...)`
+    static func icon_pull_animation_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_pull_animation_3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_pull_animation_4", bundle: ..., traitCollection: ...)`
+    static func icon_pull_animation_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_pull_animation_4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_pull_animation_5", bundle: ..., traitCollection: ...)`
+    static func icon_pull_animation_5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_pull_animation_5, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "icon_pull_to_refresh_arrow", bundle: ..., traitCollection: ...)`
     static func icon_pull_to_refresh_arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icon_pull_to_refresh_arrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_1", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_2", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_2, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_3", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_3(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_3, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_4", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_4(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_4, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_5", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_5(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_5, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_6", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_6(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_6, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_7", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_7, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_shake_animation_8", bundle: ..., traitCollection: ...)`
+    static func icon_shake_animation_8(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_shake_animation_8, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_wechat", bundle: ..., traitCollection: ...)`
+    static func icon_wechat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_wechat, compatibleWith: traitCollection)
     }
     #endif
 

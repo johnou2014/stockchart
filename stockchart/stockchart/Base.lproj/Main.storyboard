@@ -157,16 +157,19 @@
         <scene sceneID="Y9M-8g-Rp5">
             <objects>
                 <viewController id="w2c-4e-KaT" customClass="AlertsViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="i2y-J8-LcP"/>
-                        <viewControllerLayoutGuide type="bottom" id="Xan-2B-WMW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ayW-oa-yBe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TD4-db-P9R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
+                        <connections>
+                            <outlet property="dataSource" destination="w2c-4e-KaT" id="tuP-Yj-8tB"/>
+                            <outlet property="delegate" destination="w2c-4e-KaT" id="Rrq-h0-7Kz"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="hs5-8x-3d3"/>
+                    <connections>
+                        <outlet property="tableView" destination="TD4-db-P9R" id="4Mq-Zn-AZc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgJ-Fi-Ado" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,7 +269,7 @@
         <scene sceneID="SUp-cf-LrG">
             <objects>
                 <navigationController id="cWY-gC-LfK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alert" selectedImage="exclamationmark.square" catalog="system" id="E0e-kq-pXN"/>
+                    <tabBarItem key="tabBarItem" title="Alert" image="exclamationmark.square" catalog="system" selectedImage="exclamationmark.square" id="E0e-kq-pXN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ug-2j-44m">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
