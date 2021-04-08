@@ -4,131 +4,116 @@
 //
 //  Created by Sheldon_Gao on 2021/2/12.
 //
-
-
 import UIKit
 
-public class AlertsViewController2: UITableViewController {
-
-    public var array = [String]()
-    public var page = 1
-    public var type: ESRefreshExampleType = .defaulttype
-    
-    public override init(style: UITableView.Style) {
-        print("style =",style)
-        super.init(style: style)
-        for num in 1...8{
-            if num % 2 == 0 && arc4random() % 4 == 0 {
-                self.array.append("info")
-            } else {
-                self.array.append("photo")
-            }
-        }
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public override func viewDidLoad() {
+import UIKit
+import Alamofire
+import SwiftyJSON
+import Foundation
+class AlertsViewController2: UITableViewController,UISearchControllerDelegate,UISearchBarDelegate {
+    var alerts = [Alert]()
+    let searchController = UISearchController(searchResultsController:nil)
+    let identifier: String = "alertDetail"
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.backgroundColor = UIColor.init(red: 244.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1.0)
-        
-        self.tableView.register(UINib.init(nibName: "ESRefreshTableViewCell", bundle: nil), forCellReuseIdentifier: "ESRefreshTableViewCell")
-        self.tableView.register(UINib.init(nibName: "ESPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "ESPhotoTableViewCell")
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 560
-        self.tableView.separatorStyle = .none
-        self.tableView.separatorColor = UIColor.clear
-        
-        var header: ESRefreshProtocol & ESRefreshAnimatorProtocol
-        var footer: ESRefreshProtocol & ESRefreshAnimatorProtocol
-        header = ESRefreshHeaderAnimator.init(frame: CGRect.zero)
-        footer = ESRefreshFooterAnimator.init(frame: CGRect.zero)
-        
-        self.tableView.es.addPullToRefresh(animator: header) { [weak self] in
-            self?.refresh()
-        }
-        self.tableView.es.addInfiniteScrolling(animator: footer) { [weak self] in
-            self?.loadMore()
-        }
-        print("++++",String.init(describing: type))
-        self.tableView.refreshIdentifier = String.init(describing: type)
-        self.tableView.expiredTimeInterval = 20.0
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.tableView.es.autoPullToRefresh()
-        }
-    }
-
-    private func refresh() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.page = 1
-            self.array.removeAll()
-            for num in 1...8{
-                if num % 2 == 0 && arc4random() % 4 == 0 {
-                    self.array.append("info")
-                } else {
-                    self.array.append("photo")
-                }
-            }
-            self.tableView.reloadData()
-            self.tableView.es.stopPullToRefresh()
-        }
+        loadDataFromAPI()
+        setUpSearchBar()
     }
     
-    private func loadMore() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.page += 1
-            if self.page <= 3 {
-                for num in 1...8{
-                    if num % 2 == 0 && arc4random() % 4 == 0 {
-                        self.array.append("info")
-                    } else {
-                        self.array.append("photo")
-                    }
-                }
-                self.tableView.reloadData()
-                self.tableView.es.stopLoadingMore()
-            } else {
-                self.tableView.es.noticeNoMoreData()
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "alertDetail" {
+            
         }
+//           let indexPath = tableView?.indexPathForSelectedRow,
+//           let destinationViewController: CanvasViewController = segue.destination as? CanvasViewController {
+//            destinationViewController.watch = alerts[indexPath.row]
+//        }
     }
-    
-    // MARK: - Table view data source
-    public override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+}
+extension AlertsViewController2:UISearchResultsUpdating {
+    private func setUpSearchBar() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Add Stock2"
+        searchController.hidesNavigationBarDuringPresentation = true
+        navigationItem.searchController = searchController
     }
-
-    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
-    }
-
-    public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat.leastNormalMagnitude
-    }
-    
-    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell!
-        let string = self.array[indexPath.row]
-        if string == "info" {
-            cell = tableView.dequeueReusableCell(withIdentifier: "ESRefreshTableViewCell", for: indexPath as IndexPath)
-        } else if string == "photo" {
-            cell = tableView.dequeueReusableCell(withIdentifier: "ESPhotoTableViewCell", for: indexPath as IndexPath)
-            if let cell = cell as? ESPhotoTableViewCell {
-                cell.updateContent(indexPath: indexPath)
-            }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchedText = searchController.searchBar.text else { return }
+        if searchedText == "" {
+            loadDataFromAPI()
         } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath as IndexPath)
+            self.alerts = alerts.filter({
+                $0.name.contains(searchedText)
+            })
+            tableView.reloadData()
         }
-        return cell
+    }
+}
+extension AlertsViewController2 {
+    func setupUI() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
+        navigationItem.title = "Watch List"
+        tableView.reloadData()
+    }
+    private func presentAlertController(withTitle title: String) {
+        let controller = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        present(controller, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            controller.dismiss(animated: true, completion: nil)
+        }
+    }
+    @IBAction func pushController() {
+        let vc = SearchViewListController()
+        //vc.alerts = alerts
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+extension AlertsViewController2 {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return alerts.count
     }
     
-    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-        self.navigationController?.pushViewController(WebViewController.init(), animated: true)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+            as? AlertsCell {
+            cell.configurateTheCell(alerts[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
     }
     
+}
+
+// MARK: - UITableView Delegate
+
+extension AlertsViewController2 {
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("indexPath =",indexPath.row)
+            alerts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        }
+    }
+    
+    // MARK: -链式请求
+    @objc func loadDataFromAPI() {
+        AF.request("http://easytrade007.com:8080/api/v1/alarm/FB", method: .get, parameters: ["page":"1","size":"10"]).validate().responseJSON { response in
+            if let err = response.error {
+                print("error \(err.localizedDescription)")
+                return
+            }
+            let json = JSON(response.data)
+            var candles: [Alert] = [Alert]()
+            for json in json.arrayValue {
+                let info = Alert(pk: json["pk"].intValue, name: json["name"].stringValue, symbol: json["symbol"].stringValue, create_time: json["create_time"].doubleValue)
+                candles.append(info)
+            }
+            self.alerts = candles
+            self.setupUI()
+            print("刷新成功！")
+        }
+    }
 }

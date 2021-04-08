@@ -47,6 +47,8 @@
 		CE748846261B587300F0C711 /* ESPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74883C261B587300F0C711 /* ESPullToRefresh.swift */; };
 		CE74884A261B58B700F0C711 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE748848261B58B700F0C711 /* WebViewController.xib */; };
 		CE74884B261B58B700F0C711 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE748849261B58B700F0C711 /* WebViewController.swift */; };
+		CE75675D261F392C00131DAF /* AlertsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75675C261F392C00131DAF /* AlertsCell.swift */; };
+		CE756785261F3C8400131DAF /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE756784261F3C8400131DAF /* Alert.swift */; };
 		CE76549026100D2A000A4599 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76548F26100D2A000A4599 /* SearchViewController.swift */; };
 		CE7654AB2610842A000A4599 /* SearchViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AA2610842A000A4599 /* SearchViewListController.swift */; };
 		CE7654AE2610C24A000A4599 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AD2610C24A000A4599 /* SearchTableCell.swift */; };
@@ -190,6 +192,8 @@
 		CE74883C261B587300F0C711 /* ESPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESPullToRefresh.swift; sourceTree = "<group>"; };
 		CE748848261B58B700F0C711 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		CE748849261B58B700F0C711 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CE75675C261F392C00131DAF /* AlertsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsCell.swift; sourceTree = "<group>"; };
+		CE756784261F3C8400131DAF /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CE76548F26100D2A000A4599 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE7654AA2610842A000A4599 /* SearchViewListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewListController.swift; sourceTree = "<group>"; };
 		CE7654AD2610C24A000A4599 /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 				CE748848261B58B700F0C711 /* WebViewController.xib */,
 				CE74882E261B587300F0C711 /* Sources */,
 				CE748806261B568300F0C711 /* Custom */,
+				CE75675C261F392C00131DAF /* AlertsCell.swift */,
+				CE756784261F3C8400131DAF /* Alert.swift */,
 			);
 			path = AlarmTableView;
 			sourceTree = "<group>";
@@ -1123,6 +1129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE75675D261F392C00131DAF /* AlertsCell.swift in Sources */,
 				CE74881E261B568300F0C711 /* CollectionViewController.swift in Sources */,
 				CEE88B4425E9F60D00F2CD1A /* KSPageButton.swift in Sources */,
 				CEE88B9E25E9FAA000F2CD1A /* KSTimeChartModel.swift in Sources */,
@@ -1192,6 +1199,7 @@
 				CEE88B3C25E9F60D00F2CD1A /* KSChartConfigure.swift in Sources */,
 				CEE88B7225E9F60D00F2CD1A /* KSChartMenuCell.swift in Sources */,
 				CEE88B4325E9F60D00F2CD1A /* KSButton.swift in Sources */,
+				CE756785261F3C8400131DAF /* Alert.swift in Sources */,
 				CEE88AB625E9F4B100F2CD1A /* KSLineChartCell.swift in Sources */,
 				CEE88B6025E9F60D00F2CD1A /* PerformanceMonitor.swift in Sources */,
 				CEE88B6825E9F60D00F2CD1A /* KSMarketTradeCell.swift in Sources */,
