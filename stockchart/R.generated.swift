@@ -177,7 +177,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 27 images.
+  /// This `R.image` struct is generated, and contains static references to 28 images.
   struct image {
     /// Image `Photo_Lofter_1`.
     static let photo_Lofter_1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Photo_Lofter_1")
@@ -233,6 +233,8 @@ struct R: Rswift.Validatable {
     static let icon_shake_animation_8 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_shake_animation_8")
     /// Image `icon_wechat`.
     static let icon_wechat = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_wechat")
+    /// Image `icon`.
+    static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Photo_Lofter_1", bundle: ..., traitCollection: ...)`
@@ -315,6 +317,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "RefeshView_arrow", bundle: ..., traitCollection: ...)`
     static func refeshView_arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.refeshView_arrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon", bundle: ..., traitCollection: ...)`
+    static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -519,7 +528,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ESPhotoTableViewCell`.
     static let esPhotoTableViewCell: Rswift.ReuseIdentifier<ESPhotoTableViewCell> = Rswift.ReuseIdentifier(identifier: "ESPhotoTableViewCell")
@@ -529,6 +538,8 @@ struct R: Rswift.Validatable {
     static let listTableViewCell: Rswift.ReuseIdentifier<ListTableViewCell> = Rswift.ReuseIdentifier(identifier: "ListTableViewCell")
     /// Reuse identifier `MyCell`.
     static let myCell: Rswift.ReuseIdentifier<SearchTableCell> = Rswift.ReuseIdentifier(identifier: "MyCell")
+    /// Reuse identifier `alertDetail`.
+    static let alertDetail: Rswift.ReuseIdentifier<AlertsCell> = Rswift.ReuseIdentifier(identifier: "alertDetail")
     /// Reuse identifier `tableCell`.
     static let tableCell: Rswift.ReuseIdentifier<TableCell> = Rswift.ReuseIdentifier(identifier: "tableCell")
 
@@ -540,29 +551,17 @@ struct R: Rswift.Validatable {
     /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
     struct localizable {
       /// Base translation: Loading more
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static let loadingMore = Rswift.StringResource(key: "Loading more", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
       /// Base translation: Loading...
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static let loading = Rswift.StringResource(key: "Loading...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
       /// Base translation: No more data
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static let noMoreData = Rswift.StringResource(key: "No more data", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
       /// Base translation: Pull to refresh
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static let pullToRefresh = Rswift.StringResource(key: "Pull to refresh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
       /// Base translation: Release to refresh
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static let releaseToRefresh = Rswift.StringResource(key: "Release to refresh", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hans", "Base", "zh-Hant"], comment: nil)
 
       /// Base translation: Loading more
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static func loadingMore(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Loading more", bundle: hostingBundle, value: "Loading more", comment: "")
@@ -576,8 +575,6 @@ struct R: Rswift.Validatable {
       }
 
       /// Base translation: Loading...
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static func loading(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Loading...", bundle: hostingBundle, value: "Loading...", comment: "")
@@ -591,8 +588,6 @@ struct R: Rswift.Validatable {
       }
 
       /// Base translation: No more data
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static func noMoreData(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("No more data", bundle: hostingBundle, value: "No more data", comment: "")
@@ -606,8 +601,6 @@ struct R: Rswift.Validatable {
       }
 
       /// Base translation: Pull to refresh
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static func pullToRefresh(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Pull to refresh", bundle: hostingBundle, value: "Pull to refresh", comment: "")
@@ -621,8 +614,6 @@ struct R: Rswift.Validatable {
       }
 
       /// Base translation: Release to refresh
-      ///
-      /// Locales: zh-Hans, Base, zh-Hant
       static func releaseToRefresh(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Release to refresh", bundle: hostingBundle, value: "Release to refresh", comment: "")

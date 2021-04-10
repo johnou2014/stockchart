@@ -8,15 +8,25 @@
 import Foundation
 import UIKit
 //时间戳转成字符串
-func timeIntervalChangeToTimeStr(timeInterval:Double, _ dateFormat:String? = "yyyy-MM-dd HH:mm:ss") -> String {
-    let date:Date = Date.init(timeIntervalSince1970: timeInterval)
+func timeStampToString(timeStamp:String)->String {
+
+    var string = NSString(string: timeStamp)
+    
+    var timeSta:TimeInterval = string.doubleValue
+    var dfmatter = DateFormatter()
+    dfmatter.dateFormat="yyyy年MM月dd日"
+
+    var date = NSDate(timeIntervalSince1970: timeSta)
+    
+    print(dfmatter.string(from: date as Date))
+    return dfmatter.string(from: date as Date)
+}
+func timeIntervalChangeToTimeStr(timeStamp: Double) ->String {
+    let k = NSDate.init(timeIntervalSince1970: timeStamp / 1000)
     let formatter = DateFormatter.init()
-    if dateFormat == nil {
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-    }else{
-        formatter.dateFormat = dateFormat
-    }
-    return formatter.string(from: date as Date)
+    formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+    let y = formatter.string(from: k as Date)
+    return y
 }
 
 class AlertsCell: UITableViewCell {
@@ -38,7 +48,7 @@ class AlertsCell: UITableViewCell {
 
     func configurateTheCell(_ alert: Alert) {
         alertName.text = alert.name
-        alertCreateTime.text = timeIntervalChangeToTimeStr(timeInterval: alert.create_time )
+        alertCreateTime.text = timeIntervalChangeToTimeStr(timeStamp: alert.create_time )
         alertSymbol.text = alert.symbol
     }
 }
