@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="227.536231884058" y="-294.64285714285711"/>
         </scene>
-        <!--Alerts View Controller2-->
+        <!--Alerts View Controller-->
         <scene sceneID="Y9M-8g-Rp5">
             <objects>
-                <viewController id="w2c-4e-KaT" customClass="AlertsViewController2" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w2c-4e-KaT" customClass="AlertsViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bDB-cc-dg0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

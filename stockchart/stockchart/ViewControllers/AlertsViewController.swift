@@ -14,6 +14,8 @@ import Foundation
 import ESPullToRefresh
 class AlertsViewController: UITableViewController,UISearchControllerDelegate,UISearchBarDelegate {
     var alerts = [Alert]()
+    var page = 1
+    var total = 0
     let searchController = UISearchController(searchResultsController:nil)
     let identifier: String = "alertDetail"
     override func viewDidLoad() {
@@ -24,28 +26,24 @@ class AlertsViewController: UITableViewController,UISearchControllerDelegate,UIS
         self.tableView.es.addPullToRefresh(animator: header) {
             [weak self] in
             self?.refresh()
+            self?.page = 1
         }
         self.tableView.es.addInfiniteScrolling(animator: footer) {
             [weak self] in
-            self?.tableView.es.noticeNoMoreData()
+            self?.loadMore()
         }
         setUpSearchBar()
-        loadDataFromAPI()
     }
     
     // 当视图已经显示时调用该方法
     override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-            print("视图已经显示")
+        super.viewDidAppear(animated)
+        print("视图已经显示")
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "alertDetail" {
             
-    }
-//           let indexPath = tableView?.indexPathForSelectedRow,
-//           let destinationViewController: CanvasViewController = segue.destination as? CanvasViewController {
-//            destinationViewController.watch = alerts[indexPath.row]
-//        }
+        }
     }
 }
 extension AlertsViewController:UISearchResultsUpdating {
@@ -59,7 +57,7 @@ extension AlertsViewController:UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchedText = searchController.searchBar.text else { return }
         if searchedText == "" {
-            loadDataFromAPI()
+            refresh()
         } else {
             self.alerts = alerts.filter({
                 $0.name.contains(searchedText)
@@ -75,7 +73,6 @@ extension AlertsViewController {
         tableView.reloadData()
         self.tableView.es.stopPullToRefresh()
         self.tableView.es.stopLoadingMore()
-        self.tableView.es.noticeNoMoreData()
     }
     private func presentAlertController(withTitle title: String) {
         let controller = UIAlertController(title: title, message: nil, preferredStyle: .alert)
@@ -99,8 +96,12 @@ extension AlertsViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
             as? AlertsCell {
+            if alerts.count >= indexPath.row {
             cell.configurateTheCell(alerts[indexPath.row])
             return cell
+            } else {
+                return UITableViewCell()
+            }
         }
         return UITableViewCell()
     }
@@ -119,45 +120,36 @@ extension AlertsViewController {
         }
     }
     @objc func loadMore() {
-        print("loadMore")
+        print("loadMore =", self.page, self.total)
+        if(self.page * 20 < self.total) {
+            self.page += 1
+            self.refresh()
+        } else {
         self.tableView.reloadData()
         self.tableView.es.stopPullToRefresh()
-            self.tableView.es.stopLoadingMore()
-            self.tableView.es.noticeNoMoreData()
-    }
-    func refresh() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            print("run asyncAfter 3.0")
-            }
-            self.tableView.reloadData()
-            self.tableView.es.stopPullToRefresh()
-        
-        print("run stopPull")
+        self.tableView.es.stopLoadingMore()
+        self.tableView.es.noticeNoMoreData()
+        }
     }
     // MARK: -链式请求
-    @objc func loadDataFromAPI() {
-        self.alerts.removeAll()
-        AF.request("http://easytrade007.com:8080/api/v1/alarm/FB", method: .get, parameters: ["page":"1","size":"20"]).validate().responseJSON { response in
+    func refresh() {
+        self.alerts = [Alert]()
+        print("Ajax :page =",page,"total =", total)
+        AF.request("http://easytrade007.com:8080/api/v1/alarm/FB", method: .get, parameters: ["page":page,"size":"20"]).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return
             }
-            let json = JSON(response.data)["data"]
+            let res = JSON(response.data as Any)
+            let json = res["data"]
+            self.total = res["count"].intValue
             var candles: [Alert] = [Alert]()
             for json in json.arrayValue {
                 let info = Alert(pk: json["pk"].intValue, name: json["name"].stringValue, symbol: json["symbol"].stringValue, create_time: json["create_time"].doubleValue)
                 candles.append(info)
             }
             self.alerts = candles
-            print(self.alerts)
             self.setupUI()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                self.tableView.es.stopPullToRefresh()
-                self.tableView.es.stopLoadingMore()
-                self.tableView.es.noticeNoMoreData()
-            }
-            self.tableView.es.removeRefreshHeader()
-            print("刷新成功！2")
         }
     }
 }
