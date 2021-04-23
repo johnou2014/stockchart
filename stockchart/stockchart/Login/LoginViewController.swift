@@ -38,10 +38,20 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text
         let password = passwordTextField.text
         print("username =",username,"password =",password)
-        //handler?.login(username: username, password: password)
-       
-       // let vc = ViewController()
+
+//
+        let vc = WatchViewController()
+         //self.present(vc, animated: false, completion: nil)
+        //let vc = self.storyboard?.instantiateViewController(identifier: "viewController") as! UIViewController
         
-        //self.navigationController?.pushViewController(vc, animated: true)
+        vc.navigationItem.hidesBackButton = true
+        self.navigationController?.pushViewController(vc , animated:true)
+
+        //handler?.login(username: username, password: password)
     }
+//    func viewDidAppear() {
+//        self.performSegue(withIdentifier: "segue的identifile", sender: nil)
+//        let vc = WatchViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
 }

@@ -17,6 +17,7 @@ class ViewController: UITabBarController, KSWebSocketDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationsettings()
+        self.navigationItem.hidesBackButton = true
     }
     
     func notificationsettings() {
