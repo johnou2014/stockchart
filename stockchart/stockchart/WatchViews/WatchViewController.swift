@@ -102,7 +102,7 @@ extension WatchViewController {
     //MARK: -删除用户股票
     @objc func delUserStock(stock: String) {
         let delUserInfo = DelUserInfo(username: "gaoxu", symbol: stock)
-        AF.request( "http://easytrade007.com:8080/api/v1/delUserStock/",method: .post, parameters:delUserInfo, encoder: JSONParameterEncoder.default).validate().responseJSON { response in
+        AF.request( "http://easytrade007.com:8080/api/v1/delUserStock/",method: .post, parameters:delUserInfo, encoder: JSONParameterEncoder.default,headers: ["Authorization":"68f0ccb46c8870c11e2fed3cad0f2ab38edd277b"]).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return
@@ -118,7 +118,7 @@ extension WatchViewController {
     }
     // MARK: -链式请求
     @objc func loadDataFromAPI() {
-        AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"gaoxu"]).validate().responseJSON { response in
+        AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":"gaoxu"],headers: ["authorization":"68f0ccb46c8870c11e2fed3cad0f2ab38edd277b"]).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return

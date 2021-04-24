@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyJSON
+var TOKEN:String? = nil
 class ViewController: UITabBarController, KSWebSocketDelegate {
     private var socket: KSWebSocket?
     @objc enum NotificationReminder: Int {
@@ -16,10 +17,21 @@ class ViewController: UITabBarController, KSWebSocketDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        notificationsettings()
         self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        login()
+        notificationsettings()
     }
-    
+    func login() {
+        if(TOKEN == nil) {
+            print("run === Token")
+        } else {
+            
+        }
+    }
+    func pushViewController(ctrl: Any) {
+        print("pushViewController ====")
+    }
     func notificationsettings() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {

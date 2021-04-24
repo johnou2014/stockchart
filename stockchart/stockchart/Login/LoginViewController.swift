@@ -54,4 +54,12 @@ class LoginViewController: UIViewController {
 //        let vc = WatchViewController()
 //        self.navigationController?.pushViewController(vc, animated: true)
 //    }
+    @IBSegueAction func makeNewPageController(_ coder: NSCoder) -> UIViewController? {
+        print("run +++ IBSegueAction")
+        self.reloadInputViews()
+    
+        return nil
+        print("run +++ IBSegueAction2")
+        return ViewController(coder: coder)
+    }
 }

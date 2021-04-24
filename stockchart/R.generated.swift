@@ -89,25 +89,8 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
-    /// This struct is generated for `LoginViewController`, and contains static references to 1 segues.
-    struct loginViewController {
-      /// Segue identifier `segue的identifile`.
-      static let segue的identifile: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, LoginViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "segue的identifile")
-
-      #if os(iOS) || os(tvOS)
-      /// Optionally returns a typed version of segue `segue的identifile`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func segue的identifile(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, LoginViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.loginViewController.segue的identifile, segue: segue)
-      }
-      #endif
-
-      fileprivate init() {}
-    }
-
     /// This struct is generated for `WatchViewController`, and contains static references to 1 segues.
     struct watchViewController {
       /// Segue identifier `watchDetail`.
@@ -268,16 +251,11 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LoginViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "Main"
-      let viewCotroller = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "ViewCotroller")
       let watchViewController = StoryboardViewControllerResource<WatchViewController>(identifier: "WatchViewController")
-
-      func viewCotroller(_: Void = ()) -> UIKit.UINavigationController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: viewCotroller)
-      }
 
       func watchViewController(_: Void = ()) -> WatchViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: watchViewController)
@@ -291,7 +269,6 @@ struct _R: Rswift.Validatable {
         if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "waveform.path.ecg.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'waveform.path.ecg.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-        if _R.storyboard.main().viewCotroller() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'viewCotroller' could not be loaded from storyboard 'Main' as 'UIKit.UINavigationController'.") }
         if _R.storyboard.main().watchViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'watchViewController' could not be loaded from storyboard 'Main' as 'WatchViewController'.") }
       }
 
