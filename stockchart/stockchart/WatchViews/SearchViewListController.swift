@@ -21,15 +21,6 @@ class SearchViewListController: UITableViewController,UISearchControllerDelegate
         loadDataFromAPI() //获取列表
         setUpSearchBar()  //添加本地搜索
     }
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "watchDetail",
-     let indexPath = tableView?.indexPathForSelectedRow,
-     let destinationViewController: WatchDetailViewController = segue.destination as? WatchDetailViewController {
-     print("searchs === prepare", searchs)
-     destinationViewController.watch = watches[indexPath.row]
-     }
-     } */
 }
 //MARK: -local search func
 extension SearchViewListController:UISearchResultsUpdating {
@@ -105,9 +96,9 @@ extension SearchViewListController {
    
     func addUserStock(symbol: String) {
         self.navigationController?.popToRootViewController(animated: true)
-        let addStockInfo = AddStockInfo(username: "gaoxu", symbol: symbol)
+        let addStockInfo = AddStockInfo(username: getUserInfo(type: "username"), symbol: symbol)
         print("addStockInfo =",addStockInfo)
-        AF.request("http://easytrade007.com:8080/api/v1/addUserStock/", method: .post, parameters: addStockInfo,encoder: JSONParameterEncoder.default).validate().responseJSON { response in
+        AF.request("http://easytrade007.com:8080/api/v1/addUserStock/", method: .post, parameters: addStockInfo,encoder: JSONParameterEncoder.default,headers: headers).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return
@@ -127,7 +118,7 @@ extension SearchViewListController {
     
     // MARK: -链式请求
     @objc func loadDataFromAPI() {
-        AF.request("http://easytrade007.com:8080/api/v1/getStockList", method: .get, parameters: ["username":"gaoxu"]).validate().responseJSON { response in
+        AF.request("http://easytrade007.com:8080/api/v1/getStockList", method: .get, parameters: ["username":getUserInfo(type: "username")], headers: headers).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return

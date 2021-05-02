@@ -14,5 +14,4 @@ target 'stockchart' do
   pod 'SocketRocket', '~> 0.5.1'
   pod 'SwiftHTTP', '~> 3.0.1'
   pod 'ESPullToRefresh'
-  
 end

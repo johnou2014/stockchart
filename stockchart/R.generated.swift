@@ -143,14 +143,6 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    #if os(watchOS)
-    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func accentColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.accentColor.name)
-    }
-    #endif
-
     fileprivate init() {}
   }
 
@@ -254,21 +246,33 @@ struct _R: Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let name = "Main"
+      let viewController = StoryboardViewControllerResource<ViewController>(identifier: "ViewController")
       let watchViewController = StoryboardViewControllerResource<WatchViewController>(identifier: "WatchViewController")
+
+      func loginViewController(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
+      }
+
+      func viewController(_: Void = ()) -> ViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: viewController)
+      }
 
       func watchViewController(_: Void = ()) -> WatchViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: watchViewController)
       }
 
       static func validate() throws {
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "exclamationmark.square") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'exclamationmark.square' is used in storyboard 'Main', but couldn't be loaded.") } }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "gearshape") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'gearshape' is used in storyboard 'Main', but couldn't be loaded.") } }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "list.bullet.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'list.bullet.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "plus.circle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'plus.circle' is used in storyboard 'Main', but couldn't be loaded.") } }
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "waveform.path.ecg.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'waveform.path.ecg.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if UIKit.UIImage(named: "exclamationmark.square", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'exclamationmark.square' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "gearshape", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gearshape' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "list.bullet.rectangle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'list.bullet.rectangle' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plus.circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus.circle' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "waveform.path.ecg.rectangle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'waveform.path.ecg.rectangle' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
+        if _R.storyboard.main().viewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'viewController' could not be loaded from storyboard 'Main' as 'ViewController'.") }
         if _R.storyboard.main().watchViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'watchViewController' could not be loaded from storyboard 'Main' as 'WatchViewController'.") }
       }
 

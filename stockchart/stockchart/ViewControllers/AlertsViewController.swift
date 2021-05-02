@@ -135,7 +135,7 @@ extension AlertsViewController {
     func refresh() {
         self.alerts = [Alert]()
         print("Ajax :page =",page,"total =", total)
-        AF.request("http://easytrade007.com:8080/api/v1/alarm/FB", method: .get, parameters: ["page":page,"size":"20"]).validate().responseJSON { response in
+        AF.request("http://easytrade007.com:8080/api/v1/alarm/FB", method: .get, parameters: ["page":page,"size":"20"], headers: headers).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return

@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import SwiftHTTP
 import SwiftIconFont
+import Alamofire
 //======================================================================
 // MARK: - 1、常量/静态变量
 //======================================================================
@@ -310,7 +311,9 @@ class CanvasViewController: KSBaseViewController {
         }
         if(watch != nil) {
             print("stock ===",watch!.stock)
-        HTTP.GET("http://easytrade007.com:8080/api/v1/marketdata/\(watch!.stock)/pricehistory/",parameters: ["periodType":"day","period":"30"]) {
+        
+                
+            HTTP.GET("http://easytrade007.com:8080/api/v1/marketdata/\(watch!.stock)/pricehistory/",parameters: ["periodType":"day","period":"30"],headers: ["Authorization":getUserInfo(type: "Authorization")]) {
             response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")

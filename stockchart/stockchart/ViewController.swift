@@ -68,23 +68,15 @@ extension ViewController: UNUserNotificationCenterDelegate {
         
       registerCategories() // it is the safest place
 
-      let center = UNUserNotificationCenter.current() // the main center to work with notifications
-      // center.removeAllPendingNotificationRequests() // this removes all pending notifications
+      let center = UNUserNotificationCenter.current() // the main center to work 
 
       // this is the content you are going to send to your notification
       let content = UNMutableNotificationContent()
       content.title = "看到信息请及时处理！！" // the main title
       content.body = "\(title)" // the main text
       content.categoryIdentifier = "alarm" // this are the custom actions
-      content.userInfo = ["customData" : "fizzbuzz"] // this helps to attach custom data to the notification. e.g. an internal ID
-      content.sound = UNNotificationSound.default // you can create a custom UNNotificationSound object and attach it to the sound property, or just use the default one
-
-      // get the date components to schedule the time you want your notification
-      //var dateComponents = DateComponents()
-      //dateComponents.hour = 21 // give the hour
-      //dateComponents.minute = 13 // give the minutes
-      //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true) // trigger the notification to your calendar
-
+      content.userInfo = ["customData" : "fizzbuzz"] // this helps to attach
+      content.sound = UNNotificationSound.default // you can create a custom
       let trigger: UNTimeIntervalNotificationTrigger
       // faster test
       switch reminder.rawValue {
