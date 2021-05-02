@@ -90,7 +90,7 @@ class LoginViewController: UIViewController {
                 //保存token
                 // 写入文件
                 let filePath:String = NSHomeDirectory() + "/Documents/local_data_source_file.json"
-                let info = JSON(["username":username, "password": password, "Authorization": "Token \(JSON(response.data as Any)["data"]["token"].stringValue)" ]).rawString()
+                let info = JSON(["username":username, "Authorization": "Token \(JSON(response.data as Any)["data"]["token"].stringValue)" ]).rawString()
                 print("写入文件 info ===",info)
                 try! info?.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
                 self.jumpIndexPage()
