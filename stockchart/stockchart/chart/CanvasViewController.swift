@@ -162,7 +162,8 @@ class CanvasViewController: KSBaseViewController {
         followBtn.ks_addTarget(self, action: #selector(onFollowClick))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: followBtn!)
         */
-        self.segmentedPager.frame              = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - self.ks_navigationHeight())
+        print("frame =",self.view.frame)
+        self.segmentedPager.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - self.ks_navigationHeight())
         self.view.addSubview(self.segmentedPager)
         defaultTai()
         
@@ -310,18 +311,16 @@ class CanvasViewController: KSBaseViewController {
             return Int(timeStamp!)
         }
         if(watch != nil) {
-            print("stock ===",watch!.stock)
-        
-                
             HTTP.GET("http://easytrade007.com:8080/api/v1/marketdata/\(watch!.stock)/pricehistory/",parameters: ["periodType":"day","period":"30"],headers: ["Authorization":getUserInfo(type: "Authorization")]) {
             response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")
                 return
             }
-            let json = JSON(response.data)
+            let response = JSON(response.data)
+                print("easytrade007 =", response.arrayValue.count)
             var candles: [KSChartItem] = [KSChartItem]()
-            for json in json.arrayValue {
+            for json in response.arrayValue {
                 let info    = KSChartItem()
                 info.time   = ks_toTimeStamp2(timeStamp: Double(json["datetime"].intValue))// 开盘时间
                 info.open   = json["open"].stringValue// 开盘价

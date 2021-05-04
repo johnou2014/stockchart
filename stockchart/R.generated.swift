@@ -143,6 +143,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(watchOS)
+    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func accentColor(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.accentColor.name)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
@@ -213,6 +221,546 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 35 localization keys.
+    struct localizable {
+      /// Value: 12h
+      static let ks_app_global_text_12h = Rswift.StringResource(key: "ks_app_global_text_12h", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 15m
+      static let ks_app_global_text_15m = Rswift.StringResource(key: "ks_app_global_text_15m", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 1d
+      static let ks_app_global_text_1d = Rswift.StringResource(key: "ks_app_global_text_1d", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 1h
+      static let ks_app_global_text_1h = Rswift.StringResource(key: "ks_app_global_text_1h", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 1m
+      static let ks_app_global_text_1m = Rswift.StringResource(key: "ks_app_global_text_1m", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 1w
+      static let ks_app_global_text_1w = Rswift.StringResource(key: "ks_app_global_text_1w", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 2h
+      static let ks_app_global_text_2h = Rswift.StringResource(key: "ks_app_global_text_2h", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 30m
+      static let ks_app_global_text_30m = Rswift.StringResource(key: "ks_app_global_text_30m", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 4h
+      static let ks_app_global_text_4h = Rswift.StringResource(key: "ks_app_global_text_4h", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 5m
+      static let ks_app_global_text_5m = Rswift.StringResource(key: "ks_app_global_text_5m", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: 6h
+      static let ks_app_global_text_6h = Rswift.StringResource(key: "ks_app_global_text_6h", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Amount
+      static let ks_app_global_text_amount = Rswift.StringResource(key: "ks_app_global_text_amount", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Amount(%@)
+      static let ks_app_global_text_amount_currency_unit = Rswift.StringResource(key: "ks_app_global_text_amount_currency_unit", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Book
+      static let ks_app_global_text_orderbook = Rswift.StringResource(key: "ks_app_global_text_orderbook", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Buy
+      static let ks_app_global_text_buy = Rswift.StringResource(key: "ks_app_global_text_buy", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Buy
+      static let ks_app_global_text_buy_up = Rswift.StringResource(key: "ks_app_global_text_buy_up", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Chg%
+      static let ks_app_global_text_chg = Rswift.StringResource(key: "ks_app_global_text_chg", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Close
+      static let ks_app_global_text_close = Rswift.StringResource(key: "ks_app_global_text_close", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Date
+      static let ks_app_global_text_date = Rswift.StringResource(key: "ks_app_global_text_date", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: High
+      static let ks_app_global_text_24h_high = Rswift.StringResource(key: "ks_app_global_text_24h_high", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: High
+      static let ks_app_global_text_maxhigh = Rswift.StringResource(key: "ks_app_global_text_maxhigh", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Indicator
+      static let ks_app_global_text_indicator = Rswift.StringResource(key: "ks_app_global_text_indicator", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Info
+      static let ks_app_global_text_info = Rswift.StringResource(key: "ks_app_global_text_info", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Line
+      static let ks_app_global_text_line = Rswift.StringResource(key: "ks_app_global_text_line", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Low
+      static let ks_app_global_text_24h_low = Rswift.StringResource(key: "ks_app_global_text_24h_low", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Low
+      static let ks_app_global_text_maxlow = Rswift.StringResource(key: "ks_app_global_text_maxlow", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Market Trade
+      static let ks_app_global_text_market_trade = Rswift.StringResource(key: "ks_app_global_text_market_trade", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Open
+      static let ks_app_global_text_open = Rswift.StringResource(key: "ks_app_global_text_open", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Price
+      static let ks_app_global_text_price = Rswift.StringResource(key: "ks_app_global_text_price", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Price(%@)
+      static let ks_app_global_text_price_currency_unit = Rswift.StringResource(key: "ks_app_global_text_price_currency_unit", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sell
+      static let ks_app_global_text_sell = Rswift.StringResource(key: "ks_app_global_text_sell", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Sell
+      static let ks_app_global_text_sell_up = Rswift.StringResource(key: "ks_app_global_text_sell_up", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Time
+      static let ks_app_global_text_time = Rswift.StringResource(key: "ks_app_global_text_time", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Type
+      static let ks_app_global_text_type = Rswift.StringResource(key: "ks_app_global_text_type", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Vol
+      static let ks_app_global_text_24h_vol = Rswift.StringResource(key: "ks_app_global_text_24h_vol", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: 12h
+      static func ks_app_global_text_12h(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_12h", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_12h"
+        }
+
+        return NSLocalizedString("ks_app_global_text_12h", bundle: bundle, comment: "")
+      }
+
+      /// Value: 15m
+      static func ks_app_global_text_15m(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_15m", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_15m"
+        }
+
+        return NSLocalizedString("ks_app_global_text_15m", bundle: bundle, comment: "")
+      }
+
+      /// Value: 1d
+      static func ks_app_global_text_1d(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_1d", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_1d"
+        }
+
+        return NSLocalizedString("ks_app_global_text_1d", bundle: bundle, comment: "")
+      }
+
+      /// Value: 1h
+      static func ks_app_global_text_1h(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_1h", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_1h"
+        }
+
+        return NSLocalizedString("ks_app_global_text_1h", bundle: bundle, comment: "")
+      }
+
+      /// Value: 1m
+      static func ks_app_global_text_1m(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_1m", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_1m"
+        }
+
+        return NSLocalizedString("ks_app_global_text_1m", bundle: bundle, comment: "")
+      }
+
+      /// Value: 1w
+      static func ks_app_global_text_1w(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_1w", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_1w"
+        }
+
+        return NSLocalizedString("ks_app_global_text_1w", bundle: bundle, comment: "")
+      }
+
+      /// Value: 2h
+      static func ks_app_global_text_2h(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_2h", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_2h"
+        }
+
+        return NSLocalizedString("ks_app_global_text_2h", bundle: bundle, comment: "")
+      }
+
+      /// Value: 30m
+      static func ks_app_global_text_30m(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_30m", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_30m"
+        }
+
+        return NSLocalizedString("ks_app_global_text_30m", bundle: bundle, comment: "")
+      }
+
+      /// Value: 4h
+      static func ks_app_global_text_4h(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_4h", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_4h"
+        }
+
+        return NSLocalizedString("ks_app_global_text_4h", bundle: bundle, comment: "")
+      }
+
+      /// Value: 5m
+      static func ks_app_global_text_5m(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_5m", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_5m"
+        }
+
+        return NSLocalizedString("ks_app_global_text_5m", bundle: bundle, comment: "")
+      }
+
+      /// Value: 6h
+      static func ks_app_global_text_6h(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_6h", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_6h"
+        }
+
+        return NSLocalizedString("ks_app_global_text_6h", bundle: bundle, comment: "")
+      }
+
+      /// Value: Amount
+      static func ks_app_global_text_amount(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_amount", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_amount"
+        }
+
+        return NSLocalizedString("ks_app_global_text_amount", bundle: bundle, comment: "")
+      }
+
+      /// Value: Amount(%@)
+      static func ks_app_global_text_amount_currency_unit(_ value1: String, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("ks_app_global_text_amount_currency_unit", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_amount_currency_unit"
+        }
+
+        let format = NSLocalizedString("ks_app_global_text_amount_currency_unit", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// Value: Book
+      static func ks_app_global_text_orderbook(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_orderbook", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_orderbook"
+        }
+
+        return NSLocalizedString("ks_app_global_text_orderbook", bundle: bundle, comment: "")
+      }
+
+      /// Value: Buy
+      static func ks_app_global_text_buy(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_buy", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_buy"
+        }
+
+        return NSLocalizedString("ks_app_global_text_buy", bundle: bundle, comment: "")
+      }
+
+      /// Value: Buy
+      static func ks_app_global_text_buy_up(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_buy_up", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_buy_up"
+        }
+
+        return NSLocalizedString("ks_app_global_text_buy_up", bundle: bundle, comment: "")
+      }
+
+      /// Value: Chg%
+      static func ks_app_global_text_chg(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_chg", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_chg"
+        }
+
+        return NSLocalizedString("ks_app_global_text_chg", bundle: bundle, comment: "")
+      }
+
+      /// Value: Close
+      static func ks_app_global_text_close(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_close", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_close"
+        }
+
+        return NSLocalizedString("ks_app_global_text_close", bundle: bundle, comment: "")
+      }
+
+      /// Value: Date
+      static func ks_app_global_text_date(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_date", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_date"
+        }
+
+        return NSLocalizedString("ks_app_global_text_date", bundle: bundle, comment: "")
+      }
+
+      /// Value: High
+      static func ks_app_global_text_24h_high(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_24h_high", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_24h_high"
+        }
+
+        return NSLocalizedString("ks_app_global_text_24h_high", bundle: bundle, comment: "")
+      }
+
+      /// Value: High
+      static func ks_app_global_text_maxhigh(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_maxhigh", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_maxhigh"
+        }
+
+        return NSLocalizedString("ks_app_global_text_maxhigh", bundle: bundle, comment: "")
+      }
+
+      /// Value: Indicator
+      static func ks_app_global_text_indicator(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_indicator", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_indicator"
+        }
+
+        return NSLocalizedString("ks_app_global_text_indicator", bundle: bundle, comment: "")
+      }
+
+      /// Value: Info
+      static func ks_app_global_text_info(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_info"
+        }
+
+        return NSLocalizedString("ks_app_global_text_info", bundle: bundle, comment: "")
+      }
+
+      /// Value: Line
+      static func ks_app_global_text_line(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_line", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_line"
+        }
+
+        return NSLocalizedString("ks_app_global_text_line", bundle: bundle, comment: "")
+      }
+
+      /// Value: Low
+      static func ks_app_global_text_24h_low(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_24h_low", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_24h_low"
+        }
+
+        return NSLocalizedString("ks_app_global_text_24h_low", bundle: bundle, comment: "")
+      }
+
+      /// Value: Low
+      static func ks_app_global_text_maxlow(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_maxlow", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_maxlow"
+        }
+
+        return NSLocalizedString("ks_app_global_text_maxlow", bundle: bundle, comment: "")
+      }
+
+      /// Value: Market Trade
+      static func ks_app_global_text_market_trade(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_market_trade", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_market_trade"
+        }
+
+        return NSLocalizedString("ks_app_global_text_market_trade", bundle: bundle, comment: "")
+      }
+
+      /// Value: Open
+      static func ks_app_global_text_open(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_open", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_open"
+        }
+
+        return NSLocalizedString("ks_app_global_text_open", bundle: bundle, comment: "")
+      }
+
+      /// Value: Price
+      static func ks_app_global_text_price(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_price"
+        }
+
+        return NSLocalizedString("ks_app_global_text_price", bundle: bundle, comment: "")
+      }
+
+      /// Value: Price(%@)
+      static func ks_app_global_text_price_currency_unit(_ value1: String, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("ks_app_global_text_price_currency_unit", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_price_currency_unit"
+        }
+
+        let format = NSLocalizedString("ks_app_global_text_price_currency_unit", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// Value: Sell
+      static func ks_app_global_text_sell(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_sell", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_sell"
+        }
+
+        return NSLocalizedString("ks_app_global_text_sell", bundle: bundle, comment: "")
+      }
+
+      /// Value: Sell
+      static func ks_app_global_text_sell_up(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_sell_up", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_sell_up"
+        }
+
+        return NSLocalizedString("ks_app_global_text_sell_up", bundle: bundle, comment: "")
+      }
+
+      /// Value: Time
+      static func ks_app_global_text_time(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_time", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_time"
+        }
+
+        return NSLocalizedString("ks_app_global_text_time", bundle: bundle, comment: "")
+      }
+
+      /// Value: Type
+      static func ks_app_global_text_type(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_type", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_type"
+        }
+
+        return NSLocalizedString("ks_app_global_text_type", bundle: bundle, comment: "")
+      }
+
+      /// Value: Vol
+      static func ks_app_global_text_24h_vol(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ks_app_global_text_24h_vol", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ks_app_global_text_24h_vol"
+        }
+
+        return NSLocalizedString("ks_app_global_text_24h_vol", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -264,11 +812,12 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "exclamationmark.square", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'exclamationmark.square' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "gearshape", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gearshape' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "list.bullet.rectangle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'list.bullet.rectangle' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "plus.circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus.circle' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "waveform.path.ecg.rectangle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'waveform.path.ecg.rectangle' is used in storyboard 'Main', but couldn't be loaded.") }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "exclamationmark.square") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'exclamationmark.square' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "folder.badge.gear") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'folder.badge.gear' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "gearshape") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'gearshape' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "list.bullet.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'list.bullet.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "plus.circle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'plus.circle' is used in storyboard 'Main', but couldn't be loaded.") } }
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "waveform.path.ecg.rectangle") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'waveform.path.ecg.rectangle' is used in storyboard 'Main', but couldn't be loaded.") } }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }

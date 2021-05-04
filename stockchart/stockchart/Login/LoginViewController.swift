@@ -55,6 +55,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.title = "Login In"
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         getUserData()
     }
     @IBAction func textFiledEditingChanged(_ sender: UITextField) {
@@ -83,7 +84,7 @@ class LoginViewController: UIViewController {
                 print("error \(err.localizedDescription)")
                 return
             }
-            let success = JSON(response.data)["success"].boolValue
+            let success = JSON(response.data as Any)["success"].boolValue
             print("success =", success)
             if success {
                 print("登录成功")
@@ -91,16 +92,16 @@ class LoginViewController: UIViewController {
                 // 写入文件
                 let filePath:String = NSHomeDirectory() + "/Documents/local_data_source_file.json"
                 let info = JSON(["username":username, "Authorization": "Token \(JSON(response.data as Any)["data"]["token"].stringValue)" ]).rawString()
-                print("写入文件 info ===",info)
+                print("写入文件 info ===",info! as String)
                 try! info?.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
                 self.jumpIndexPage()
             } else {
-             self.dialogMessage(str: "登录失败")
+                self.dialogMessage(str: JSON(response.data as Any)["message"].stringValue)
             }
         }
     }
     func dialogMessage(str: String) {
-        var dialogMessage = UIAlertController(title: "登录提示", message: str, preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "Login Message", message: str, preferredStyle: .alert)
         dialogMessage.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
                     //Cancel Action
                 }))

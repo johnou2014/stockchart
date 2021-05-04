@@ -27,7 +27,6 @@ class SettingsViewController: UIViewController {
         
     }
     func jumpIndexPage() {
-        print("run === jumpIndexPage" )
         //use StoryboardId
         let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: LoginViewController())))
                     as! LoginViewController
