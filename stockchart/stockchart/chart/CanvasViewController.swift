@@ -56,7 +56,7 @@ class CanvasViewController: KSBaseViewController {
             userIdLabel.text = "userId:" + String(watch.user_id)
             stockIdLabel.text = "stockId:" + String(watch.stock_id)
             if watch.pk > 40 {
-            thumbnailImageView.image = UIImage(from: .themify, code: "stats.up", textColor: .green, backgroundColor: .clear, size: CGSize(width: 200, height: 100))
+                thumbnailImageView.image = UIImage(from: .themify, code: "stats.up", textColor: .green, backgroundColor: .clear, size: CGSize(width: 200, height: 100))
             } else {
                 thumbnailImageView.image = UIImage(from: .themify, code: "stats.down", textColor: .red, backgroundColor: .clear, size: CGSize(width: 200, height: 100))
             }
@@ -67,10 +67,10 @@ class CanvasViewController: KSBaseViewController {
             let ctrl = CanvasViewController.init()
             print("run pushView +++");
             /*
-            let kAppdelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-            let rotation : UIInterfaceOrientationMask = [.landscapeLeft, .landscapeRight]
-                    kAppdelegate?.blockRotation = rotation
-     */
+             let kAppdelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+             let rotation : UIInterfaceOrientationMask = [.landscapeLeft, .landscapeRight]
+             kAppdelegate?.blockRotation = rotation
+             */
             ctrl.update(market: "eth/btc")
             //self.pushViewController(ctrl: ctrl)
         }
@@ -121,7 +121,7 @@ class CanvasViewController: KSBaseViewController {
     //======================================================================
     /// 初始化数据和视图
     private func initializeCtrl() {
-        defaultValue()
+        //defaultValue()
         createChildViews()
     }
     
@@ -145,25 +145,24 @@ class CanvasViewController: KSBaseViewController {
     /// 创建子控件
     private func createChildViews() {
         /*
-        titleView                              = KSButton.init(textColor: KS_Const_Color_White,
-                                                               textFont: KS_Const_Font_Bold_18,
-                                                               alignment: NSTextAlignment.center,
-                                                               imgName: "ic_nav_triangle_white",
-                                                               imgIsLeft: false,
-                                                               offset: KS_Const_Point04,
-                                                               imgWidth: 12,
-                                                               imgHeight: 8)
-        titleView?.frame                       = CGRect.init(x: 0, y: 0, width: 150, height: 30)
-        self.navigationItem.titleView          = titleView
-        updateTitleView()
-        titleView?.addTarget(self, action: #selector(onNavTitleClick), for: UIControl.Event.touchUpInside)
-        
-        followBtn                              = UIButton.init(normalImage: "ic_desborad_follow_normal", selectedImage: "ic_desborad_follow_select")
-        followBtn.ks_addTarget(self, action: #selector(onFollowClick))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: followBtn!)
-        */
-        print("frame =",self.view.frame)
-        self.segmentedPager.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - self.ks_navigationHeight())
+         titleView                              = KSButton.init(textColor: KS_Const_Color_White,
+         textFont: KS_Const_Font_Bold_18,
+         alignment: NSTextAlignment.center,
+         imgName: "ic_nav_triangle_white",
+         imgIsLeft: false,
+         offset: KS_Const_Point04,
+         imgWidth: 12,
+         imgHeight: 8)
+         titleView?.frame                       = CGRect.init(x: 0, y: 0, width: 150, height: 30)
+         self.navigationItem.titleView          = titleView
+         updateTitleView()
+         titleView?.addTarget(self, action: #selector(onNavTitleClick), for: UIControl.Event.touchUpInside)
+         
+         followBtn                              = UIButton.init(normalImage: "ic_desborad_follow_normal", selectedImage: "ic_desborad_follow_select")
+         followBtn.ks_addTarget(self, action: #selector(onFollowClick))
+         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: followBtn!)
+         */
+        self.segmentedPager.frame = CGRect.init(x: 0, y: 94, width: self.view.frame.width, height: self.view.frame.height - self.ks_navigationHeight())
         self.view.addSubview(self.segmentedPager)
         defaultTai()
         
@@ -287,6 +286,7 @@ class CanvasViewController: KSBaseViewController {
                     info.volume = json[5].stringValue// 成交量
                     candles.append(info)
                 }
+                candles = candles.reversed()
                 self.headerChartView.chartView.klineData.removeAll()
                 self.headerChartView.chartView.resetChart(datas: candles)
                 self.configure.isSwitch = false
@@ -299,43 +299,62 @@ class CanvasViewController: KSBaseViewController {
     
     func readLocalFile() {
         //读取ajax
-       
+        
         func ks_toTimeStamp2(timeStamp: Double) ->Int {
             let k = NSDate.init(timeIntervalSince1970: timeStamp / 1000)
             let formatter = DateFormatter.init()
-            formatter.dateFormat = "YYYY-MM-dd"
+            formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
             let y = formatter.string(from: k as Date)
-            KS_Date_Formatter.dateFormat = "YY-MM-dd"
+            KS_Date_Formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
             let last = KS_Date_Formatter.date(from: y)
             let timeStamp = last?.timeIntervalSince1970
             return Int(timeStamp!)
         }
+        
         if(watch != nil) {
+            
             HTTP.GET("http://easytrade007.com:8080/api/v1/marketdata/\(watch!.stock)/pricehistory/",parameters: ["periodType":"day","period":"30"],headers: ["Authorization":getUserInfo(type: "Authorization")]) {
-            response in
-            if let err = response.error {
-                print("error \(err.localizedDescription)")
-                return
+                response in
+                if let err = response.error {
+                    print("error \(err.localizedDescription)")
+                    return
+                }
+                let fileData = KSFileMgr.readLocalData(fileName: "pingan", type: "txt")
+                let response   = JSON(fileData!)
+                
+                /*let response = JSON(response.data)
+                var candles: [KSChartItem] = [KSChartItem]()
+                for json in response.arrayValue {
+                    let info    = KSChartItem()
+                    info.time   = ks_toTimeStamp2(timeStamp: Double(json["datetime"].intValue))// 开盘时间
+                    info.open   = json["open"].stringValue// 开盘价
+                    info.high   = json["high"].stringValue// 最高价
+                    info.low    = json["low"].stringValue// 最低价
+                    info.close  = json["close"].stringValue// 收盘价(当前K线未结束的即为最新价)
+                    info.volume = json["volume"].stringValue// 成交量
+                    candles.append(info)
+                }
+                */
+                let jsons    = JSON(fileData!)
+                var candles: [KSChartItem] = [KSChartItem]()
+                for json in jsons["hq"].arrayValue {
+                    let info    = KSChartItem()
+                    info.time   = Date.ks_toTimeStamp(time: json[0].stringValue, format: "YY-MM-dd")// 开盘时间
+                    info.open   = json[1].stringValue// 开盘价
+                    info.high   = json[6].stringValue// 最高价
+                    info.low    = json[5].stringValue// 最低价
+                    info.close  = json[2].stringValue// 收盘价(当前K线未结束的即为最新价)
+                    info.volume = json[7].stringValue// 成交量
+                    candles.append(info)
+                }
+                candles = candles.reversed()
+                self.headerChartView.chartView.klineData.removeAll()
+                self.headerChartView.chartView.resetChart(datas: candles)
+                self.configure.isSwitch = false
+                self.headerChartView.resetDrawChart(isAll: true)
             }
-            let response = JSON(response.data)
-                print("easytrade007 =", response.arrayValue.count)
-            var candles: [KSChartItem] = [KSChartItem]()
-            for json in response.arrayValue {
-                let info    = KSChartItem()
-                info.time   = ks_toTimeStamp2(timeStamp: Double(json["datetime"].intValue))// 开盘时间
-                info.open   = json["open"].stringValue// 开盘价
-                info.high   = json["high"].stringValue// 最高价
-                info.low    = json["low"].stringValue// 最低价
-                info.close  = json["close"].stringValue// 收盘价(当前K线未结束的即为最新价)
-                info.volume = json["volume"].stringValue// 成交量
-                candles.append(info)
+            
         }
-            self.headerChartView.chartView.klineData.removeAll()
-            self.headerChartView.chartView.resetChart(datas: candles)
-            self.configure.isSwitch = false
-            self.headerChartView.resetDrawChart(isAll: true)
-        }
-    }
     }
     
     //======================================================================

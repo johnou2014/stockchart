@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftUI
+
 class KSHeaderChartView: KSBaseView {
     
     var timeConfigure: KSTimeMenuConfigure!

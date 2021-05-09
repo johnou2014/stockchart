@@ -31,6 +31,8 @@
 		CE78955F26402FE800AEE4C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE78955E26402FE800AEE4C8 /* Localizable.strings */; };
 		CE8E4A0F25D6AED5007B11A2 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */; };
 		CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */; };
+		CE9D671326457DEB0061F648 /* pingan.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE9D671226457DEB0061F648 /* pingan.txt */; };
+		CEC6802E2642D23F001779B7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC6802D2642D23F001779B7 /* LoadingView.swift */; };
 		CEDBC7BA25FC531C00FD8067 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBC7B925FC531C00FD8067 /* CanvasViewController.swift */; };
 		CEE88AB625E9F4B100F2CD1A /* KSLineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE88AB525E9F4B100F2CD1A /* KSLineChartCell.swift */; };
 		CEE88B3C25E9F60D00F2CD1A /* KSChartConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE88AD025E9F60C00F2CD1A /* KSChartConfigure.swift */; };
@@ -151,6 +153,8 @@
 		CE7BD37C25F4FA6600B937D6 /* watchlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = watchlist.json; sourceTree = "<group>"; };
 		CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CE9D671226457DEB0061F648 /* pingan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pingan.txt; sourceTree = "<group>"; };
+		CEC6802D2642D23F001779B7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CEDBC7B925FC531C00FD8067 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		CEE88AB525E9F4B100F2CD1A /* KSLineChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSLineChartCell.swift; sourceTree = "<group>"; };
 		CEE88AD025E9F60C00F2CD1A /* KSChartConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSChartConfigure.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 		CE6E6C8D25CE450900A4C892 /* stockchart */ = {
 			isa = PBXGroup;
 			children = (
+				CEC6802C2642D220001779B7 /* Loading */,
 				CE78955C26402F0D00AEE4C8 /* Resources */,
 				CE74FCC02625DB4F00E72009 /* Login */,
 				CE7487B0261B3D1800F0C711 /* AlarmTableView */,
@@ -370,6 +375,7 @@
 		CE78955C26402F0D00AEE4C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE9D671126457D600061F648 /* Files */,
 				CE78955D26402FB600AEE4C8 /* Localizable */,
 			);
 			path = Resources;
@@ -389,6 +395,22 @@
 				CE7BD37C25F4FA6600B937D6 /* watchlist.json */,
 			);
 			path = staticResources;
+			sourceTree = "<group>";
+		};
+		CE9D671126457D600061F648 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE9D671226457DEB0061F648 /* pingan.txt */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		CEC6802C2642D220001779B7 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				CEC6802D2642D23F001779B7 /* LoadingView.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		CEE88AB025E9F43500F2CD1A /* chart */ = {
@@ -936,6 +958,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6E6C9825CE450C00A4C892 /* Assets.xcassets in Resources */,
+				CE9D671326457DEB0061F648 /* pingan.txt in Resources */,
 				CE78955F26402FE800AEE4C8 /* Localizable.strings in Resources */,
 				CE6E6C9625CE450900A4C892 /* Main.storyboard in Resources */,
 			);
@@ -1012,6 +1035,7 @@
 				CE75675D261F392C00131DAF /* AlertsCell.swift in Sources */,
 				CEE88B4425E9F60D00F2CD1A /* KSPageButton.swift in Sources */,
 				CEE88B9E25E9FAA000F2CD1A /* KSTimeChartModel.swift in Sources */,
+				CEC6802E2642D23F001779B7 /* LoadingView.swift in Sources */,
 				CE7654AB2610842A000A4599 /* SearchViewListController.swift in Sources */,
 				CEE88BBD25E9FB0700F2CD1A /* KSAxisModel.swift in Sources */,
 				CEE88B7325E9F60D00F2CD1A /* KSTransactionBarView.swift in Sources */,

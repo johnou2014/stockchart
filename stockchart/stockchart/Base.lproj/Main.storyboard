@@ -263,7 +263,7 @@
         <!--Chart-->
         <scene sceneID="hJx-jI-S3T">
             <objects>
-                <viewController id="iRz-XV-Wnf" customClass="ChartViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iRz-XV-Wnf" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O3s-ke-MUC"/>
                         <viewControllerLayoutGuide type="bottom" id="qpL-0C-7l7"/>

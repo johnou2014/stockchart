@@ -531,6 +531,7 @@ extension KSKLineChartView {
                 self.updateYAxisTitle(section)
             }
             let showXAxisSection = self.getSecionWhichShowXAxis()
+            print("x 轴时间",showXAxisSection)
             //显示在分区下面绘制X轴坐标[底部时间]
             self.topLayer.drawXAxisLabel(showXAxisSection, xAxisToDraw: xAxisToDraw, style: self.style)
             //重新显示点击选中的坐标
@@ -1265,7 +1266,15 @@ extension KSKLineChartView {
             self.gridLayer.addSublayer(section.titleLayer)//[绘制最顶部价格/指标值等数据]
         }
     }
-
+    func afterTwoDecimals(value: CGFloat) -> CGFloat {
+       let str = String.init(format:"%.2f", value)
+        let string = str
+       var cgFloat:CGFloat = 0
+       if let doubleValue = Double(string) {
+        cgFloat = CGFloat(doubleValue)
+      }
+     return cgFloat
+    }
     func updateYAxisTitle(_ section: KSSection) {
         if self.style.showYAxisLabel == .none {
             return
@@ -1284,7 +1293,10 @@ extension KSKLineChartView {
             else {
                 labelText = (section.yAxis.max - interval * CGFloat(i))
             }
+            labelText = afterTwoDecimals(value: labelText)
+            print("labelText y =",labelText)
             let yAxisLabel    = section.yAxisTitles[i]
+             
             yAxisLabel.string = self.delegate?.ksLineChart?(self, rowTitleInSection: section, titleValue: labelText)
         }
     }

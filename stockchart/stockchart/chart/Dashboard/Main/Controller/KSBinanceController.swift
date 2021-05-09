@@ -290,6 +290,15 @@ class KSBinanceController: KSBaseViewController {
     }
     
     func readLocalFile() {
+        socket?.activeClose()
+        NotificationCenter.default.removeObserver(self)
+        print("run ++++++++++ ws ")
+        let server       = "ws://easytrade007.com:8080/ws/foobar?subscribe-broadcast&publish-broadcast&echo"
+        socket           = KSWebSocket.init()
+        //socket?.configureServer(KSSingleton.shared.server.socketServer, isAutoConnect: true)
+        socket?.configureServer(server, isAutoConnect: true)
+        socket?.delegate = self
+        socket?.startConnect()
         //读取ajax
        
         func ks_toTimeStamp2(timeStamp: Double) ->Int {
@@ -321,20 +330,13 @@ class KSBinanceController: KSBaseViewController {
                 info.volume = json["volume"].stringValue// 成交量
                 candles.append(info)
         }
+            candles = candles.reversed()
             self.headerChartView.chartView.klineData.removeAll()
             self.headerChartView.chartView.resetChart(datas: candles)
             self.configure.isSwitch = false
             self.headerChartView.resetDrawChart(isAll: true)
         }
-        socket?.activeClose()
-        NotificationCenter.default.removeObserver(self)
-        print("run ++++++++++ ws ")
-        let server       = "ws://easytrade007.com:8080/ws/foobar?subscribe-broadcast&publish-broadcast&echo"
-        socket           = KSWebSocket.init()
-        //socket?.configureServer(KSSingleton.shared.server.socketServer, isAutoConnect: true)
-        socket?.configureServer(server, isAutoConnect: true)
-        socket?.delegate = self
-        socket?.startConnect()
+       
         print("end+++++++++")
     }
     

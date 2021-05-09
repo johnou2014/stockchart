@@ -9,7 +9,7 @@
 import UIKit
 
 class KSChartConfigure: NSObject {
-    var dateFormat:String = "yyyy-MM-dd"
+    var dateFormat:String = "MM-DD HH:mm:ss"
     var decimal:Int       = 8
 }
 

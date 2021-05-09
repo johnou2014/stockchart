@@ -14,15 +14,31 @@ struct DelUserInfo: Encodable {
 }
 class WatchViewController: UITableViewController,UISearchControllerDelegate,UISearchBarDelegate {
     var watchs = [Watch]()
+    var loading: Bool = false
     let searchController = UISearchController(searchResultsController:nil)
     let identifier: String = "tableCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         loadDataFromAPI()
         setUpSearchBar()
+        openLoadingView()
     }
-    
+    func openLoadingView() {
+        let loadingView: LoadingView = LoadingView(frame: CGRect(x: self.view.frame.size.width/2-50, y: self.view.frame.size.height/2-50, width: 100, height: 100))
+        loadingView.backgroundColor = UIColor(displayP3Red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 0.3)
+        self.view.addSubview(loadingView)
+    }
+    func closeLoadingView() {
+        self.view.subviews.forEach {
+            (view) -> () in
+            if(view is LoadingView) {
+                view.removeFromSuperview()
+            }
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "watchDetail",
            let indexPath = tableView?.indexPathForSelectedRow,
@@ -65,6 +81,7 @@ extension WatchViewController {
         }
     }
     @IBAction func pushController() {
+        print("push Controller ===")
         let vc = SearchViewListController()
         vc.watchs = watchs
         self.navigationController?.pushViewController(vc, animated: true)
@@ -73,7 +90,10 @@ extension WatchViewController {
 extension WatchViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return watchs.count
+            self.tableView.separatorStyle = .singleLine
+            self.tableView.backgroundView = nil
+            return watchs.count
+            //self.tableView.separatorStyle = .none
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,7 +128,8 @@ extension WatchViewController {
                 print("error \(err.localizedDescription)")
                 return
             }
-            let json = JSON(response.data)
+            let json = JSON(response.data as Any)
+            print("delete json =",json)
             if (response.data != nil) {
                 self.presentAlertController(withTitle: "删除失败！")
             } else {
@@ -124,13 +145,20 @@ extension WatchViewController {
                 print("error \(err.localizedDescription)")
                 return
             }
-            let json = JSON(response.data)
+            let response = JSON(response.data as Any)
+            print("response =",response)
             var candles: [Watch] = [Watch]()
-            for json in json.arrayValue {
+            for json in response.arrayValue {
                 let info = Watch(pk: json["pk"].intValue, user: json["user"].stringValue, stock: json["stock"].stringValue, stock_name: json["stock_name"].stringValue, user_id: json["user_id"].intValue, stock_id: json["stock_id"].intValue)
                 candles.append(info)
             }
-            self.watchs = candles
+          
+            if candles.count == 0 {
+                self.watchs = [Watch(pk: 0, user: "", stock: "", stock_name: "None Of Stock", user_id: 0, stock_id: 0)]
+            } else {
+                self.watchs = candles
+            }
+            self.closeLoadingView()
             self.setupUI()
             print("刷新成功！")
         }
