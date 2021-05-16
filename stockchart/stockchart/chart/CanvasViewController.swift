@@ -16,7 +16,7 @@ import Alamofire
 //======================================================================
 import Foundation
 
-
+var timePickerDic:[String: Dictionary<String,String>] = ["5m":["periodType":"5m"],"1m":["periodType":"5m"],"1d":["periodType":"day","period":"90"]]
 class CanvasViewController: KSBaseViewController {
     @IBOutlet private var pkLabel: UILabel!
     @IBOutlet private var userLabel:UILabel!
@@ -270,7 +270,8 @@ class CanvasViewController: KSBaseViewController {
         if isReset {
             self.resetKit()
         }
-        
+        self.readLocalFile()
+        return;
         ASNetManager.request(url: "https://api.binance.com/api/v1/klines?symbol=\(self.configure.symbol.uppercased())&interval=1m", parameters: nil, success: { (result: Any?) in
             if let _result = result {
                 let jsons = JSON(_result)
@@ -299,52 +300,36 @@ class CanvasViewController: KSBaseViewController {
     
     func readLocalFile() {
         //读取ajax
-        
-        func ks_toTimeStamp2(timeStamp: Double) ->Int {
-            let k = NSDate.init(timeIntervalSince1970: timeStamp / 1000)
-            let formatter = DateFormatter.init()
-            formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-            let y = formatter.string(from: k as Date)
-            KS_Date_Formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
-            let last = KS_Date_Formatter.date(from: y)
-            let timeStamp = last?.timeIntervalSince1970
-            return Int(timeStamp!)
-        }
-        
         if(watch != nil) {
-            
-            HTTP.GET("http://easytrade007.com:8080/api/v1/marketdata/\(watch!.stock)/pricehistory/",parameters: ["periodType":"day","period":"30"],headers: ["Authorization":getUserInfo(type: "Authorization")]) {
+            print("readLocalFile = configure =", configure.kline)
+            let parameters = (timePickerDic[configure.kline] != nil) ? timePickerDic[configure.kline] : nil
+            if((parameters == nil)) {
+                print("parameters not found")
+                return
+            }
+            print("parameters =", parameters!)
+            HTTP.GET("http://easytrade007.com:8080/api/v1/marketdata/\(watch!.stock)/pricehistory/",parameters: parameters!
+                        //["periodType":"day","period":"90"]
+                     ,headers: ["Authorization":getUserInfo(type: "Authorization")]) {
                 response in
                 if let err = response.error {
                     print("error \(err.localizedDescription)")
                     return
                 }
-                let fileData = KSFileMgr.readLocalData(fileName: "pingan", type: "txt")
-                let response   = JSON(fileData!)
+                //let fileData = KSFileMgr.readLocalData(fileName: "pingan", type: "txt")
+                //let response   = JSON(fileData!)
                 
-                /*let response = JSON(response.data)
+                let response = JSON(response.data)
+                //print("response =",response)
                 var candles: [KSChartItem] = [KSChartItem]()
                 for json in response.arrayValue {
                     let info    = KSChartItem()
-                    info.time   = ks_toTimeStamp2(timeStamp: Double(json["datetime"].intValue))// 开盘时间
+                    info.time   = json["datetime"].intValue/1000 // 开盘时间
                     info.open   = json["open"].stringValue// 开盘价
                     info.high   = json["high"].stringValue// 最高价
                     info.low    = json["low"].stringValue// 最低价
                     info.close  = json["close"].stringValue// 收盘价(当前K线未结束的即为最新价)
                     info.volume = json["volume"].stringValue// 成交量
-                    candles.append(info)
-                }
-                */
-                let jsons    = JSON(fileData!)
-                var candles: [KSChartItem] = [KSChartItem]()
-                for json in jsons["hq"].arrayValue {
-                    let info    = KSChartItem()
-                    info.time   = Date.ks_toTimeStamp(time: json[0].stringValue, format: "YY-MM-dd")// 开盘时间
-                    info.open   = json[1].stringValue// 开盘价
-                    info.high   = json[6].stringValue// 最高价
-                    info.low    = json[5].stringValue// 最低价
-                    info.close  = json[2].stringValue// 收盘价(当前K线未结束的即为最新价)
-                    info.volume = json[7].stringValue// 成交量
                     candles.append(info)
                 }
                 candles = candles.reversed()
@@ -498,6 +483,14 @@ extension CanvasViewController: KSViewDelegate {
     func ksviewCallback(view: UIView, data: Any?, identifier: String?) {
         ///k线切换
         if identifier == "KSTimePickerView" {
+            if let _data = data as? KSChartMenuInfo {
+                print("_data.identifier =",_data.identifier)
+                self.unSubscriptionKline(symbol: configure.symbol, kline: _data.identifier)
+                subscriptionKline()
+            }
+            //self.readLocalFile()
+            //self.headerChartView.resetDrawChart(isAll: true)
+            /*
             if self.isLocal {
                 self.headerChartView.resetDrawChart(isAll: true)
             }
@@ -507,7 +500,7 @@ extension CanvasViewController: KSViewDelegate {
                     self.unSubscriptionKline(symbol: configure.symbol, kline: _data.identifier)
                     subscriptionKline()
                 }
-            }
+            } */
         }
         else if identifier == "KSMenuBarView" {
             let index = data as! Int

@@ -58,7 +58,7 @@ class KSIndexConfigure: NSObject {
             self.timeID = 11
         }
     }
-    
+    /* //origin
     lazy var timeDict:[Int:(String,String,Int)] = {
         let timeDict = [1:("1m","ks_app_global_text_line",60),
                         2:("1m","ks_app_global_text_1m",60),
@@ -72,6 +72,12 @@ class KSIndexConfigure: NSObject {
                         10:("12h","ks_app_global_text_12h",60*720),
                         11:("1d","ks_app_global_text_1d",60*1440),
                         12:("1w","ks_app_global_text_1w",60*10080)]
+        return timeDict
+    }() */
+    lazy var timeDict:[Int:(String,String,Int)] = {
+        let timeDict = [1:("1m","ks_app_global_text_line",60),
+                        2:("5m","ks_app_global_text_5m",60*5),
+                        3:("1d","ks_app_global_text_1d",60*1440)]
         return timeDict
     }()
 }

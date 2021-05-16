@@ -103,9 +103,11 @@ extension KSChartFuncsView {
         if  assistTai == KSSeriesKey.volume {
             assistTai = ""
         }
+        //注释掉indicator
+        /*
         if masterTai.isEmpty && assistTai.isEmpty {
             taiBtn.update(text: "ks_app_global_text_indicator",isCenter: false)
-        }
+        } */
         else if masterTai.isEmpty == false && assistTai.isEmpty == false {
             taiBtn.update(text: masterTai + "-" + assistTai,isCenter: false)
         }

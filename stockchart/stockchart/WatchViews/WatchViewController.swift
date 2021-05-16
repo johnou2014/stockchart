@@ -12,13 +12,15 @@ struct DelUserInfo: Encodable {
     let username: String
     let symbol: String
 }
+
 class WatchViewController: UITableViewController,UISearchControllerDelegate,UISearchBarDelegate {
     var watchs = [Watch]()
     var loading: Bool = false
     let searchController = UISearchController(searchResultsController:nil)
     let identifier: String = "tableCell"
-    
+    //static var watchViewController = WatchViewController()
     override func viewDidLoad() {
+        print("run didload=")
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -140,6 +142,8 @@ extension WatchViewController {
     }
     // MARK: -链式请求
     @objc func loadDataFromAPI() {
+        self.watchs = [Watch]()
+        tableView.reloadData()
         AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":getUserInfo(type: "username")],headers:headers).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")

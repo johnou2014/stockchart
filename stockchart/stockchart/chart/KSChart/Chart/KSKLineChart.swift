@@ -1294,7 +1294,6 @@ extension KSKLineChartView {
                 labelText = (section.yAxis.max - interval * CGFloat(i))
             }
             labelText = afterTwoDecimals(value: labelText)
-            print("labelText y =",labelText)
             let yAxisLabel    = section.yAxisTitles[i]
              
             yAxisLabel.string = self.delegate?.ksLineChart?(self, rowTitleInSection: section, titleValue: labelText)

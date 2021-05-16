@@ -79,10 +79,9 @@ extension SearchViewListController {
         let symbol = searchs[indexPath.row].symbol
         for watch in watchs {
             if watch.stock == symbol {
-                presentAlertController(withTitle: "已经存在你选择的\(searchs[indexPath.row].name)股票了")
+                presentAlertController(withTitle: "The \(searchs[indexPath.row].name)stock you selected already exists")
                 return
             }
-            print("watch =", watch)
         }
         addUserStock(symbol: symbol)
     }
@@ -110,6 +109,8 @@ extension SearchViewListController {
                 self.presentAlertController(withTitle: "添加成功！")
             }
             self.navigationController?.popToRootViewController(animated: true)
+           // MARK:- Todo 刷新列表
+            //WatchViewController.watchViewController.viewDidLoad()
         }
     }
     

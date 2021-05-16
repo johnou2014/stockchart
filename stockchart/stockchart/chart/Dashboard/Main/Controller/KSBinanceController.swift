@@ -264,6 +264,7 @@ class KSBinanceController: KSBaseViewController {
         if isReset {
             self.resetKit()
         }
+        return
         ASNetManager.request(url: "https://api.binance.com/api/v1/klines?symbol=\(self.configure.symbol.uppercased())&interval=1m", parameters: nil, success: { (result: Any?) in
             if let _result = result {
                 let jsons = JSON(_result)

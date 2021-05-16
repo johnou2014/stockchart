@@ -70,6 +70,7 @@ extension KSTimePickerView: UICollectionViewDelegate, UICollectionViewDataSource
         item.isSelectd                           = true
         KSSingleton.shared.indexConfigure.timeID = item.ID
         self.delegate?.timePickerViewCallback?(timePickerView: self, value: item)
+        print(self, "value =",item,item.ID)
         collectionView.reloadData()
     }
 }
@@ -82,7 +83,7 @@ class KSTimeMenuConfigure: NSObject {
     class func defaultConfigure() -> KSTimeMenuConfigure {
         let configure      = KSTimeMenuConfigure.init()
         let timeID         = KSSingleton.shared.indexConfigure.timeID
-        for i in 1...12 {
+        for i in 1...3 {
             let dict = KSSingleton.shared.indexConfigure.timeDict
             let info          = KSChartMenuInfo.init()
             info.identifier   = dict[i]?.0 ?? ""
