@@ -45,7 +45,7 @@ class KSIndexConfigure: NSObject {
     
     var chartType: String {
         get {
-            return timeDict[timeID]?.0 ?? "1d"
+            return timeDict[timeID]?.0 ?? "5m"
         }
     }
     
@@ -55,7 +55,7 @@ class KSIndexConfigure: NSObject {
         self.assistTai = KSIndexConfigure.readString(key: KSUserDefault.assist) ?? KSSeriesKey.volume
         self.timeID    = KSIndexConfigure.readInt(key: KSUserDefault.time)
         if self.timeID == 0 {
-            self.timeID = 11
+            self.timeID = 3
         }
     }
     /* //origin
