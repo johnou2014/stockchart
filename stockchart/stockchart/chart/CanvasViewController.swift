@@ -26,6 +26,7 @@ class CanvasViewController: KSBaseViewController {
     @IBOutlet private var stockIdLabel: UILabel!
     @IBOutlet private var thumbnailImageView: UIImageView!
     var watch: Watch?
+    var alert: Alert?
     //======================================================================
     // MARK: - 2、属性
     //======================================================================
@@ -60,19 +61,14 @@ class CanvasViewController: KSBaseViewController {
             } else {
                 thumbnailImageView.image = UIImage(from: .themify, code: "stats.down", textColor: .red, backgroundColor: .clear, size: CGSize(width: 200, height: 100))
             }
-            //let ctr = KSBinanceController.init()
-            //self.view.addSubview(ctr.view)
-            print("watch ===",watch.stock)
-            
             let ctrl = CanvasViewController.init()
-            print("run pushView +++");
-            /*
-             let kAppdelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
-             let rotation : UIInterfaceOrientationMask = [.landscapeLeft, .landscapeRight]
-             kAppdelegate?.blockRotation = rotation
-             */
             ctrl.update(market: "eth/btc")
-            //self.pushViewController(ctrl: ctrl)
+        }
+        if let alert = alert {
+            //pk: 3073, name: "MACD crossover up", symbol: "FB", create_time: 1605552300000.0
+            navigationItem.title = alert.name
+            let ctrl = CanvasViewController.init()
+            ctrl.update(market: "eth/btc")
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -271,37 +267,14 @@ class CanvasViewController: KSBaseViewController {
             self.resetKit()
         }
         self.readLocalFile()
-        return;
-        ASNetManager.request(url: "https://api.binance.com/api/v1/klines?symbol=\(self.configure.symbol.uppercased())&interval=1m", parameters: nil, success: { (result: Any?) in
-            if let _result = result {
-                let jsons = JSON(_result)
-                var candles: [KSChartItem] = [KSChartItem]()
-                for json in jsons.arrayValue {
-                    let info        = KSChartItem()
-                    info.time       = json[0].intValue/1000// 开盘时间
-                    //json["k"]["T"]// 这根K线的结束时间
-                    info.open   = json[1].stringValue// 开盘价
-                    info.high   = json[2].stringValue// 最高价
-                    info.low    = json[3].stringValue// 最低价
-                    info.close  = json[4].stringValue// 收盘价(当前K线未结束的即为最新价)
-                    info.volume = json[5].stringValue// 成交量
-                    candles.append(info)
-                }
-                candles = candles.reversed()
-                self.headerChartView.chartView.klineData.removeAll()
-                self.headerChartView.chartView.resetChart(datas: candles)
-                self.configure.isSwitch = false
-                self.headerChartView.resetDrawChart(isAll: true)
-            }
-        }) { (error: ASRequestError?) in
-            
+        if alert != nil {
+            KSIndexConfigure.writeInt(num: 2, key: "ks_key_timeID")
         }
     }
     
     func readLocalFile() {
         //读取ajax
         if(watch != nil) {
-            print("readLocalFile = configure =", configure.kline)
             let parameters = (timePickerDic[configure.kline] != nil) ? timePickerDic[configure.kline] : nil
             if((parameters == nil)) {
                 print("parameters not found")
@@ -339,6 +312,38 @@ class CanvasViewController: KSBaseViewController {
                 self.headerChartView.resetDrawChart(isAll: true)
             }
             
+        }
+        if alert != nil {
+            print("symbol =",alert!.symbol, "create_time",alert!.create_time)
+            HTTP.GET("http://easytrade007.com:8080/api/v1/marketdata/\(alert!.symbol)/pricehistory/",parameters:["periodType":"5m","endtime": alert!.create_time]
+                     ,headers: ["Authorization":getUserInfo(type: "Authorization")]) {
+                response in
+                if let err = response.error {
+                    print("error \(err.localizedDescription)")
+                    return
+                }
+                //let fileData = KSFileMgr.readLocalData(fileName: "pingan", type: "txt")
+                //let response   = JSON(fileData!)
+                
+                let response = JSON(response.data)
+                print("response ==",response)
+                var candles: [KSChartItem] = [KSChartItem]()
+                for json in response.arrayValue {
+                    let info    = KSChartItem()
+                    info.time   = json["datetime"].intValue/1000 // 开盘时间
+                    info.open   = json["open"].stringValue// 开盘价
+                    info.high   = json["high"].stringValue// 最高价
+                    info.low    = json["low"].stringValue// 最低价
+                    info.close  = json["close"].stringValue// 收盘价(当前K线未结束的即为最新价)
+                    info.volume = json["volume"].stringValue// 成交量
+                    candles.append(info)
+                }
+                candles = candles.reversed()
+                self.headerChartView.chartView.klineData.removeAll()
+                self.headerChartView.chartView.resetChart(datas: candles)
+                self.configure.isSwitch = false
+                self.headerChartView.resetDrawChart(isAll: true)
+            }
         }
     }
     

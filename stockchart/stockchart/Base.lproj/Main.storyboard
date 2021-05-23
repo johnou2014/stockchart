@@ -83,6 +83,25 @@
             </objects>
             <point key="canvasLocation" x="228" y="497"/>
         </scene>
+        <!--Canvas View Controller-->
+        <scene sceneID="Vkj-KU-Gcu">
+            <objects>
+                <viewController id="uz0-g3-B4F" customClass="CanvasViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mUj-xu-F81"/>
+                        <viewControllerLayoutGuide type="bottom" id="hDS-cx-kzf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gSY-CZ-fqK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ouG-yL-bxV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L0h-PY-7ej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786" y="-240"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="DIB-f5-UN8">
             <objects>
@@ -196,6 +215,7 @@
                                     <outlet property="alertCreateTime" destination="XP8-LW-DkS" id="wUc-Ik-wEL"/>
                                     <outlet property="alertName" destination="D43-gp-qDJ" id="EFB-71-f07"/>
                                     <outlet property="alertSymbol" destination="2nu-fJ-L6S" id="LUH-zt-2Zf"/>
+                                    <segue destination="uz0-g3-B4F" kind="show" identifier="alertDetail" id="aKC-zG-giH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -237,7 +257,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hC-Iu-GaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-922" y="-250"/>
+            <point key="canvasLocation" x="-1009" y="-251"/>
         </scene>
         <!--Watch list-->
         <scene sceneID="eYn-qQ-ab7">

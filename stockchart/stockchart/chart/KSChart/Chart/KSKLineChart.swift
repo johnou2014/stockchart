@@ -531,7 +531,6 @@ extension KSKLineChartView {
                 self.updateYAxisTitle(section)
             }
             let showXAxisSection = self.getSecionWhichShowXAxis()
-            print("x 轴时间",showXAxisSection)
             //显示在分区下面绘制X轴坐标[底部时间]
             self.topLayer.drawXAxisLabel(showXAxisSection, xAxisToDraw: xAxisToDraw, style: self.style)
             //重新显示点击选中的坐标

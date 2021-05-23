@@ -89,8 +89,25 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
+    /// This struct is generated for `AlertsViewController`, and contains static references to 1 segues.
+    struct alertsViewController {
+      /// Segue identifier `alertDetail`.
+      static let alertDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, AlertsViewController, CanvasViewController> = Rswift.StoryboardSegueIdentifier(identifier: "alertDetail")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `alertDetail`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func alertDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, AlertsViewController, CanvasViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.alertsViewController.alertDetail, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This struct is generated for `WatchViewController`, and contains static references to 1 segues.
     struct watchViewController {
       /// Segue identifier `watchDetail`.

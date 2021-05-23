@@ -41,8 +41,10 @@ class AlertsViewController: UITableViewController,UISearchControllerDelegate,UIS
         print("视图已经显示")
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "alertDetail" {
-            
+        if segue.identifier == "alertDetail",
+           let indexPath = tableView?.indexPathForSelectedRow,
+           let destinationViewController: CanvasViewController = segue.destination as? CanvasViewController {
+            destinationViewController.alert = alerts[indexPath.row]
         }
     }
 }
@@ -52,7 +54,7 @@ extension AlertsViewController:UISearchResultsUpdating {
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search Alert List"
         searchController.hidesNavigationBarDuringPresentation = true
-        navigationItem.searchController = searchController
+        //navigationItem.searchController = searchController
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchedText = searchController.searchBar.text else { return }
