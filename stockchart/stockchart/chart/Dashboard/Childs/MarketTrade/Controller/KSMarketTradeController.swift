@@ -88,7 +88,7 @@ class KSMarketTradeController: KSDashboardChildController {
                                               widthScales: [0.23,0.13,0.32,0.32],
                                               margin: KS_Const_Point16,
                                               padding: KS_Const_Point04)
-        headerView.frame = CGRect.init(x: 0, y: 0, width: self.ks_screenWidth(), height: KS_Const_Point40)
+        headerView.frame = CGRect.init(x: 0, y: 0, width: self.ks_screenWidth(), height: 0)
         updateHeader()
         
         headerView.backgroundColor = KS_Const_Color_White

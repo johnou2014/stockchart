@@ -245,8 +245,6 @@ class KSBinanceController: KSBaseViewController {
     }
     
     private func resetKit() {
-        orderBookCtrl.resetKit()
-        marketTradeCtrl.resetKit()
         self.headerChartView.resetKit()
     }
     
@@ -346,9 +344,6 @@ class KSBinanceController: KSBaseViewController {
     //======================================================================
     lazy var segmentedPager: MXSegmentedPager = {
         let segmentedPager        = MXSegmentedPager.init()
-        segmentedPager.delegate   = self
-        segmentedPager.dataSource = self
-        
         // Parallax Header
         segmentedPager.parallaxHeader.view                          = self.headerChartView
         segmentedPager.parallaxHeader.mode                          = MXParallaxHeaderMode.bottom
@@ -381,34 +376,6 @@ class KSBinanceController: KSBaseViewController {
         return headerChartView
     }()
     
-    lazy var orderBookCtrl: KSOrderBookController = {
-        let orderBookCtrl       = KSOrderBookController.init()
-        orderBookCtrl.configure = KSDashboardChildConfigure.init(bid: self.configure.bid_currency, ask: self.configure.ask_currency)
-        orderBookCtrl.title     = String.ks_localizde("ks_app_global_text_orderbook")
-        orderBookCtrl.isBar     = isBar
-        return orderBookCtrl
-    }()
-    
-    lazy var marketTradeCtrl: KSMarketTradeController = {
-        let marketTradeCtrl       = KSMarketTradeController.init()
-        marketTradeCtrl.configure = KSDashboardChildConfigure.init(bid: self.configure.bid_currency, ask: self.configure.ask_currency)
-        marketTradeCtrl.title     = String.ks_localizde("ks_app_global_text_market_trade")
-        marketTradeCtrl.isBar     = isBar
-        return marketTradeCtrl
-    }()
-    
-    lazy var infoCtrl: KSMarketTradeController = {
-        let infoCtrl       = KSMarketTradeController.init()
-        infoCtrl.configure = KSDashboardChildConfigure.init(bid: self.configure.bid_currency, ask: self.configure.ask_currency)
-        infoCtrl.title     = String.ks_localizde("ks_app_global_text_info")
-        infoCtrl.isBar     = isBar
-        return infoCtrl
-    }()
-    
-    lazy var childCtrls: [UIViewController] = {
-        let childCtrls = [orderBookCtrl,marketTradeCtrl,infoCtrl]
-        return childCtrls
-    }()
     
     lazy var configure: KSDashboardConfigure = {
         let configure          = KSDashboardConfigure.init()
@@ -424,37 +391,6 @@ class KSBinanceController: KSBaseViewController {
     
 }
 
-extension KSBinanceController: MXSegmentedPagerDelegate, MXSegmentedPagerDataSource {
-    // MARK: - MXSegmentedPagerDataSource
-    func numberOfPages(in segmentedPager: MXSegmentedPager) -> Int {
-        return self.childCtrls.count
-    }
-    
-    func segmentedPager(_ segmentedPager: MXSegmentedPager, viewForPageAt index: Int) -> UIView {
-        return self.childCtrls[index].view
-    }
-    
-    func segmentedPager(_ segmentedPager: MXSegmentedPager, titleForSectionAt index: Int) -> String {
-        return self.childCtrls[index].title ?? ""
-    }
-    
-    // MARK: - MXSegmentedPagerDelegate
-    func heightForSegmentedControl(in segmentedPager: MXSegmentedPager) -> CGFloat {
-        return 40
-    }
-    
-    func segmentedPager(_ segmentedPager: MXSegmentedPager, didSelectViewWith index: Int) {
-        configure.pagerIndex = index
-        if index == 0 {
-            orderBookCtrl.reloadData()
-        }
-        else if index == 1 {
-            marketTradeCtrl.reloadData()
-        }
-        hideIndexMenu()
-        //self.headerChartView.menuBarView.updateSelected(index: index)
-    }
-}
 
 // MARK: - Socket
 extension KSBinanceController: KSWebSocketDelegate {
@@ -540,15 +476,7 @@ extension KSBinanceController {
     }
     
     ///处理深度
-    private func handleDepth(message: JSON) {
-        let msg = KSOrderBookInfo.formatMessage(json: message)
-        self.orderBookCtrl.update(orders: msg, configure: configure)
-    }
-    
-    private func handleDetail(message: JSON) {
-        let msg = KSTradeDetail.formatTradeMessage(json: message)
-        marketTradeCtrl.update(details: msg, configure: self.configure)
-    }
+  
 }
 
 // MARK: - 发送消息

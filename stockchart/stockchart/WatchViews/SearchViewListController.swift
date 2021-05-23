@@ -94,7 +94,6 @@ extension SearchViewListController {
     }
    
     func addUserStock(symbol: String) {
-        self.navigationController?.popToRootViewController(animated: true)
         let addStockInfo = AddStockInfo(username: getUserInfo(type: "username"), symbol: symbol)
         print("addStockInfo =",addStockInfo)
         AF.request("http://easytrade007.com:8080/api/v1/addUserStock/", method: .post, parameters: addStockInfo,encoder: JSONParameterEncoder.default,headers: headers).validate().responseJSON { response in
@@ -102,15 +101,27 @@ extension SearchViewListController {
                 print("error \(err.localizedDescription)")
                 return
             }
-            let json = JSON(response.data)
-            if (response.data != nil) {
-                self.presentAlertController(withTitle: "添加失败！")
+            let json = JSON(response.data) as Any
+            print("addStockInfo reponse =",json)
+            if (response.data == nil) {
+                self.presentAlertController(withTitle: "add stock failed！")
+                return
             } else {
-                self.presentAlertController(withTitle: "添加成功！")
+                //self.navigationController?.popViewController(animated: true)
+               
+                self.navigationController?.popViewController(animated: true)
+                let time: TimeInterval = 2.0
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + time) {
+                    //code
+                    print("back to watchviewController")
+                    WatchViewController.watchViewController.watchs = [Watch]()
+                    WatchViewController.watchViewController.loadDataFromAPI()
+                }
+                
             }
-            self.navigationController?.popToRootViewController(animated: true)
+           
            // MARK:- Todo 刷新列表
-            //WatchViewController.watchViewController.viewDidLoad()
+            //WatchViewController.watchViewController.loadDataFromAPI()
         }
     }
     

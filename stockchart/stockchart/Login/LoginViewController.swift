@@ -24,23 +24,23 @@ func getUserInfo(type: String) -> String {
     let exist = fileManager.fileExists(atPath: filePath)
     if(exist) {
         //存在文件
-        print("读取文件=",exist)
+        //print("读取文件=",exist)
         //读文件
         let _manager = FileManager.default
         let urlsForDocDirectory = _manager.urls(for: .documentDirectory, in:.userDomainMask)
         let docPath = urlsForDocDirectory[0]
         let file = docPath.appendingPathComponent("local_data_source_file.json")
-        print(file)
+        //print(file)
         
         //读取本地的文件
         
         let readHandler = try! FileHandle(forReadingFrom:file)
         let data = readHandler.readDataToEndOfFile()
         let readString = String(data: data, encoding: String.Encoding.utf8)!
-        print(JSON(readString))
+        //print(JSON(readString))
         if let dataFromString = readString.data(using: .utf8, allowLossyConversion: false) {
             let json = try! JSON(data: dataFromString)
-            print("json =", json[type].stringValue)
+            //print("json =", json[type].stringValue)
             return json[type].stringValue
         }
     }
@@ -76,23 +76,23 @@ class LoginViewController: UIViewController {
             self.dialogMessage(str: "请填写完整")
             return
         }
-        print("username =",username,"password =",password)
+        //print("username =",username,"password =",password)
         
         AF.request("http://easytrade007.com:8080/api/v1/checkUser/", method: .post,parameters: ["username":username,"password":password], encoder: JSONParameterEncoder.default).validate().responseJSON { response in
-            print("response =",response)
+            //print("response =",response)
             if let err = response.error {
-                print("error \(err.localizedDescription)")
+                //print("error \(err.localizedDescription)")
                 return
             }
             let success = JSON(response.data as Any)["success"].boolValue
-            print("success =", success)
+            //print("success =", success)
             if success {
-                print("登录成功")
+                //print("登录成功")
                 //保存token
                 // 写入文件
                 let filePath:String = NSHomeDirectory() + "/Documents/local_data_source_file.json"
                 let info = JSON(["username":username, "Authorization": "Token \(JSON(response.data as Any)["data"]["token"].stringValue)" ]).rawString()
-                print("写入文件 info ===",info! as String)
+                //print("写入文件 info ===",info! as String)
                 try! info?.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
                 self.jumpIndexPage()
             } else {

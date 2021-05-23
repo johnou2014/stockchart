@@ -25,7 +25,7 @@ class KSMultipleLabelView: UIView {
             let itemLabel           = UILabel.init(textColor: textColor, textFont: textFont, alignment: NSTextAlignment.center)
             itemLabel.numberOfLines = 1
             self.items.append(itemLabel)
-            self.addSubview(itemLabel)
+            //self.addSubview(itemLabel)
         }
     }
     
@@ -37,7 +37,7 @@ class KSMultipleLabelView: UIView {
             let itemLabel           = UILabel.init(textColor: textColor, textFont: textFont, alignment: alignments[i])
             itemLabel.numberOfLines = 1
             self.items.append(itemLabel)
-            self.addSubview(itemLabel)
+            //self.addSubview(itemLabel)
         }
     }
     
@@ -52,14 +52,14 @@ class KSMultipleLabelView: UIView {
             let itemLabel           = UILabel.init(textColor: textColor, textFont: textFont, alignment: alignments[i])
             itemLabel.numberOfLines = 1
             self.items.append(itemLabel)
-            self.addSubview(itemLabel)
+            //self.addSubview(itemLabel)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let SW = self.frame.width
-        let SH = self.frame.height
+        let SW = CGFloat(0.0)// self.frame.width
+        let SH = CGFloat(0.0)//self.frame.height
         if isCustomLayout {
             let LSW        = SW - (self.margin * 2.0) - (CGFloat(self.contentsCount - 1) * self.padding)
             var LX:CGFloat = 0
@@ -69,7 +69,8 @@ class KSMultipleLabelView: UIView {
                 if i == 0 {
                     LX = self.margin
                 }
-                itemLabel.frame = CGRect(x: LX, y: 0, width: LW, height: SH)
+                itemLabel.frame = CGRect(x: LX, y: 0, width: LW, height: SH
+                )
                 LX = LX + LW + self.padding
             }
         }

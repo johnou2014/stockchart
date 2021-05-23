@@ -18,9 +18,8 @@ class WatchViewController: UITableViewController,UISearchControllerDelegate,UISe
     var loading: Bool = false
     let searchController = UISearchController(searchResultsController:nil)
     let identifier: String = "tableCell"
-    //static var watchViewController = WatchViewController()
+    static var watchViewController = WatchViewController()
     override func viewDidLoad() {
-        print("run didload=")
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -87,6 +86,7 @@ extension WatchViewController {
         let vc = SearchViewListController()
         vc.watchs = watchs
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 extension WatchViewController {

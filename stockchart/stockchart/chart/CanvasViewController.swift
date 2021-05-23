@@ -385,7 +385,7 @@ class CanvasViewController: KSBaseViewController {
     lazy var orderBookCtrl: KSOrderBookController = {
         let orderBookCtrl       = KSOrderBookController.init()
         orderBookCtrl.configure = KSDashboardChildConfigure.init(bid: self.configure.bid_currency, ask: self.configure.ask_currency)
-        orderBookCtrl.title     = String.ks_localizde("ks_app_global_text_orderbook")
+        //orderBookCtrl.title     = String.ks_localizde("ks_app_global_text_orderbook")
         orderBookCtrl.isBar     = isBar
         return orderBookCtrl
     }()
@@ -393,7 +393,7 @@ class CanvasViewController: KSBaseViewController {
     lazy var marketTradeCtrl: KSMarketTradeController = {
         let marketTradeCtrl       = KSMarketTradeController.init()
         marketTradeCtrl.configure = KSDashboardChildConfigure.init(bid: self.configure.bid_currency, ask: self.configure.ask_currency)
-        marketTradeCtrl.title     = String.ks_localizde("ks_app_global_text_market_trade")
+        //marketTradeCtrl.title     = String.ks_localizde("ks_app_global_text_market_trade")
         marketTradeCtrl.isBar     = isBar
         return marketTradeCtrl
     }()
@@ -401,7 +401,7 @@ class CanvasViewController: KSBaseViewController {
     lazy var infoCtrl: KSMarketTradeController = {
         let infoCtrl       = KSMarketTradeController.init()
         infoCtrl.configure = KSDashboardChildConfigure.init(bid: self.configure.bid_currency, ask: self.configure.ask_currency)
-        infoCtrl.title     = String.ks_localizde("ks_app_global_text_info")
+        //infoCtrl.title     = String.ks_localizde("ks_app_global_text_info")
         infoCtrl.isBar     = isBar
         return infoCtrl
     }()

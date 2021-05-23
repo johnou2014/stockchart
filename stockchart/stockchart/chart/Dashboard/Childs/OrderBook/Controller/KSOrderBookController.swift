@@ -68,6 +68,7 @@ class KSOrderBookController: KSDashboardChildController {
     private func createChildViews() {
         tableView = self.createTableView(target: self, separatorStyle: UITableViewCell.SeparatorStyle.none)
         tableView?.estimatedSectionFooterHeight = 0
+        
         tableView?.estimatedSectionHeaderHeight = 0
         tableView?.snp.makeConstraints({ (make) in
             make.top.equalToSuperview()
@@ -86,11 +87,11 @@ class KSOrderBookController: KSDashboardChildController {
                                                               alignments: [NSTextAlignment.left,NSTextAlignment.center,NSTextAlignment.right],
                                                               count: 3,
                                                               padding: KS_Const_Point16)
-        headerView.frame           = CGRect.init(x: 0, y: 0, width: self.ks_screenWidth(), height: KS_Const_Point40)
+        headerView.frame           = CGRect.init(x: 0, y: 0, width: self.ks_screenWidth(), height: 0)
         updateHeader()
         
         headerView.backgroundColor = KS_Const_Color_White
-        tableView?.tableHeaderView = headerView
+       // tableView?.tableHeaderView = headerView
     }
     //======================================================================
     // MARK: - 10、按钮点击事件
