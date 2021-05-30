@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 import Foundation
 import ESPullToRefresh
-class AlertsViewController: UITableViewController,UISearchControllerDelegate,UISearchBarDelegate {
+class AlertsViewController: UITableViewController,UISearchControllerDelegate {
     var alerts = [Alert]()
     var page = 1
     var total = 0
@@ -32,7 +32,7 @@ class AlertsViewController: UITableViewController,UISearchControllerDelegate,UIS
             [weak self] in
             self?.loadMore()
         }
-        setUpSearchBar()
+        //setUpSearchBar()
     }
     
     // 当视图已经显示时调用该方法
@@ -49,6 +49,7 @@ class AlertsViewController: UITableViewController,UISearchControllerDelegate,UIS
     }
 }
 extension AlertsViewController:UISearchResultsUpdating {
+    /*
     private func setUpSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -56,6 +57,7 @@ extension AlertsViewController:UISearchResultsUpdating {
         searchController.hidesNavigationBarDuringPresentation = true
         //navigationItem.searchController = searchController
     }
+ */
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchedText = searchController.searchBar.text else { return }
         if searchedText == "" {

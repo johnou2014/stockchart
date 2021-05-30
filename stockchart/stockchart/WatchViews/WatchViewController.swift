@@ -27,6 +27,9 @@ class WatchViewController: UITableViewController,UISearchControllerDelegate,UISe
         setUpSearchBar()
         openLoadingView()
     }
+    func viewDidApper() {
+        print("viewDidApper ===")
+    }
     func openLoadingView() {
         let loadingView: LoadingView = LoadingView(frame: CGRect(x: self.view.frame.size.width/2-50, y: self.view.frame.size.height/2-50, width: 100, height: 100))
         loadingView.backgroundColor = UIColor(displayP3Red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 0.3)
@@ -64,7 +67,8 @@ extension WatchViewController:UISearchResultsUpdating {
             self.watchs = watchs.filter({
                 $0.stock_name.contains(searchedText)
             })
-            tableView.reloadData()
+            self.setupUI()
+            //tableView.reloadData()
         }
     }
 }
@@ -72,7 +76,10 @@ extension WatchViewController {
     func setupUI() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: self, action: nil)
         navigationItem.title = "Watch List"
-        tableView.reloadData()
+        //tableView.reloadData()
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
     }
     private func presentAlertController(withTitle title: String) {
         let controller = UIAlertController(title: title, message: nil, preferredStyle: .alert)
@@ -143,7 +150,7 @@ extension WatchViewController {
     // MARK: -链式请求
     @objc func loadDataFromAPI() {
         self.watchs = [Watch]()
-        tableView.reloadData()
+        self.setupUI()
         AF.request("http://easytrade007.com:8080/api/v1/getUserStock", method: .get, parameters: ["username":getUserInfo(type: "username")],headers:headers).validate().responseJSON { response in
             if let err = response.error {
                 print("error \(err.localizedDescription)")

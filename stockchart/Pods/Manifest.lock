@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.5)
+  - DropDown (2.3.13)
   - ESPullToRefresh (2.9.3)
   - HandyJSON (5.0.2)
   - HMSegmentedControl (1.5.3)
@@ -21,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.5)
+  - DropDown
   - ESPullToRefresh
   - HandyJSON (~> 5.0.0)
   - Kingfisher
@@ -35,6 +37,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - DropDown
     - ESPullToRefresh
     - HandyJSON
     - HMSegmentedControl
@@ -52,6 +55,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
@@ -67,6 +71,6 @@ SPEC CHECKSUMS:
   SwiftIconFont: 0a772c5ac65a40c9b0675efa37b4928158bd8e43
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 89d5c3321bf398d24761054783495a4581b0a310
+PODFILE CHECKSUM: c49d1057c8b738cf92d34bcb3da8adf283e212c5
 
 COCOAPODS: 1.10.0

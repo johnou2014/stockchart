@@ -29,6 +29,8 @@
 		CE7654AB2610842A000A4599 /* SearchViewListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AA2610842A000A4599 /* SearchViewListController.swift */; };
 		CE7654AE2610C24A000A4599 /* SearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7654AD2610C24A000A4599 /* SearchTableCell.swift */; };
 		CE78955F26402FE800AEE4C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE78955E26402FE800AEE4C8 /* Localizable.strings */; };
+		CE81FCF12662669B00515FA6 /* TableViewTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81FCF02662669B00515FA6 /* TableViewTestController.swift */; };
+		CE81FCF626626C8A00515FA6 /* EditTableViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81FCF526626C8A00515FA6 /* EditTableViewTest.swift */; };
 		CE8E4A0F25D6AED5007B11A2 /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */; };
 		CE8E4A1525D6B08C007B11A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */; };
 		CE9D671326457DEB0061F648 /* pingan.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE9D671226457DEB0061F648 /* pingan.txt */; };
@@ -151,6 +153,8 @@
 		CE7654AD2610C24A000A4599 /* SearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableCell.swift; sourceTree = "<group>"; };
 		CE78955E26402FE800AEE4C8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		CE7BD37C25F4FA6600B937D6 /* watchlist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = watchlist.json; sourceTree = "<group>"; };
+		CE81FCF02662669B00515FA6 /* TableViewTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewTestController.swift; sourceTree = "<group>"; };
+		CE81FCF526626C8A00515FA6 /* EditTableViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewTest.swift; sourceTree = "<group>"; };
 		CE8E4A0E25D6AED5007B11A2 /* AlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		CE8E4A1425D6B08C007B11A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CE9D671226457DEB0061F648 /* pingan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pingan.txt; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				CE5D0ACD260F5A7C007464DD /* Search.swift */,
 				CE76548F26100D2A000A4599 /* SearchViewController.swift */,
 				CE7654AD2610C24A000A4599 /* SearchTableCell.swift */,
+				CE81FCF02662669B00515FA6 /* TableViewTestController.swift */,
+				CE81FCF526626C8A00515FA6 /* EditTableViewTest.swift */,
 			);
 			path = WatchViews;
 			sourceTree = "<group>";
@@ -1052,6 +1058,7 @@
 				CEE88B7A25E9F60D00F2CD1A /* KSChartValueView.swift in Sources */,
 				CEE88B5825E9F60D00F2CD1A /* KSBaseNavigationController.swift in Sources */,
 				CE6E6C8F25CE450900A4C892 /* AppDelegate.swift in Sources */,
+				CE81FCF12662669B00515FA6 /* TableViewTestController.swift in Sources */,
 				CEE88BA425E9FAA000F2CD1A /* Date+KSExtensions.swift in Sources */,
 				CEE88BBB25E9FB0700F2CD1A /* KSCalculator.swift in Sources */,
 				CEE88B7925E9F60D00F2CD1A /* KSChartIndexView.swift in Sources */,
@@ -1138,6 +1145,7 @@
 				CE8E4A0F25D6AED5007B11A2 /* AlertsViewController.swift in Sources */,
 				CEE88BB425E9FB0700F2CD1A /* KSLayer.swift in Sources */,
 				CEE88B6F25E9F60D00F2CD1A /* KSVerticalMenuView.swift in Sources */,
+				CE81FCF626626C8A00515FA6 /* EditTableViewTest.swift in Sources */,
 				CE74FCC22625DB6800E72009 /* LoginViewController.swift in Sources */,
 				CEE88B4225E9F60D00F2CD1A /* KSTwinsLabelView.swift in Sources */,
 				CEE88BA325E9FAA000F2CD1A /* String+KSExtensions.swift in Sources */,
