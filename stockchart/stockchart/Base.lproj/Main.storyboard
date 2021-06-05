@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z4t-I9-vDs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yEs-OZ-pOu">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -233,7 +233,6 @@
         <!--Search View List Controller-->
         <scene sceneID="IKh-lg-2Dy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1hC-Iu-GaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="JaY-y2-AYw" customClass="SearchViewListController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="31y-fI-joJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -256,6 +255,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="zlF-sU-swS"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hC-Iu-GaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1009" y="-251"/>
         </scene>
@@ -271,11 +271,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r6g-Ef-NGF">
+                                <rect key="frame" x="0.0" y="60" width="414" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditTableViewTest" rowHeight="87" id="yJh-PM-vc7" customClass="EditTableViewTest" customModule="stockchart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yJh-PM-vc7" id="lVP-Nu-0To">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXs-2J-WkT">
+                                                    <rect key="frame" x="-1" y="5" width="88" height="77"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp1-gb-35N">
+                                                    <rect key="frame" x="95" y="15" width="104" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnC-IP-qoq">
+                                                    <rect key="frame" x="97" y="48" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZ2-Lx-rju">
+                                                    <rect key="frame" x="334" y="21" width="70" height="45"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="KBu-vX-XeJ"/>
+                                                        <constraint firstAttribute="height" constant="45" id="f6b-hN-h0D"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onClickDeleteButton:" destination="yEs-OZ-pOu" eventType="touchUpInside" id="qmP-7h-JpL"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gXs-2J-WkT" secondAttribute="bottom" constant="5" id="74T-IV-IfT"/>
+                                                <constraint firstItem="gXs-2J-WkT" firstAttribute="leading" secondItem="lVP-Nu-0To" secondAttribute="leading" constant="5" id="BJJ-ee-gNV"/>
+                                                <constraint firstItem="IZ2-Lx-rju" firstAttribute="centerY" secondItem="lVP-Nu-0To" secondAttribute="centerY" id="C3Y-57-JRv"/>
+                                                <constraint firstAttribute="trailing" secondItem="IZ2-Lx-rju" secondAttribute="trailing" constant="7" id="EuK-bp-SzM"/>
+                                                <constraint firstAttribute="trailing" secondItem="IZ2-Lx-rju" secondAttribute="trailing" constant="5" id="Kav-zm-tes"/>
+                                                <constraint firstAttribute="trailing" secondItem="IZ2-Lx-rju" secondAttribute="trailing" constant="10" id="OxN-iV-bP9"/>
+                                                <constraint firstAttribute="trailing" secondItem="IZ2-Lx-rju" secondAttribute="trailing" constant="10" id="TSz-fo-83q"/>
+                                                <constraint firstItem="gXs-2J-WkT" firstAttribute="centerY" secondItem="lVP-Nu-0To" secondAttribute="centerY" id="Wmj-Dq-6TN"/>
+                                                <constraint firstAttribute="trailing" secondItem="IZ2-Lx-rju" secondAttribute="trailing" id="XZg-wM-MED"/>
+                                                <constraint firstItem="gXs-2J-WkT" firstAttribute="top" secondItem="lVP-Nu-0To" secondAttribute="top" constant="5" id="mBA-FN-4em"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblName" destination="Qp1-gb-35N" id="cxR-3H-rQs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yEs-OZ-pOu" id="FTP-L7-qst"/>
+                                    <outlet property="delegate" destination="yEs-OZ-pOu" id="14t-qf-Ydf"/>
+                                </connections>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xut-Ip-9nW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Stock" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QvP-tZ-9WT">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="WGN-M2-XWF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -295,6 +365,9 @@
                                                 <state key="normal" title="Add Stock">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onClickAddButton:" destination="yEs-OZ-pOu" eventType="touchUpInside" id="rYt-JB-dd2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -314,13 +387,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="r6g-Ef-NGF" secondAttribute="trailing" id="6Da-ae-xkK"/>
+                            <constraint firstItem="KyH-zv-MVF" firstAttribute="top" secondItem="r6g-Ef-NGF" secondAttribute="bottom" id="8b7-FX-EYO"/>
+                            <constraint firstAttribute="trailing" secondItem="r6g-Ef-NGF" secondAttribute="trailing" id="Fow-KM-1YP"/>
                             <constraint firstAttribute="trailing" secondItem="Xut-Ip-9nW" secondAttribute="trailing" id="LCS-vK-x9q"/>
                             <constraint firstItem="Xut-Ip-9nW" firstAttribute="leading" secondItem="hjA-ha-Hp5" secondAttribute="leading" id="Oly-7b-tU4"/>
+                            <constraint firstItem="r6g-Ef-NGF" firstAttribute="top" secondItem="Xut-Ip-9nW" secondAttribute="bottom" id="ULk-yw-ScA"/>
+                            <constraint firstItem="r6g-Ef-NGF" firstAttribute="leading" secondItem="hjA-ha-Hp5" secondAttribute="leading" id="W4A-Xe-mqF"/>
                             <constraint firstItem="Xut-Ip-9nW" firstAttribute="top" secondItem="Ipb-Jg-oly" secondAttribute="bottom" id="Yjo-EF-N3z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lblInput" destination="QvP-tZ-9WT" id="JvY-uM-nrL"/>
+                        <outlet property="stockTableViewList" destination="r6g-Ef-NGF" id="b0i-nv-Kl0"/>
                         <outlet property="vmDropDown" destination="Xut-Ip-9nW" id="Vzk-wR-AbG"/>
                     </connections>
                 </viewController>
@@ -731,6 +810,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -240,8 +240,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `EditTableViewTest`.
+    static let editTableViewTest: Rswift.ReuseIdentifier<EditTableViewTest> = Rswift.ReuseIdentifier(identifier: "EditTableViewTest")
     /// Reuse identifier `MyCell`.
     static let myCell: Rswift.ReuseIdentifier<SearchTableCell> = Rswift.ReuseIdentifier(identifier: "MyCell")
     /// Reuse identifier `alertDetail`.
@@ -822,7 +824,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = TableViewTestController
 
       let bundle = R.hostingBundle
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
