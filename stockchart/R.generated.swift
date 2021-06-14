@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
   struct segue {
     /// This struct is generated for `AlertsViewController`, and contains static references to 1 segues.
     struct alertsViewController {
@@ -102,6 +102,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func alertDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, AlertsViewController, CanvasViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.alertsViewController.alertDetail, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `TableViewTestController`, and contains static references to 1 segues.
+    struct tableViewTestController {
+      /// Segue identifier `jumpToCanvans`.
+      static let jumpToCanvans: Rswift.StoryboardSegueIdentifier<MXPageSegue, TableViewTestController, CanvasViewController> = Rswift.StoryboardSegueIdentifier(identifier: "jumpToCanvans")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `jumpToCanvans`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func jumpToCanvans(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<MXPageSegue, TableViewTestController, CanvasViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.tableViewTestController.jumpToCanvans, segue: segue)
       }
       #endif
 

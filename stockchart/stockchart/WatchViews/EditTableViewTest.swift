@@ -9,6 +9,8 @@ import UIKit
 
 class EditTableViewTest: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblNameDetail: UILabel!
+    @IBOutlet weak var lblImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
