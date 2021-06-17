@@ -16,7 +16,7 @@ class TableViewTestController: UIViewController {
     @IBOutlet weak var stockTableViewList: UITableView!
     
     let dropDown = DropDown()
-    var stringArr = [Watch]()
+    var watchs = [Watch]()
     var searchOptions = [Search]()
     var filterSearchOptions = [String]()
     
@@ -48,7 +48,7 @@ class TableViewTestController: UIViewController {
     //MARK:- showFruiteOptions
     @IBAction func showFruiteOptions(_ sender:Any) {
       var result = self.searchOptions.filter { (item) -> Bool in
-        if let _ = self.stringArr.first(where: { $0.stock == item.symbol }) {
+        if let _ = self.watchs.first(where: { $0.stock == item.symbol }) {
             return false
         }
             return true
@@ -75,7 +75,7 @@ class TableViewTestController: UIViewController {
             //MARK: - 检查是否在选择项目里面，不存在不让添加
             text = text.uppercased()
             var isInTheOption = false
-            for(_, item) in self.stringArr.enumerated() {
+            for(_, item) in self.watchs.enumerated() {
                 if item.stock == text {
                     presentAlertController(withTitle: "Cannot be added repeatedly")
                     return
@@ -99,7 +99,7 @@ class TableViewTestController: UIViewController {
         guard let indexpath = stockTableViewList.indexPathForRow(at: point) else {
             return
         }
-        stringArr.remove(at: indexpath.row)
+        watchs.remove(at: indexpath.row)
         stockTableViewList.beginUpdates()
         stockTableViewList.deleteRows(at: [IndexPath(row: indexpath.row, section: 0)], with: .left)
         stockTableViewList.endUpdates()
@@ -125,16 +125,16 @@ extension TableViewTestController {
 }
 extension TableViewTestController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        stringArr.count
+        watchs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditTableViewTest", for: indexPath) as? EditTableViewTest else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "editTableViewTest", for: indexPath) as? EditTableViewTest else {
             return UITableViewCell()
         }
-        cell.lblName.text = stringArr[indexPath.row].stock
-        cell.lblNameDetail.text = stringArr[indexPath.row].stock_name
-        if stringArr[indexPath.row].pk > 40 {
+        cell.lblName.text = watchs[indexPath.row].stock
+        cell.lblNameDetail.text = watchs[indexPath.row].stock_name
+        if watchs[indexPath.row].pk > 40 {
             cell.lblImage.image = UIImage(from: .themify, code: "stats.up", textColor: .green, backgroundColor: .clear, size: CGSize(width: 200, height: 100))
         } else {
             cell.lblImage.image = UIImage(from: .themify, code: "stats.down", textColor: .red, backgroundColor: .clear, size: CGSize(width: 200, height: 100))
@@ -147,16 +147,17 @@ extension TableViewTestController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("indexPath =",indexPath.row)
-            let stock = stringArr[indexPath.row].stock
-            print("stock =",stock, stringArr[indexPath.row])
+            let stock = watchs[indexPath.row].stock
+            print("stock =",stock, watchs[indexPath.row])
             self.showAlertDialog(tableView, indexPath: indexPath, stock: stock)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "jumpToCanvans",
+        if segue.identifier == "watchDetail",
            let indexPath = stockTableViewList?.indexPathForSelectedRow,
            let destinationViewController: CanvasViewController = segue.destination as? CanvasViewController {
-            destinationViewController.watch = stringArr[indexPath.row]
+            print("active =",watchs[indexPath.row])
+            destinationViewController.watch = watchs[indexPath.row]
         }
     }
     func showAlertDialog(_ tableView: UITableView, indexPath: IndexPath, stock: String) {
@@ -166,7 +167,7 @@ extension TableViewTestController: UITableViewDataSource,UITableViewDelegate {
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                  print("Ok button click...")
                 self.delUserStock(stock: stock)
-                self.stringArr.remove(at: indexPath.row)
+                self.watchs.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .bottom)
             })
             // Create Cancel button with action handlder
@@ -191,7 +192,7 @@ extension TableViewTestController {
                 self.presentAlertController(withTitle: "add stock failed！")
                 return
             } else {
-                self.stringArr.insert(Watch(pk: 0, user: "", stock: self.lblInput.text!, stock_name: self.lblInput.text!, user_id: 0, stock_id: 0), at: 0)
+                self.watchs.insert(Watch(pk: 0, user: "", stock: self.lblInput.text!, stock_name: self.lblInput.text!, user_id: 0, stock_id: 0), at: 0)
                 self.stockTableViewList.beginUpdates()
                 self.stockTableViewList.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
                 self.stockTableViewList.endUpdates()
@@ -213,7 +214,7 @@ extension TableViewTestController {
                 candles.append(info)
             }
             print("candles =", candles)
-            self.stringArr = candles
+            self.watchs = candles
             self.stockTableViewList.reloadData()
             self.lblInput.text = nil
         }

@@ -110,15 +110,15 @@ struct R: Rswift.Validatable {
 
     /// This struct is generated for `TableViewTestController`, and contains static references to 1 segues.
     struct tableViewTestController {
-      /// Segue identifier `jumpToCanvans`.
-      static let jumpToCanvans: Rswift.StoryboardSegueIdentifier<MXPageSegue, TableViewTestController, CanvasViewController> = Rswift.StoryboardSegueIdentifier(identifier: "jumpToCanvans")
+      /// Segue identifier `editTableViewTestKey`.
+      static let editTableViewTestKey: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, TableViewTestController, CanvasViewController> = Rswift.StoryboardSegueIdentifier(identifier: "editTableViewTestKey")
 
       #if os(iOS) || os(tvOS)
-      /// Optionally returns a typed version of segue `jumpToCanvans`.
+      /// Optionally returns a typed version of segue `editTableViewTestKey`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func jumpToCanvans(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<MXPageSegue, TableViewTestController, CanvasViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.tableViewTestController.jumpToCanvans, segue: segue)
+      static func editTableViewTestKey(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, TableViewTestController, CanvasViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.tableViewTestController.editTableViewTestKey, segue: segue)
       }
       #endif
 
@@ -259,12 +259,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `EditTableViewTest`.
-    static let editTableViewTest: Rswift.ReuseIdentifier<EditTableViewTest> = Rswift.ReuseIdentifier(identifier: "EditTableViewTest")
     /// Reuse identifier `MyCell`.
     static let myCell: Rswift.ReuseIdentifier<SearchTableCell> = Rswift.ReuseIdentifier(identifier: "MyCell")
     /// Reuse identifier `alertDetail`.
     static let alertDetail: Rswift.ReuseIdentifier<AlertsCell> = Rswift.ReuseIdentifier(identifier: "alertDetail")
+    /// Reuse identifier `editTableViewTest`.
+    static let editTableViewTest: Rswift.ReuseIdentifier<EditTableViewTest> = Rswift.ReuseIdentifier(identifier: "editTableViewTest")
     /// Reuse identifier `tableCell`.
     static let tableCell: Rswift.ReuseIdentifier<TableCell> = Rswift.ReuseIdentifier(identifier: "tableCell")
 
@@ -841,7 +841,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = TableViewTestController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yEs-OZ-pOu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z4t-I9-vDs">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="RyF-8g-zqd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LLw-RY-K3a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nq-VV-19R">
@@ -38,14 +38,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pk " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7w-oI-dKP">
-                                <rect key="frame" x="128" y="138" width="231" height="21"/>
+                                <rect key="frame" x="128" y="134" width="231" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yX-Tj-i9G">
-                                <rect key="frame" x="16" y="185" width="236" height="21"/>
+                                <rect key="frame" x="16" y="180" width="236" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -59,7 +59,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stock Id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHs-Cy-gRI">
-                                <rect key="frame" x="16" y="209" width="236" height="21"/>
+                                <rect key="frame" x="16" y="203" width="236" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnO-Zn-RRQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="228" y="497"/>
+            <point key="canvasLocation" x="-7" y="1176"/>
         </scene>
         <!--Canvas View Controller-->
         <scene sceneID="Vkj-KU-Gcu">
@@ -100,26 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0h-PY-7ej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="-240"/>
-        </scene>
-        <!--Canvas View Controller-->
-        <scene sceneID="TaR-a0-vtb">
-            <objects>
-                <viewController id="vhP-Qg-WF3" customClass="CanvasViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="POz-lf-YEP"/>
-                        <viewControllerLayoutGuide type="bottom" id="bJ1-wI-0sD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sZf-kV-thq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Xk3-vI-X2z"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k57-1R-j8E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1800" y="-1163"/>
+            <point key="canvasLocation" x="874" y="480"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="DIB-f5-UN8">
@@ -189,7 +170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SB2-js-QA0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="339" y="-284"/>
+            <point key="canvasLocation" x="-855" y="1004"/>
         </scene>
         <!--Alerts View Controller-->
         <scene sceneID="Y9M-8g-Rp5">
@@ -247,14 +228,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgJ-Fi-Ado" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="-278"/>
+            <point key="canvasLocation" x="891" y="-237"/>
         </scene>
         <!--Search View List Controller-->
         <scene sceneID="IKh-lg-2Dy">
             <objects>
                 <tableViewController id="JaY-y2-AYw" customClass="SearchViewListController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="31y-fI-joJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -276,7 +257,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hC-Iu-GaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1009" y="-251"/>
+            <point key="canvasLocation" x="-862" y="311"/>
         </scene>
         <!--Table View Test Controller-->
         <scene sceneID="g3g-uE-r7g">
@@ -291,14 +272,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r6g-Ef-NGF">
-                                <rect key="frame" x="0.0" y="60" width="414" height="676"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="583"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditTableViewTest" rowHeight="87" id="yJh-PM-vc7" customClass="EditTableViewTest" customModule="stockchart" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="editTableViewTest" rowHeight="87" id="yJh-PM-vc7" customClass="EditTableViewTest" customModule="stockchart" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yJh-PM-vc7" id="lVP-Nu-0To">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355.66666666666669" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXs-2J-WkT">
@@ -337,7 +318,7 @@
                                             <outlet property="lblImage" destination="gXs-2J-WkT" id="s4h-7A-2f2"/>
                                             <outlet property="lblName" destination="Qp1-gb-35N" id="cxR-3H-rQs"/>
                                             <outlet property="lblNameDetail" destination="EnC-IP-qoq" id="5CF-M6-VMp"/>
-                                            <segue destination="vhP-Qg-WF3" kind="custom" identifier="jumpToCanvans" customClass="MXPageSegue" id="fTk-qO-Be4"/>
+                                            <segue destination="8nN-Kw-Ipd" kind="show" identifier="editTableViewTestKey" id="qOt-Ek-adz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -347,7 +328,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xut-Ip-9nW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Stock" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QvP-tZ-9WT">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="60"/>
@@ -393,7 +374,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="r6g-Ef-NGF" secondAttribute="trailing" id="6Da-ae-xkK"/>
                             <constraint firstItem="KyH-zv-MVF" firstAttribute="top" secondItem="r6g-Ef-NGF" secondAttribute="bottom" id="8b7-FX-EYO"/>
@@ -405,6 +386,7 @@
                             <constraint firstItem="Xut-Ip-9nW" firstAttribute="top" secondItem="Ipb-Jg-oly" secondAttribute="bottom" id="Yjo-EF-N3z"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gi5-rV-h0l"/>
                     <connections>
                         <outlet property="lblInput" destination="QvP-tZ-9WT" id="JvY-uM-nrL"/>
                         <outlet property="stockTableViewList" destination="r6g-Ef-NGF" id="b0i-nv-Kl0"/>
@@ -413,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yp7-VL-ePM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1042.0289855072465" y="-1147.0108695652175"/>
+            <point key="canvasLocation" x="232" y="-251"/>
         </scene>
         <!--Watch list-->
         <scene sceneID="eYn-qQ-ab7">
@@ -429,7 +411,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="hjK-3I-Yb3" kind="relationship" relationship="rootViewController" id="vcr-7E-Pst"/>
+                        <segue destination="yEs-OZ-pOu" kind="relationship" relationship="rootViewController" id="BNT-BK-sIA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E60-S8-JTH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -796,6 +778,34 @@
             </objects>
             <point key="canvasLocation" x="2209" y="-998"/>
         </scene>
+        <!--Canvas View Controller-->
+        <scene sceneID="AJd-BH-dH6">
+            <objects>
+                <viewController id="8nN-Kw-Ipd" customClass="CanvasViewController" customModule="stockchart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ruM-sm-312"/>
+                        <viewControllerLayoutGuide type="bottom" id="5qc-yy-1WK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mBB-KQ-qjM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hg-R6-my8">
+                                <rect key="frame" x="120" y="99" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zea-eu-miV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUw-a0-jki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="239" y="478"/>
+        </scene>
     </scenes>
     <resources>
         <image name="exclamationmark.square" catalog="system" width="128" height="114"/>
@@ -818,9 +828,6 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

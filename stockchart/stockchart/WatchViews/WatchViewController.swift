@@ -47,6 +47,7 @@ class WatchViewController: UITableViewController,UISearchControllerDelegate,UISe
         if segue.identifier == "watchDetail",
            let indexPath = tableView?.indexPathForSelectedRow,
            let destinationViewController: CanvasViewController = segue.destination as? CanvasViewController {
+            print("active =",watchs[indexPath.row])
             destinationViewController.watch = watchs[indexPath.row]
         }
     }
